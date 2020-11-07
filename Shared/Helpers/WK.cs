@@ -5,11 +5,11 @@ namespace Shared
     {
         public class Default
         {
-            public static readonly int W = 500;
-            public static readonly int H = 500;
+            public static readonly int CanvasWidth = 500;
+            public static readonly int CanvasHeight = 500;
 
-            public static readonly int pixels_x = 10;
-            public static readonly int pixels_y = 10;
+            public static readonly int Pixels_X = 10;
+            public static readonly int Pixels_Y = 10;
         }
 
         public class Scene

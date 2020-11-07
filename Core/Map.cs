@@ -30,10 +30,10 @@ namespace Shared
                     switch (map1[row, elem])
                     {
                         case 'x':
-                            spriteBatch.Draw(map_x, new Rectangle(x: elem * WK.Default.pixels_x, y: row * WK.Default.pixels_y, width: WK.Default.pixels_x, height: WK.Default.pixels_y), Color.White);
+                            spriteBatch.Draw(map_x, new Rectangle(x: elem * WK.Default.Pixels_X, y: row * WK.Default.Pixels_Y, width: WK.Default.Pixels_X, height: WK.Default.Pixels_Y), Color.White);
                             break;
                         case '.':
-                            spriteBatch.Draw(map_p, new Rectangle(x: elem * WK.Default.pixels_x, y: row * WK.Default.pixels_y, width: WK.Default.pixels_x, height: WK.Default.pixels_y), Color.White);
+                            spriteBatch.Draw(map_p, new Rectangle(x: elem * WK.Default.Pixels_X, y: row * WK.Default.Pixels_Y, width: WK.Default.Pixels_X, height: WK.Default.Pixels_Y), Color.White);
                             break;
                         default:
                             break;

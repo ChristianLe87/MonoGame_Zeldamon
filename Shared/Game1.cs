@@ -17,9 +17,6 @@ namespace Shared
         public static string actualScene = WK.Scene.GameScene;
         Dictionary<string, IScene> scenes;
 
-        int canvasWidth = 500;
-        int canvasHeight = 500;
-
         public Game1()
         {
             // Content
@@ -29,30 +26,18 @@ namespace Shared
 
             // Window
             graphicsDeviceManager = new GraphicsDeviceManager(this);
-            graphicsDeviceManager.PreferredBackBufferWidth = canvasWidth;
-            graphicsDeviceManager.PreferredBackBufferHeight = canvasHeight;
+            graphicsDeviceManager.PreferredBackBufferWidth = WK.Default.CanvasWidth;
+            graphicsDeviceManager.PreferredBackBufferHeight = WK.Default.CanvasHeight;
             graphicsDeviceManager.ApplyChanges();
 
-            base.Initialize();
-        }
-
-        protected override void LoadContent()
-        {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
 
             this.scenes = new Dictionary<string, IScene>()
             {
                 {WK.Scene.GameScene, new GameScene() }
             };
+
         }
-
-
-        protected override void UnloadContent()
-        {
-            // TODO: Code
-        }
-
 
         protected override void Update(GameTime gameTime)
         {
