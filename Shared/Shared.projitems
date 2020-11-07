@@ -10,10 +10,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Game1.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Scenes\Game_Scene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Tools.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\IScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Player.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\WK.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

@@ -2,11 +2,11 @@
 
 namespace Shared
 {
-    public class Game_Scene : IScene
+    public class GameScene : IScene
     {
         Player player;
 
-        public Game_Scene()
+        public GameScene()
         {
             player = new Player();
         }

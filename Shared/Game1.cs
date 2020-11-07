@@ -14,7 +14,7 @@ namespace Shared
 
         SpriteBatch spriteBatch;
 
-        public static string actualScene = "Game_Scene";
+        public static string actualScene = WK.Scene.GameScene;
         Dictionary<string, IScene> scenes;
 
         int canvasWidth = 500;
@@ -35,7 +35,7 @@ namespace Shared
 
             this.scenes = new Dictionary<string, IScene>()
             {
-                {"Game_Scene", new Game_Scene() }
+                {WK.Scene.GameScene, new GameScene() }
             };
 
             base.Initialize();
