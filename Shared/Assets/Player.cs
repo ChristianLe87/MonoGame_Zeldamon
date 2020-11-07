@@ -4,17 +4,30 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Shared
 {
-    public class Tools
+    public class Player
     {
-        internal static Texture2D CreateColorTexture(Color color)
+        Texture2D texture2D;
+        Rectangle rectangle;
+
+        public Player()
         {
-            Texture2D newTexture = new Texture2D(Game1.graphicsDeviceManager.GraphicsDevice, 1, 1, false, SurfaceFormat.Color);
-            newTexture.SetData(new Color[] { color });
-            return newTexture;
+            texture2D = Tools.CreateColorTexture(Color.Pink);
+            rectangle = new Rectangle(250, 250, 20, 20);
         }
 
+        public void Update()
+        {
+            Vector2 oldPosition = new Vector2(rectangle.X, rectangle.Y);
+            Vector2 newPosition = MovePlayer(oldPosition, 2);
+            rectangle = new Rectangle((int)newPosition.X, (int)newPosition.Y, rectangle.Width, rectangle.Height);
+        }
 
-        internal static Vector2 MovePlayer(Vector2 position, int minPosition, int maxPosition, int moveSpeed)
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(texture2D, rectangle, Color.White);
+        }
+
+        public static Vector2 MovePlayer(Vector2 position, int moveSpeed)
         {
             KeyboardState keyboardState = Keyboard.GetState();
 

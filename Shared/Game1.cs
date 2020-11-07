@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace Shared
 {
@@ -14,15 +14,14 @@ namespace Shared
 
         SpriteBatch spriteBatch;
 
-        Texture2D texture2D;
-        Rectangle rectangle;
+        public static string actualScene = "Game_Scene";
+        Dictionary<string, IScene> scenes;
 
         int canvasWidth = 500;
         int canvasHeight = 500;
 
         public Game1()
         {
-
             // Content
             string absolutePath = Path.Combine(Environment.CurrentDirectory, "Content");
             this.Content.RootDirectory = absolutePath;
@@ -34,16 +33,18 @@ namespace Shared
             graphicsDeviceManager.PreferredBackBufferHeight = canvasHeight;
             graphicsDeviceManager.ApplyChanges();
 
+            this.scenes = new Dictionary<string, IScene>()
+            {
+                {"Game_Scene", new Game_Scene() }
+            };
+
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
             // TODO: Code
-            texture2D = Tools.CreateColorTexture(Color.Pink);
-            rectangle = new Rectangle(250, 250, 20, 20);
         }
 
 
@@ -55,16 +56,10 @@ namespace Shared
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
             // TODO: Code
-
             if (true) this.IsMouseVisible = true;
 
-            Vector2 oldPosition = new Vector2(rectangle.X, rectangle.Y);
-            Vector2 newPosition = Tools.MovePlayer(oldPosition, 100, 100, 2);
-            rectangle = new Rectangle((int)newPosition.X, (int)newPosition.Y, rectangle.Width, rectangle.Height);
+            scenes[actualScene].Update();
 
             base.Update(gameTime);
         }
@@ -77,7 +72,7 @@ namespace Shared
             spriteBatch.Begin();
 
             // TODO: Code
-            spriteBatch.Draw(texture2D, rectangle, Color.White);
+            scenes[actualScene].Draw(spriteBatch);
 
             spriteBatch.End();
 
