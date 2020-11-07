@@ -12,7 +12,7 @@ namespace Shared
         public static GraphicsDeviceManager graphicsDeviceManager;
         public static ContentManager contentManager;
 
-        SpriteBatch spriteBatch;
+        public static SpriteBatch spriteBatch;
 
         public static string actualScene = WK.Scene.GameScene;
         Dictionary<string, IScene> scenes;
@@ -33,18 +33,18 @@ namespace Shared
             graphicsDeviceManager.PreferredBackBufferHeight = canvasHeight;
             graphicsDeviceManager.ApplyChanges();
 
-            this.scenes = new Dictionary<string, IScene>()
-            {
-                {WK.Scene.GameScene, new GameScene() }
-            };
-
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            // TODO: Code
+
+
+            this.scenes = new Dictionary<string, IScene>()
+            {
+                {WK.Scene.GameScene, new GameScene() }
+            };
         }
 
 
@@ -69,13 +69,9 @@ namespace Shared
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin();
-
-            // TODO: Code
             scenes[actualScene].Draw(spriteBatch);
 
             spriteBatch.End();
-
             base.Draw(gameTime);
         }
     }

@@ -15,6 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\IScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Player.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\WK.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\Camera.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

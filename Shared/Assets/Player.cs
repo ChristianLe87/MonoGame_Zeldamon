@@ -7,7 +7,7 @@ namespace Shared
     public class Player
     {
         Texture2D texture2D;
-        Rectangle rectangle;
+        public Rectangle rectangle;
 
         public Player()
         {
