@@ -32,12 +32,16 @@ namespace Shared
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+
             scenes = new Dictionary<string, IScene>()
             {
                 {WK.Scene.GameScene, new GameScene() },
                 {WK.Scene.House_1, new House_1() }
             };
             scenes[actualScene].Initialize(new Point(100, 150));
+
+            base.Initialize();
+
         }
 
         protected override void Update(GameTime gameTime)

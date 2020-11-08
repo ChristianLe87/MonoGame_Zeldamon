@@ -18,6 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Camera.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\House_1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Portal.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\Dialog.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

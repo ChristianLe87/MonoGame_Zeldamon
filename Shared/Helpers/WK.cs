@@ -12,6 +12,11 @@ namespace Shared
             public static readonly int Pixels_Y = 10;
         }
 
+        public class Content
+        {
+            public static readonly string Arial_20 = "Arial_20";
+        }
+
         public class Scene
         {
             public static readonly string About = "About";
