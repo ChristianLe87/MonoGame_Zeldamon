@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class GameScene : IScene
+    public class House_1 : IScene
     {
         Camera camera;
 
@@ -16,13 +16,13 @@ namespace Shared
 
         public void Initialize(Point startPlayerPosition)
         {
-            map = new Map(WK.Map.Map1);
+            map = new Map(WK.Map.Map2);
             player = new Player(startPlayerPosition);
             camera = new Camera();
 
             portals = new List<Portal>()
             {
-                new Portal(new Point(7 * WK.Default.Pixels_X, 13 * WK.Default.Pixels_Y), WK.Scene.House_1, new Point(4 * WK.Default.Pixels_Y, 12 * WK.Default.Pixels_Y))
+                new Portal(new Point(4 * WK.Default.Pixels_Y, 13 * WK.Default.Pixels_Y), WK.Scene.GameScene, new Point(7 * WK.Default.Pixels_X, 14 * WK.Default.Pixels_Y))
             };
         }
 
@@ -34,6 +34,7 @@ namespace Shared
             player.Update();
 
             foreach (var portal in portals) portal.Update(player);
+
         }
 
         public void Draw(SpriteBatch spriteBatch)

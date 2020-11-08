@@ -9,10 +9,10 @@ namespace Shared
         Texture2D texture2D;
         public Rectangle rectangle;
 
-        public Player()
+        public Player(Point startPosition)
         {
             texture2D = Tools.CreateColorTexture(Color.Pink);
-            rectangle = new Rectangle(250, 250, 20, 20);
+            rectangle = new Rectangle(startPosition.X, startPosition.Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
         }
 
         public void Update()

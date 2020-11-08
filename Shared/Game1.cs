@@ -14,8 +14,8 @@ namespace Shared
 
         public static SpriteBatch spriteBatch;
 
-        public static string actualScene = WK.Scene.GameScene;
-        Dictionary<string, IScene> scenes;
+        private static string actualScene = WK.Scene.GameScene;
+        private static Dictionary<string, IScene> scenes;
 
         public Game1()
         {
@@ -32,11 +32,12 @@ namespace Shared
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            this.scenes = new Dictionary<string, IScene>()
+            scenes = new Dictionary<string, IScene>()
             {
-                {WK.Scene.GameScene, new GameScene() }
+                {WK.Scene.GameScene, new GameScene() },
+                {WK.Scene.House_1, new House_1() }
             };
-
+            scenes[actualScene].Initialize(new Point(100, 150));
         }
 
         protected override void Update(GameTime gameTime)
@@ -58,6 +59,12 @@ namespace Shared
 
             spriteBatch.End();
             base.Draw(gameTime);
+        }
+
+        public static void ChangeScene(string targetScene, Point targetPlayerPosition)
+        {
+            actualScene = targetScene;
+            scenes[actualScene].Initialize(targetPlayerPosition);
         }
     }
 }
