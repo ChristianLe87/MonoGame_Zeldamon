@@ -7,14 +7,17 @@ namespace Shared
     {
         Texture2D map_x;
         Texture2D map_p;
+        Texture2D map_other;
 
-        private char[,] map1;
+        private Tile[,] map;
 
-        public Map(char[,] map1)
+        public Map(char[,] originalMap)
         {
-            this.map1 = map1;
             this.map_x = Tools.CreateColorTexture(Color.Brown);
             this.map_p = Tools.CreateColorTexture(Color.Green);
+            this.map_other = Tools.CreateColorTexture(Color.Red);
+
+            this.map = PopulateMap(originalMap);
         }
 
         public void Update()
@@ -23,23 +26,38 @@ namespace Shared
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            for (int row = 0; row < map1.GetLength(0); row++)
+            for (int row = 0; row < map.GetLength(0); row++)
             {
-                for (int elem = 0; elem < map1.GetLength(1); elem++)
+                for (int elem = 0; elem < map.GetLength(1); elem++)
                 {
-                    switch (map1[row, elem])
+                    map[row, elem].Draw(spriteBatch);
+                }
+            }
+        }
+
+        private Tile[,] PopulateMap(char[,] originalMap)
+        {
+            Tile[,] map = new Tile[originalMap.GetLength(0), originalMap.GetLength(1)];
+
+            for (int row = 0; row < originalMap.GetLength(0); row++)
+            {
+                for (int elem = 0; elem < originalMap.GetLength(1); elem++)
+                {
+                    switch (originalMap[row, elem])
                     {
                         case 'x':
-                            spriteBatch.Draw(map_x, new Rectangle(x: elem * WK.Default.Pixels_X, y: row * WK.Default.Pixels_Y, width: WK.Default.Pixels_X, height: WK.Default.Pixels_Y), Color.White);
+                            map[row, elem] = new Tile(map_x, Layer.Background, new Point(elem * WK.Default.Pixels_X, row * WK.Default.Pixels_Y), "x");
                             break;
                         case '.':
-                            spriteBatch.Draw(map_p, new Rectangle(x: elem * WK.Default.Pixels_X, y: row * WK.Default.Pixels_Y, width: WK.Default.Pixels_X, height: WK.Default.Pixels_Y), Color.White);
+                            map[row, elem] = new Tile(map_p, Layer.Background, new Point(elem * WK.Default.Pixels_X, row * WK.Default.Pixels_Y), ".");
                             break;
                         default:
+                            map[row, elem] = new Tile(map_other, Layer.Background, new Point(elem * WK.Default.Pixels_X, row * WK.Default.Pixels_Y), "");
                             break;
                     }
                 }
             }
+            return map;
         }
     }
 }

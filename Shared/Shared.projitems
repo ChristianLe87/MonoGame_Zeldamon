@@ -20,6 +20,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Portal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Dialog.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Map.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

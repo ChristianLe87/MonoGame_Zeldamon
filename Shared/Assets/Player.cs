@@ -27,7 +27,7 @@ namespace Shared
             spriteBatch.Draw(texture2D, rectangle, Color.White);
         }
 
-        public static Vector2 MovePlayer(Vector2 position, int moveSpeed)
+        private Vector2 MovePlayer(Vector2 position, int moveSpeed)
         {
             KeyboardState keyboardState = Keyboard.GetState();
 
