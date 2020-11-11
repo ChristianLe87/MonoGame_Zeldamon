@@ -1,15 +1,16 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    internal class Map
+    public class Map
     {
         Texture2D map_x;
         Texture2D map_p;
         Texture2D map_other;
 
-        private Tile[,] map;
+        public List<Tile> map { get; private set; }
 
         public Map(char[,] originalMap)
         {
@@ -26,18 +27,12 @@ namespace Shared
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            for (int row = 0; row < map.GetLength(0); row++)
-            {
-                for (int elem = 0; elem < map.GetLength(1); elem++)
-                {
-                    map[row, elem].Draw(spriteBatch);
-                }
-            }
+            foreach (var m in map) m.Draw(spriteBatch);
         }
 
-        private Tile[,] PopulateMap(char[,] originalMap)
+        private List<Tile> PopulateMap(char[,] originalMap)
         {
-            Tile[,] map = new Tile[originalMap.GetLength(0), originalMap.GetLength(1)];
+            List<Tile> map = new List<Tile>();// new Tile[originalMap.GetLength(0), originalMap.GetLength(1)];
 
             for (int row = 0; row < originalMap.GetLength(0); row++)
             {
@@ -46,13 +41,13 @@ namespace Shared
                     switch (originalMap[row, elem])
                     {
                         case 'x':
-                            map[row, elem] = new Tile(map_x, Layer.Background, new Point(elem * WK.Default.Pixels_X, row * WK.Default.Pixels_Y), "x");
+                            map.Add(new Tile(map_x, Layer.Background, new Point(elem * WK.Default.Pixels_X, row * WK.Default.Pixels_Y), "x"));
                             break;
                         case '.':
-                            map[row, elem] = new Tile(map_p, Layer.Background, new Point(elem * WK.Default.Pixels_X, row * WK.Default.Pixels_Y), ".");
+                            map.Add(new Tile(map_p, Layer.Background, new Point(elem * WK.Default.Pixels_X, row * WK.Default.Pixels_Y), "."));
                             break;
                         default:
-                            map[row, elem] = new Tile(map_other, Layer.Background, new Point(elem * WK.Default.Pixels_X, row * WK.Default.Pixels_Y), "");
+                            map.Add(new Tile(map_other, Layer.Background, new Point(elem * WK.Default.Pixels_X, row * WK.Default.Pixels_Y), ""));
                             break;
                     }
                 }

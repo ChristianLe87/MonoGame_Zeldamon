@@ -19,8 +19,9 @@ namespace Shared
             this.rectangle = rectangle;
         }
 
-        public void Update(Player player)
+        public void Update(Player player, string[] text = null)
         {
+            if(text != null) this.text = text;
             this.rectangle.X = player.rectangle.X - (WK.Default.CanvasWidth / 2) + (WK.Default.Pixels_X / 2);
             this.rectangle.Y = player.rectangle.Y + (WK.Default.CanvasHeight / 2) - rectangle.Height + (WK.Default.Pixels_Y / 2);
         }

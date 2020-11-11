@@ -7,7 +7,7 @@ namespace Shared
     public class Tile
     {
         Texture2D texture2D;
-        Rectangle rectangle;
+        public Rectangle rectangle { get; private set; }
         public string tag { get; private set; }
         public Layer layer { get; private set; }
 

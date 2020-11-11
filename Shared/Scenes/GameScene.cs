@@ -35,11 +35,11 @@ namespace Shared
             camera.Update(player);
 
             map.Update();
-            player.Update();
+            player.Update(map);
 
             foreach (var portal in portals) portal.Update(player);
 
-            dialog.Update(player);
+            dialog.Update(player, new string[] { $"X: {player.rectangle.X}\nY:{player.rectangle.Y}" });
         }
 
         public void Draw(SpriteBatch spriteBatch)

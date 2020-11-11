@@ -31,7 +31,7 @@ namespace Shared
             camera.Update(player);
 
             map.Update();
-            player.Update();
+            player.Update(map);
 
             foreach (var portal in portals) portal.Update(player);
 
