@@ -21,6 +21,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Dialog.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Map.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Tile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\NPC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

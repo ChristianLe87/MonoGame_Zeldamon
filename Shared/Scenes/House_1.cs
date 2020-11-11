@@ -14,6 +14,8 @@ namespace Shared
 
         List<Portal> portals;
 
+        List<NPC> NPCs;
+
         public void Initialize(Point startPlayerPosition)
         {
             map = new Map(WK.Map.Map2);
@@ -23,6 +25,11 @@ namespace Shared
             portals = new List<Portal>()
             {
                 new Portal(new Point(4 * WK.Default.Pixels_Y, 13 * WK.Default.Pixels_Y), WK.Scene.GameScene, new Point(7 * WK.Default.Pixels_X, 14 * WK.Default.Pixels_Y))
+            };
+
+            NPCs = new List<NPC>()
+            {
+                new NPC(new Point(3, 11))
             };
         }
 
@@ -34,7 +41,7 @@ namespace Shared
             player.Update(map);
 
             foreach (var portal in portals) portal.Update(player);
-
+            foreach (var npc in NPCs) npc.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -45,6 +52,7 @@ namespace Shared
             player.Draw(spriteBatch);
 
             foreach (var portal in portals) portal.Draw(spriteBatch);
+            foreach (var npc in NPCs) npc.Draw(spriteBatch);
         }
     }
 }
