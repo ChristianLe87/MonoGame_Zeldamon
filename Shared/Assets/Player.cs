@@ -9,6 +9,7 @@ namespace Shared
     {
         Texture2D texture2D;
         public Rectangle rectangle;
+        CharacterDirecction characterDirecction = CharacterDirecction._null;
 
         public Player(Point startPosition)
         {
@@ -30,29 +31,57 @@ namespace Shared
         {
             KeyboardState keyboardState = Keyboard.GetState();
 
-            if (keyboardState.IsKeyDown(Keys.W) || keyboardState.IsKeyDown(Keys.Up))
+            if (keyboardState.IsKeyDown(Keys.W) || keyboardState.IsKeyDown(Keys.Up) || characterDirecction == CharacterDirecction.Up)
             {
                 if (GetCollideDirection(map, rectangle, CharacterDirecction.Up) == CharacterDirecction.Up) return;
 
                 rectangle.Y -= 1;
+
+                // move until player until alligne with tile
+                if (rectangle.Y % WK.Default.Pixels_Y != 0)
+                    characterDirecction = CharacterDirecction.Up;
+                else
+                    characterDirecction = CharacterDirecction._null;
+
             }
-            else if (keyboardState.IsKeyDown(Keys.S) || keyboardState.IsKeyDown(Keys.Down))
+            else if (keyboardState.IsKeyDown(Keys.S) || keyboardState.IsKeyDown(Keys.Down) || characterDirecction == CharacterDirecction.Down)
             {
                 if (GetCollideDirection(map, rectangle, CharacterDirecction.Down) == CharacterDirecction.Down) return;
 
                 rectangle.Y += 1;
+
+                // move until player until alligne with tile
+                if (rectangle.Y % WK.Default.Pixels_Y != 0)
+                    characterDirecction = CharacterDirecction.Down;
+                else
+                    characterDirecction = CharacterDirecction._null;
+
             }
-            else if (keyboardState.IsKeyDown(Keys.D) || keyboardState.IsKeyDown(Keys.Right))
+            else if (keyboardState.IsKeyDown(Keys.D) || keyboardState.IsKeyDown(Keys.Right) || characterDirecction == CharacterDirecction.Right)
             {
                 if (GetCollideDirection(map, rectangle, CharacterDirecction.Right) == CharacterDirecction.Right) return;
 
                 rectangle.X += 1;
+
+                // move until player until alligne with tile
+                if (rectangle.X % WK.Default.Pixels_X != 0)
+                    characterDirecction = CharacterDirecction.Right;
+                else
+                    characterDirecction = CharacterDirecction._null;
+
             }
-            else if (keyboardState.IsKeyDown(Keys.A) || keyboardState.IsKeyDown(Keys.Left))
+            else if (keyboardState.IsKeyDown(Keys.A) || keyboardState.IsKeyDown(Keys.Left) || characterDirecction == CharacterDirecction.Left)
             {
                 if (GetCollideDirection(map, rectangle, CharacterDirecction.Left) == CharacterDirecction.Left) return;
 
                 rectangle.X -= 1;
+
+                // move until player until alligne with tile
+                if (rectangle.X % WK.Default.Pixels_X != 0)
+                    characterDirecction = CharacterDirecction.Left;
+                else
+                    characterDirecction = CharacterDirecction._null;
+
             }
         }
 
