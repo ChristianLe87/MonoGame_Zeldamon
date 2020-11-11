@@ -1,5 +1,4 @@
-﻿
-namespace Shared
+﻿namespace Shared
 {
     public class WK
     {
@@ -14,7 +13,25 @@ namespace Shared
 
         public class Content
         {
-            public static readonly string Arial_20 = "Arial_20";
+            public class Font
+            {
+                public static readonly string Arial_20 = "Arial_20";
+            }
+
+            public class Texture
+            {
+                public class Player
+                {
+                    public static readonly string Idle_Up = "Player_Idle_Up";
+                    public static readonly string Idle_Down = "Player_Idle_Down";
+                    public static readonly string Idle_Right = "Player_Idle_Right";
+                    public static readonly string Idle_Left = "Player_Idle_Left";
+                    public static readonly string Walk_Up = "Player_Walk_Up";
+                    public static readonly string Walk_Down = "Player_Walk_Down";
+                    public static readonly string Walk_Right = "Player_Walk_Right";
+                    public static readonly string Walk_Left = "Player_Walk_Left";
+                }
+            }
         }
 
         public class Scene

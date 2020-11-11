@@ -15,7 +15,7 @@ namespace Shared
         {
             this.text = text;
             this.backgrowndTexture = Tools.CreateColorTexture(Color.LightBlue);
-            this.font = Game1.contentManager.Load<SpriteFont>(WK.Content.Arial_20);
+            this.font = Game1.contentManager.Load<SpriteFont>(WK.Content.Font.Arial_20);
             this.rectangle = rectangle;
         }
 

@@ -13,6 +13,41 @@
       <Link>Content\Arial_20.xnb</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\Shared\Content\.DS_Store">
+      <Link>Content\.DS_Store</Link>
+    </None>
+    <None Include="..\Shared\Content\Player\Player_Idle_Up.png">
+      <Link>Content\Player\Player_Idle_Up.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Player\Player_Idle_Right.png">
+      <Link>Content\Player\Player_Idle_Right.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Player\Player_Walk_Left.png">
+      <Link>Content\Player\Player_Walk_Left.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Player\Player_Idle_Left.png">
+      <Link>Content\Player\Player_Idle_Left.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Player\Player_Idle_Down.png">
+      <Link>Content\Player\Player_Idle_Down.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Player\Player_Walk_Down.png">
+      <Link>Content\Player\Player_Walk_Down.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Player\Player_Walk_Right.png">
+      <Link>Content\Player\Player_Walk_Right.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Player\Player_Walk_Up.png">
+      <Link>Content\Player\Player_Walk_Up.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />
 </Project>
