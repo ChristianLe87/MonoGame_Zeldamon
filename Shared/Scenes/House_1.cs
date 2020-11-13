@@ -16,7 +16,7 @@ namespace Shared
             this.entities = new List<IEntity>()
             {
                 new Player(startPlayerPosition,"player"),
-                new NPC(new Point(3, 11), "npc"),
+                new NPC_2(new Point(3, 11), "npc"),
                 new Portal(new Point(4 * WK.Default.Pixels_Y, 13 * WK.Default.Pixels_Y), WK.Scene.GameScene, new Point(7 * WK.Default.Pixels_X, 14 * WK.Default.Pixels_Y), "portal"),
                 new Map(WK.Map.Map2, "map2")
             };
@@ -28,7 +28,7 @@ namespace Shared
         {
             Player player = entities.First(x => x.tag == "player") as Player;
             Map map = entities.First(x => x.tag == "map2") as Map;
-            List<NPC> NPCs = entities.Where(x => x.tag == "npc").Select(x => x as NPC).ToList(); ;
+            List<Inpc> NPCs = entities.Where(x => x.tag == "npc").Select(x => x as Inpc).ToList(); ;
             List<Portal> portals = entities.Where(x => x.tag == "portal").Select(x => x as Portal).ToList();
 
             camera.Update(player);
@@ -45,7 +45,7 @@ namespace Shared
         {
             Player player = entities.First(x => x.tag == "player") as Player;
             Map map = entities.First(x => x.tag == "map2") as Map;
-            List<NPC> NPCs = entities.Where(x => x.tag == "npc").Select(x => x as NPC).ToList();
+            List<Inpc> NPCs = entities.Where(x => x.tag == "npc").Select(x => x as Inpc).ToList();
             List<Portal> portals = entities.Where(x => x.tag == "portal").Select(x => x as Portal).ToList();
 
             camera.Draw(spriteBatch);

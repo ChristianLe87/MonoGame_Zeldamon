@@ -28,7 +28,7 @@ namespace Shared
         {
             Player player = entities.First(x => x.tag == "player") as Player;
             Map map = entities.First(x => x.tag == "map1") as Map;
-            List<NPC> NPCs = entities.Where(x => x.tag == "npc").Select(x=>x as NPC).ToList();
+            List<Inpc> NPCs = entities.Where(x => x.tag == "npc").Select(x=>x as Inpc).ToList();
             List<Portal> portals = entities.Where(x => x.tag == "portal").Select(x => x as Portal).ToList();
             List<Dialog> dialogs = entities.Where(x => x.tag == "dialog").Select(x => x as Dialog).ToList();
 
@@ -45,7 +45,7 @@ namespace Shared
         {
             Player player = entities.First(x => x.tag == "player") as Player;
             Map map = entities.First(x => x.tag == "map1") as Map;
-            List<NPC> NPCs = entities.Where(x => x.tag == "npc").Select(x => x as NPC).ToList();
+            List<Inpc> NPCs = entities.Where(x => x.tag == "npc").Select(x => x as Inpc).ToList();
             List<Portal> portals = entities.Where(x => x.tag == "portal").Select(x => x as Portal).ToList();
             List<Dialog> dialogs = entities.Where(x => x.tag == "dialog").Select(x => x as Dialog).ToList();
 

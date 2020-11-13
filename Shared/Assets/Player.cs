@@ -39,7 +39,7 @@ namespace Shared
     {
         public static void Update(List<IEntity> entities, Player player)
         {
-            List<Rectangle> NPCs = entities.OfType<NPC>().Select(x => x.rectangle).ToList();
+            List<Rectangle> NPCs = entities.OfType<Inpc>().Select(x => x.rectangle).ToList();
             List<Rectangle> tiles = entities.OfType<Map>().First().tiles.Where(x => x.tag == "x").Select(x => x.rectangle).ToList();
             List<Rectangle> rectangles = NPCs.Concat(tiles).ToList();
 

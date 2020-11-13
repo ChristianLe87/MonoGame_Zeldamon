@@ -21,12 +21,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Dialog.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Map.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Tile.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\NPC.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\IEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\IEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\NPCs\NPC_1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Inpc.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\NPCs\NPC_2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NPCHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
     <Folder Include="$(MSBuildThisFileDirectory)Scenes\" />
     <Folder Include="$(MSBuildThisFileDirectory)Assets\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Assets\NPCs\" />
   </ItemGroup>
 </Project>
