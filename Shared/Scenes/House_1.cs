@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -11,25 +12,23 @@ namespace Shared
 
         Map map;
         Player player;
-
         List<Portal> portals;
-
         List<NPC> NPCs;
 
         public void Initialize(Point startPlayerPosition)
         {
-            map = new Map(WK.Map.Map2);
-            player = new Player(startPlayerPosition);
-            camera = new Camera();
+            this.map = new Map(WK.Map.Map2);
+            this.player = new Player(startPlayerPosition,"player");
+            this.camera = new Camera();
 
-            portals = new List<Portal>()
+            this.portals = new List<Portal>()
             {
-                new Portal(new Point(4 * WK.Default.Pixels_Y, 13 * WK.Default.Pixels_Y), WK.Scene.GameScene, new Point(7 * WK.Default.Pixels_X, 14 * WK.Default.Pixels_Y))
+                new Portal(player, new Point(4 * WK.Default.Pixels_Y, 13 * WK.Default.Pixels_Y), WK.Scene.GameScene, new Point(7 * WK.Default.Pixels_X, 14 * WK.Default.Pixels_Y), "portal")
             };
 
-            NPCs = new List<NPC>()
+            this.NPCs = new List<NPC>()
             {
-                new NPC(new Point(3, 11))
+                new NPC(new Point(3, 11), "npc")
             };
         }
 
@@ -37,22 +36,29 @@ namespace Shared
         {
             camera.Update(player);
 
-            map.Update();
-            player.Update(map);
+            MapHelpers.Update();
 
-            foreach (var portal in portals) portal.Update(player);
-            foreach (var npc in NPCs) npc.Update();
+            
+            var npcRectangles = NPCs.Select(x => x.rectangle).ToList();
+            var mapRectangles = map.tiles.Where(x=>x.tag == "x").Select(x=>x.rectangle).ToList();
+            List<Rectangle> rectangles = npcRectangles.Concat(mapRectangles).ToList();
+
+            PlayerHelpers.Update(rectangles, player);
+
+            foreach (var portal in portals) PortalHelpers.Update(portal, player);
+            foreach (var npc in NPCs) NPCHelpers.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             camera.Draw(spriteBatch);
 
-            map.Draw(spriteBatch);
-            player.Draw(spriteBatch);
+            MapHelpers.Draw(spriteBatch, map.tiles);
 
-            foreach (var portal in portals) portal.Draw(spriteBatch);
-            foreach (var npc in NPCs) npc.Draw(spriteBatch);
+            PlayerHelpers.Draw(spriteBatch, player);
+
+            foreach (var portal in portals) PortalHelpers.Draw(spriteBatch, portal);
+            foreach (var npc in NPCs) NPCHelpers.Draw(spriteBatch, npc);
         }
     }
 }

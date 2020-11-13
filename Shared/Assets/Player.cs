@@ -1,154 +1,160 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+
 namespace Shared
 {
     public class Player
     {
-        Texture2D texture_IdleUp;
-        Texture2D texture_IdleDown;
-        Texture2D texture_IdleRight;
-        Texture2D texture_IdleLeft;
-        Texture2D texture_WalkUp;
-        Texture2D texture_WalkDown;
-        Texture2D texture_WalkRight;
-        Texture2D texture_WalkLeft;
+        public Dictionary<string, Texture2D> textures;
 
-        PlayerState playerState = PlayerState.IdleDown;
+        public PlayerState playerState = PlayerState.IdleDown;
 
         public Rectangle rectangle;
-        CharacterDirecction characterDirecction = CharacterDirecction._null;
 
-        public Player(Point startPosition)
+        public CharacterDirecction characterDirecction = CharacterDirecction._null;
+
+        public string tag;
+
+        public Player(Point startPosition, string tag)
         {
-            this.texture_IdleUp = Tools.GetTexture(WK.Content.Texture.Player.Idle_Up);
-            this.texture_IdleDown = Tools.GetTexture(WK.Content.Texture.Player.Idle_Down);
-            this.texture_IdleRight = Tools.GetTexture(WK.Content.Texture.Player.Idle_Right);
-            this.texture_IdleLeft = Tools.GetTexture(WK.Content.Texture.Player.Idle_Left);
-            this.texture_WalkUp = Tools.GetTexture(WK.Content.Texture.Player.Walk_Up);
-            this.texture_WalkDown = Tools.GetTexture(WK.Content.Texture.Player.Walk_Down);
-            this.texture_WalkRight = Tools.GetTexture(WK.Content.Texture.Player.Walk_Right);
-            this.texture_WalkLeft = Tools.GetTexture(WK.Content.Texture.Player.Walk_Left);
+            this.tag = tag;
+
+            this.textures = new Dictionary<string, Texture2D>()
+            {
+                { "texture_IdleUp",  Tools.GetTexture(WK.Content.Texture.Player.Idle_Up) },
+                { "texture_IdleDown" , Tools.GetTexture(WK.Content.Texture.Player.Idle_Down) },
+                { "texture_IdleRight" , Tools.GetTexture(WK.Content.Texture.Player.Idle_Right) },
+                { "texture_IdleLeft" , Tools.GetTexture(WK.Content.Texture.Player.Idle_Left) },
+                { "texture_WalkUp" , Tools.GetTexture(WK.Content.Texture.Player.Walk_Up) },
+                { "texture_WalkDown" , Tools.GetTexture(WK.Content.Texture.Player.Walk_Down) },
+                { "texture_WalkRight" , Tools.GetTexture(WK.Content.Texture.Player.Walk_Right) },
+                { "texture_WalkLeft" , Tools.GetTexture(WK.Content.Texture.Player.Walk_Left)}
+            };
 
             rectangle = new Rectangle(startPosition.X, startPosition.Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
         }
+    }
 
-        public void Update(Map map)
+    public class PlayerHelpers
+    {
+        public static void Update(List<Rectangle> rectangles, Player player)
         {
-            MovePlayer(map);
+            MovePlayer(rectangles, player);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public static void Draw(SpriteBatch spriteBatch, Player player)
         {
-            switch (playerState)
+            switch (player.playerState)
             {
                 case PlayerState.IdleUp:
-                    spriteBatch.Draw(texture_IdleUp, rectangle, new Rectangle(0, 0, 16, 16), Color.White);
+                    spriteBatch.Draw(player.textures["texture_IdleUp"], player.rectangle, new Rectangle(0, 0, 16, 16), Color.White);
                     break;
                 case PlayerState.IdleDown:
-                    spriteBatch.Draw(texture_IdleDown, rectangle, new Rectangle(0, 0, 16, 16), Color.White);
+                    spriteBatch.Draw(player.textures["texture_IdleDown"], player.rectangle, new Rectangle(0, 0, 16, 16), Color.White);
                     break;
                 case PlayerState.IdleRight:
-                    spriteBatch.Draw(texture_IdleRight, rectangle, new Rectangle(0, 0, 16, 16), Color.White);
+                    spriteBatch.Draw(player.textures["texture_IdleRight"], player.rectangle, new Rectangle(0, 0, 16, 16), Color.White);
                     break;
                 case PlayerState.IdleLeft:
-                    spriteBatch.Draw(texture_IdleLeft, rectangle, new Rectangle(0, 0, 16, 16), Color.White);
+                    spriteBatch.Draw(player.textures["texture_IdleLeft"], player.rectangle, new Rectangle(0, 0, 16, 16), Color.White);
                     break;
                 case PlayerState.WalkUp:
-                    spriteBatch.Draw(texture_WalkUp, rectangle, Color.White);
+                    spriteBatch.Draw(player.textures["texture_WalkUp"], player.rectangle, Color.White);
                     break;
                 case PlayerState.WalkDown:
-                    spriteBatch.Draw(texture_WalkDown, rectangle, Color.White);
+                    spriteBatch.Draw(player.textures["texture_WalkDown"], player.rectangle, Color.White);
                     break;
                 case PlayerState.WalkRight:
-                    spriteBatch.Draw(texture_WalkRight, rectangle, Color.White);
+                    spriteBatch.Draw(player.textures["texture_WalkRight"], player.rectangle, Color.White);
                     break;
                 case PlayerState.WalkLeft:
-                    spriteBatch.Draw(texture_WalkLeft, rectangle, Color.White);
+                    spriteBatch.Draw(player.textures["texture_WalkLeft"], player.rectangle, Color.White);
                     break;
                 default:
                     break;
             }
-            
+
         }
 
-        private void MovePlayer(Map map)
+        private static void MovePlayer(List<Rectangle> rectangles, Player player)
         {
             KeyboardState keyboardState = Keyboard.GetState();
 
-            if (keyboardState.IsKeyDown(Keys.W) || keyboardState.IsKeyDown(Keys.Up) || characterDirecction == CharacterDirecction.Up)
+            if (keyboardState.IsKeyDown(Keys.W) || keyboardState.IsKeyDown(Keys.Up) || player.characterDirecction == CharacterDirecction.Up)
             {
-                playerState = PlayerState.IdleUp;
+                player.playerState = PlayerState.IdleUp;
 
-                if (GetCollideDirection(map, rectangle, CharacterDirecction.Up) == CharacterDirecction.Up) return;
+                if (GetCollideDirection(rectangles, player.rectangle, CharacterDirecction.Up) == CharacterDirecction.Up) return;
 
-                rectangle.Y -= 1;
+                player.rectangle.Y -= 1;
 
                 // move until player until alligne with tile
-                if (rectangle.Y % WK.Default.Pixels_Y != 0)
-                    characterDirecction = CharacterDirecction.Up;
+                if (player.rectangle.Y % WK.Default.Pixels_Y != 0)
+                    player.characterDirecction = CharacterDirecction.Up;
                 else
-                    characterDirecction = CharacterDirecction._null;
+                    player.characterDirecction = CharacterDirecction._null;
 
             }
-            else if (keyboardState.IsKeyDown(Keys.S) || keyboardState.IsKeyDown(Keys.Down) || characterDirecction == CharacterDirecction.Down)
+            else if (keyboardState.IsKeyDown(Keys.S) || keyboardState.IsKeyDown(Keys.Down) || player.characterDirecction == CharacterDirecction.Down)
             {
-                playerState = PlayerState.IdleDown;
+                player.playerState = PlayerState.IdleDown;
 
-                if (GetCollideDirection(map, rectangle, CharacterDirecction.Down) == CharacterDirecction.Down) return;
+                if (GetCollideDirection(rectangles, player.rectangle, CharacterDirecction.Down) == CharacterDirecction.Down) return;
 
-                rectangle.Y += 1;
+                player.rectangle.Y += 1;
 
                 // move until player until alligne with tile
-                if (rectangle.Y % WK.Default.Pixels_Y != 0)
-                    characterDirecction = CharacterDirecction.Down;
+                if (player.rectangle.Y % WK.Default.Pixels_Y != 0)
+                    player.characterDirecction = CharacterDirecction.Down;
                 else
-                    characterDirecction = CharacterDirecction._null;
+                    player.characterDirecction = CharacterDirecction._null;
 
             }
-            else if (keyboardState.IsKeyDown(Keys.D) || keyboardState.IsKeyDown(Keys.Right) || characterDirecction == CharacterDirecction.Right)
+            else if (keyboardState.IsKeyDown(Keys.D) || keyboardState.IsKeyDown(Keys.Right) || player.characterDirecction == CharacterDirecction.Right)
             {
-                playerState = PlayerState.IdleRight;
+                player.playerState = PlayerState.IdleRight;
 
-                if (GetCollideDirection(map, rectangle, CharacterDirecction.Right) == CharacterDirecction.Right) return;
+                if (GetCollideDirection(rectangles, player.rectangle, CharacterDirecction.Right) == CharacterDirecction.Right) return;
 
-                rectangle.X += 1;
+                player.rectangle.X += 1;
 
                 // move until player until alligne with tile
-                if (rectangle.X % WK.Default.Pixels_X != 0)
-                    characterDirecction = CharacterDirecction.Right;
+                if (player.rectangle.X % WK.Default.Pixels_X != 0)
+                    player.characterDirecction = CharacterDirecction.Right;
                 else
-                    characterDirecction = CharacterDirecction._null;
+                    player.characterDirecction = CharacterDirecction._null;
 
             }
-            else if (keyboardState.IsKeyDown(Keys.A) || keyboardState.IsKeyDown(Keys.Left) || characterDirecction == CharacterDirecction.Left)
+            else if (keyboardState.IsKeyDown(Keys.A) || keyboardState.IsKeyDown(Keys.Left) || player.characterDirecction == CharacterDirecction.Left)
             {
-                playerState = PlayerState.IdleLeft;
+                player.playerState = PlayerState.IdleLeft;
 
-                if (GetCollideDirection(map, rectangle, CharacterDirecction.Left) == CharacterDirecction.Left) return;
+                if (GetCollideDirection(rectangles, player.rectangle, CharacterDirecction.Left) == CharacterDirecction.Left) return;
 
-                rectangle.X -= 1;
+                player.rectangle.X -= 1;
 
                 // move until player until alligne with tile
-                if (rectangle.X % WK.Default.Pixels_X != 0)
-                    characterDirecction = CharacterDirecction.Left;
+                if (player.rectangle.X % WK.Default.Pixels_X != 0)
+                    player.characterDirecction = CharacterDirecction.Left;
                 else
-                    characterDirecction = CharacterDirecction._null;
+                    player.characterDirecction = CharacterDirecction._null;
 
             }
         }
 
 
-        private CharacterDirecction GetCollideDirection(Map map, Rectangle playerRectangle, CharacterDirecction MoveDirection)
+        private static CharacterDirecction GetCollideDirection(List<Rectangle> rectangles, Rectangle playerRectangle, CharacterDirecction MoveDirection)
         {
-            Rectangle futurePlayerRectangle = rectangle;
+            Rectangle futurePlayerRectangle = playerRectangle;
 
             if (MoveDirection == CharacterDirecction.Right)
             {
                 futurePlayerRectangle.X++;
 
-                bool collisionDetected = GetIfWillIntersects(map, "x", futurePlayerRectangle);
+                bool collisionDetected = GetIfWillIntersects(rectangles, futurePlayerRectangle);
 
                 if (collisionDetected) return CharacterDirecction.Right;
             }
@@ -156,7 +162,7 @@ namespace Shared
             {
                 futurePlayerRectangle.X--;
 
-                bool collisionDetected = GetIfWillIntersects(map, "x", futurePlayerRectangle);
+                bool collisionDetected = GetIfWillIntersects(rectangles, futurePlayerRectangle);
 
                 if (collisionDetected) return CharacterDirecction.Left;
             }
@@ -164,7 +170,7 @@ namespace Shared
             {
                 futurePlayerRectangle.Y--;
 
-                bool collisionDetected = GetIfWillIntersects(map, "x", futurePlayerRectangle);
+                bool collisionDetected = GetIfWillIntersects(rectangles, futurePlayerRectangle);
 
                 if (collisionDetected) return CharacterDirecction.Up;
             }
@@ -172,7 +178,7 @@ namespace Shared
             {
                 futurePlayerRectangle.Y++;
 
-                bool collisionDetected = GetIfWillIntersects(map, "x", futurePlayerRectangle);
+                bool collisionDetected = GetIfWillIntersects(rectangles, futurePlayerRectangle);
 
                 if (collisionDetected) return CharacterDirecction.Down;
             }
@@ -180,11 +186,10 @@ namespace Shared
             return CharacterDirecction._null;
         }
 
-        private bool GetIfWillIntersects(Map map, string tag, Rectangle futurePlayerRectangle)
+        private static bool GetIfWillIntersects(List<Rectangle> rectangles, Rectangle futurePlayerRectangle)
         {
-            return map.map
-                        .Where(x => x.tag == tag)
-                        .Select(x => x.rectangle.Intersects(futurePlayerRectangle))
+            return rectangles
+                        .Select(x => x.Intersects(futurePlayerRectangle))
                         .Contains(true);
         }
     }

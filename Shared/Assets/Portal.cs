@@ -6,33 +6,42 @@ namespace Shared
 {
     public class Portal
     {
-        Rectangle position;
+        public Rectangle rectangle { get; private set; }
+        public string tag { get; private set; }
+        public string targetScene;
+        public Point targetPosition;
 
-        string targetScene;
-        Point targetPosition;
+        public Texture2D texture2D;
 
-        Texture2D texture2D;
+        public Player player;
 
-        public Portal(Point position, string targetScene, Point targetPosition, Texture2D texture2D = null)
+        public Portal(Player player, Point position, string targetScene, Point targetPosition, string tag, Texture2D texture2D = null)
         {
-            this.position = new Rectangle(position.X, position.Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
+            this.player = player;
+
+            this.tag = tag;
+
+            this.rectangle = new Rectangle(position.X, position.Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
             this.targetScene = targetScene;
             this.targetPosition = targetPosition;
 
             this.texture2D = texture2D == null ? Tools.CreateColorTexture(Color.Red) : texture2D;
         }
+    }
 
-        public void Update(Player player)
+    public class PortalHelpers
+    {
+        public static void Update(Portal portal, Player player)
         {
-            if (player.rectangle.Intersects(position))
+            if (player.rectangle.Intersects(portal.rectangle))
             {
-                Game1.ChangeScene(targetScene, targetPosition);
+                Game1.ChangeScene(portal.targetScene, portal.targetPosition);
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public static void Draw(SpriteBatch spriteBatch, Portal portal)
         {
-            spriteBatch.Draw(texture2D, position, Color.White);
+            spriteBatch.Draw(portal.texture2D, portal.rectangle, Color.White);
         }
     }
 }

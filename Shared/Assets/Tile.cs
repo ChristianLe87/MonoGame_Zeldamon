@@ -35,4 +35,5 @@ namespace Shared
         Main,
         Front
     }
+
 }
