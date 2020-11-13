@@ -22,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Map.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Tile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\NPC.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\IEntity.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

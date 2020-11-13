@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class Portal
+    public class Portal : IEntity
     {
         public Rectangle rectangle { get; private set; }
         public string tag { get; private set; }
@@ -13,12 +13,8 @@ namespace Shared
 
         public Texture2D texture2D;
 
-        public Player player;
-
-        public Portal(Player player, Point position, string targetScene, Point targetPosition, string tag, Texture2D texture2D = null)
+        public Portal(Point position, string targetScene, Point targetPosition, string tag, Texture2D texture2D = null)
         {
-            this.player = player;
-
             this.tag = tag;
 
             this.rectangle = new Rectangle(position.X, position.Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);

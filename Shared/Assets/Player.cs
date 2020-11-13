@@ -6,21 +6,18 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Shared
 {
-    public class Player
+    public class Player : IEntity
     {
         public Dictionary<string, Texture2D> textures;
-
-        public PlayerState playerState = PlayerState.IdleDown;
-
+        public PlayerState playerState;
         public Rectangle rectangle;
-
         public CharacterDirecction characterDirecction = CharacterDirecction._null;
-
-        public string tag;
+        public string tag { get; private set; }
 
         public Player(Point startPosition, string tag)
         {
             this.tag = tag;
+            this.playerState = PlayerState.IdleDown;
 
             this.textures = new Dictionary<string, Texture2D>()
             {
@@ -40,8 +37,12 @@ namespace Shared
 
     public class PlayerHelpers
     {
-        public static void Update(List<Rectangle> rectangles, Player player)
+        public static void Update(List<IEntity> entities, Player player)
         {
+            List<Rectangle> NPCs = entities.OfType<NPC>().Select(x => x.rectangle).ToList();
+            List<Rectangle> tiles = entities.OfType<Map>().First().tiles.Where(x => x.tag == "x").Select(x => x.rectangle).ToList();
+            List<Rectangle> rectangles = NPCs.Concat(tiles).ToList();
+
             MovePlayer(rectangles, player);
         }
 

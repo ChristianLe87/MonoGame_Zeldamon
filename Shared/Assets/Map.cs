@@ -4,14 +4,16 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class Map
+    public class Map : IEntity
     {
         Dictionary<string, Texture2D> textures;
 
         public List<Tile> tiles { get; private set; }
+        public string tag { get; private set; }
 
-        public Map(char[,] originalMap)
+        public Map(char[,] originalMap, string tag)
         {
+            this.tag = tag;
             this.textures = new Dictionary<string, Texture2D>()
             {
                 { "map_x", Tools.CreateColorTexture(Color.Brown) },

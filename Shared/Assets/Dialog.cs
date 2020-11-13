@@ -4,15 +4,17 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class Dialog
+    public class Dialog : IEntity
     {
         string[] text;
         Texture2D backgrowndTexture;
         SpriteFont font;
         Rectangle rectangle;
+        public string tag { get; private set; }
 
-        public Dialog(string[] text, Rectangle rectangle)
+        public Dialog(string[] text, Rectangle rectangle, string tag)
         {
+            this.tag = tag;
             this.text = text;
             this.backgrowndTexture = Tools.CreateColorTexture(Color.LightBlue);
             this.font = Game1.contentManager.Load<SpriteFont>(WK.Content.Font.Arial_20);

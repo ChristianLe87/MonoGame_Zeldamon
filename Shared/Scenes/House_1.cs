@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -9,41 +9,33 @@ namespace Shared
     public class House_1 : IScene
     {
         Camera camera;
-
-        Map map;
-        Player player;
-        List<Portal> portals;
-        List<NPC> NPCs;
+        List<IEntity> entities;
 
         public void Initialize(Point startPlayerPosition)
         {
-            this.map = new Map(WK.Map.Map2);
-            this.player = new Player(startPlayerPosition,"player");
+            this.entities = new List<IEntity>()
+            {
+                new Player(startPlayerPosition,"player"),
+                new NPC(new Point(3, 11), "npc"),
+                new Portal(new Point(4 * WK.Default.Pixels_Y, 13 * WK.Default.Pixels_Y), WK.Scene.GameScene, new Point(7 * WK.Default.Pixels_X, 14 * WK.Default.Pixels_Y), "portal"),
+                new Map(WK.Map.Map2, "map2")
+            };
+
             this.camera = new Camera();
-
-            this.portals = new List<Portal>()
-            {
-                new Portal(player, new Point(4 * WK.Default.Pixels_Y, 13 * WK.Default.Pixels_Y), WK.Scene.GameScene, new Point(7 * WK.Default.Pixels_X, 14 * WK.Default.Pixels_Y), "portal")
-            };
-
-            this.NPCs = new List<NPC>()
-            {
-                new NPC(new Point(3, 11), "npc")
-            };
         }
 
         public void Update()
         {
+            Player player = entities.First(x => x.tag == "player") as Player;
+            Map map = entities.First(x => x.tag == "map2") as Map;
+            List<NPC> NPCs = entities.Where(x => x.tag == "npc").Select(x => x as NPC).ToList(); ;
+            List<Portal> portals = entities.Where(x => x.tag == "portal").Select(x => x as Portal).ToList();
+
             camera.Update(player);
 
             MapHelpers.Update();
 
-            
-            var npcRectangles = NPCs.Select(x => x.rectangle).ToList();
-            var mapRectangles = map.tiles.Where(x=>x.tag == "x").Select(x=>x.rectangle).ToList();
-            List<Rectangle> rectangles = npcRectangles.Concat(mapRectangles).ToList();
-
-            PlayerHelpers.Update(rectangles, player);
+            PlayerHelpers.Update(entities, player);
 
             foreach (var portal in portals) PortalHelpers.Update(portal, player);
             foreach (var npc in NPCs) NPCHelpers.Update();
@@ -51,6 +43,11 @@ namespace Shared
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            Player player = entities.First(x => x.tag == "player") as Player;
+            Map map = entities.First(x => x.tag == "map2") as Map;
+            List<NPC> NPCs = entities.Where(x => x.tag == "npc").Select(x => x as NPC).ToList();
+            List<Portal> portals = entities.Where(x => x.tag == "portal").Select(x => x as Portal).ToList();
+
             camera.Draw(spriteBatch);
 
             MapHelpers.Draw(spriteBatch, map.tiles);
