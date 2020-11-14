@@ -25,7 +25,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Assets\NPCs\NPC_1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Inpc.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\NPCs\NPC_2.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)NPCHelpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\NPCHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

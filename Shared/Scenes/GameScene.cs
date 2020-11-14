@@ -8,13 +8,13 @@ namespace Shared
     public class GameScene : IScene
     {
         Camera camera;
-        List<IEntity> entities;
+        public List<IEntity> entities { get; set; }
 
         public void Initialize(Point startPlayerPosition)
         {
             this.entities = new List<IEntity>()
             {
-                new Player(startPlayerPosition, "player"),
+                new Player(startPlayerPosition, "player", this),
                 //new NPC(new Point(3, 11), "npc")
                 new Portal(new Point(7 * WK.Default.Pixels_X, 13 * WK.Default.Pixels_Y), WK.Scene.House_1, new Point(4 * WK.Default.Pixels_Y, 12 * WK.Default.Pixels_Y), "portal"),
                 new Dialog(new string[] { "dfsafdsa" }, new Rectangle(0, 0, WK.Default.CanvasWidth, (WK.Default.CanvasHeight / 3)), "dialog"),
@@ -35,7 +35,7 @@ namespace Shared
             camera.Update(player);
 
             MapHelpers.Update();
-            PlayerHelpers.Update(entities, player);
+            PlayerHelpers.Update(player);
 
             foreach (var portal in portals) PortalHelpers.Update(portal, player);
             foreach (var dialog in dialogs) dialog.Update(player, new string[] { $"X: {player.rectangle.X}\nY:{player.rectangle.Y}" });
