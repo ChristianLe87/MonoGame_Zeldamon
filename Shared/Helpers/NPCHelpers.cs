@@ -6,8 +6,9 @@ namespace Shared
 {
     public class NPCHelpers
     {
-        public static void Update()
+        public static void Update(Inpc npc, Player player)
         {
+            RotateToPlayer(player, npc);
             // Face player
         }
 
@@ -29,6 +30,35 @@ namespace Shared
                     break;
                 default:
                     break;
+            }
+        }
+
+        private static void RotateToPlayer(Player player, Inpc npc)
+        {
+            int y = player.rectangle.Y - npc.rectangle.Y;
+            if(y == 0)
+            {
+                if(player.rectangle.X< npc.rectangle.X)
+                {
+                    npc.npcState = NPC_State.IdleLeft;
+                }
+                else
+                {
+                    npc.npcState = NPC_State.IdleRight;
+                }
+            }
+
+            int x = player.rectangle.X - npc.rectangle.X;
+            if(x == 0)
+            {
+                if (player.rectangle.Y > npc.rectangle.Y)
+                {
+                    npc.npcState = NPC_State.IdleDown;
+                }
+                else
+                {
+                    npc.npcState = NPC_State.IdleUp;
+                }
             }
         }
 
