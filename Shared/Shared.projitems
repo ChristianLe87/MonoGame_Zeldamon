@@ -12,7 +12,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Game1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Tools.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\IScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Player.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\WK.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Camera.cs" />
@@ -21,16 +20,19 @@
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Dialog.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Map.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Tile.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\IEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\NPCs\NPC_1.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Inpc.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\NPCs\NPC_2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\NPCHelpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\Inpc.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\Button.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
     <Folder Include="$(MSBuildThisFileDirectory)Scenes\" />
     <Folder Include="$(MSBuildThisFileDirectory)Assets\" />
     <Folder Include="$(MSBuildThisFileDirectory)Assets\NPCs\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\" />
   </ItemGroup>
 </Project>

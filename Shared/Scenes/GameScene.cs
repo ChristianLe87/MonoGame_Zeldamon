@@ -37,7 +37,7 @@ namespace Shared
             PlayerHelpers.Update(this);
 
             foreach (var portal in portals) PortalHelpers.Update(portal, player);
-            foreach (var dialog in dialogs) dialog.Update(player, new string[] { $"X: {player.rectangle.X}\nY:{player.rectangle.Y}" });
+            foreach (var dialog in dialogs) dialog.Update(this, new string[] { $"X: {player.rectangle.X}\nY:{player.rectangle.Y}" });
             foreach (var npc in NPCs) NPCHelpers.Update(npc, player, this);
         }
 
