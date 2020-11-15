@@ -27,6 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\Inpc.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Button.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\PlayerHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
