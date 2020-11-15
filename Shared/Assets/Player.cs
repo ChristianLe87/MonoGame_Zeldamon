@@ -8,16 +8,14 @@ namespace Shared
 {
     public class Player : IEntity
     {
-        public IScene scene;
         public Dictionary<string, Texture2D> textures;
         public PlayerState playerState;
         public Rectangle rectangle;
         public CharacterDirecction characterDirecction = CharacterDirecction._null;
         public string tag { get; private set; }
 
-        public Player(Point startPosition, string tag, IScene scene)
+        public Player(Point startPosition, string tag)
         {
-            this.scene = scene;
             this.tag = tag;
             this.playerState = PlayerState.IdleDown;
 
@@ -39,9 +37,9 @@ namespace Shared
 
     public class PlayerHelpers
     {
-        public static void Update(Player player)
+        public static void Update(IScene scene)
         {
-            MovePlayer(player);
+            MovePlayer(scene);
         }
 
         public static void Draw(SpriteBatch spriteBatch, Player player)
@@ -75,13 +73,14 @@ namespace Shared
                 default:
                     break;
             }
-
         }
 
-        private static void MovePlayer(Player player)
+        private static void MovePlayer(IScene scene)
         {
-            List<Rectangle> NPCs = player.scene.entities.OfType<Inpc>().Select(x => x.rectangle).ToList();
-            List<Rectangle> tiles = player.scene.entities.OfType<Map>().First().tiles.Where(x => x.tag == "x").Select(x => x.rectangle).ToList();
+            Player player = scene.entities.First(x => x.tag == "player") as Player;
+
+            List<Rectangle> NPCs = scene.entities.OfType<Inpc>().Select(x => x.rectangle).ToList();
+            List<Rectangle> tiles = scene.entities.OfType<Map>().First().tiles.Where(x => x.tag == "x").Select(x => x.rectangle).ToList();
             List<Rectangle> rectangles = NPCs.Concat(tiles).ToList();
 
             KeyboardState keyboardState = Keyboard.GetState();
@@ -90,7 +89,7 @@ namespace Shared
             {
                 player.playerState = PlayerState.IdleUp;
 
-                if (GetCollideDirection(player, CharacterDirecction.Up) == CharacterDirecction.Up) return;
+                if (GetCollideDirection(scene, CharacterDirecction.Up) == CharacterDirecction.Up) return;
 
                 player.rectangle.Y -= 1;
 
@@ -105,7 +104,7 @@ namespace Shared
             {
                 player.playerState = PlayerState.IdleDown;
 
-                if (GetCollideDirection(player, CharacterDirecction.Down) == CharacterDirecction.Down) return;
+                if (GetCollideDirection(scene, CharacterDirecction.Down) == CharacterDirecction.Down) return;
 
                 player.rectangle.Y += 1;
 
@@ -120,7 +119,7 @@ namespace Shared
             {
                 player.playerState = PlayerState.IdleRight;
 
-                if (GetCollideDirection(player, CharacterDirecction.Right) == CharacterDirecction.Right) return;
+                if (GetCollideDirection(scene, CharacterDirecction.Right) == CharacterDirecction.Right) return;
 
                 player.rectangle.X += 1;
 
@@ -135,7 +134,7 @@ namespace Shared
             {
                 player.playerState = PlayerState.IdleLeft;
 
-                if (GetCollideDirection(player, CharacterDirecction.Left) == CharacterDirecction.Left) return;
+                if (GetCollideDirection(scene, CharacterDirecction.Left) == CharacterDirecction.Left) return;
 
                 player.rectangle.X -= 1;
 
@@ -149,10 +148,12 @@ namespace Shared
         }
 
 
-        private static CharacterDirecction GetCollideDirection(Player player, CharacterDirecction moveDirection)
+        private static CharacterDirecction GetCollideDirection(IScene scene, CharacterDirecction moveDirection)
         {
-            List<Rectangle> NPCs = player.scene.entities.OfType<Inpc>().Select(x => x.rectangle).ToList();
-            List<Rectangle> tiles = player.scene.entities.OfType<Map>().First().tiles.Where(x => x.tag == "x").Select(x => x.rectangle).ToList();
+            Player player = scene.entities.First(x => x.tag == "player") as Player;
+
+            List<Rectangle> NPCs = scene.entities.OfType<Inpc>().Select(x => x.rectangle).ToList();
+            List<Rectangle> tiles = scene.entities.OfType<Map>().First().tiles.Where(x => x.tag == "x").Select(x => x.rectangle).ToList();
             List<Rectangle> rectangles = NPCs.Concat(tiles).ToList();
 
             Rectangle futurePlayerRectangle = player.rectangle;

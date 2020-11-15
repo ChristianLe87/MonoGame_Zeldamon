@@ -15,7 +15,7 @@ namespace Shared
         {
             this.entities = new List<IEntity>()
             {
-                new Player(startPlayerPosition,"player", this),
+                new Player(startPlayerPosition,"player"),
                 new NPC_2(new Point(3, 11), "npc"),
                 new Portal(new Point(4 * WK.Default.Pixels_Y, 13 * WK.Default.Pixels_Y), WK.Scene.GameScene, new Point(7 * WK.Default.Pixels_X, 14 * WK.Default.Pixels_Y), "portal"),
                 new Map(WK.Map.Map2, "map2")
@@ -35,7 +35,7 @@ namespace Shared
 
             MapHelpers.Update();
 
-            PlayerHelpers.Update(player);
+            PlayerHelpers.Update(this);
 
             foreach (var portal in portals) PortalHelpers.Update(portal, player);
             foreach (var npc in NPCs) NPCHelpers.Update(npc, player, this);
