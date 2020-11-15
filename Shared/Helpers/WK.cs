@@ -13,6 +13,12 @@
 
         public class Content
         {
+            public class Folder
+            {
+                public static readonly string Player = "Player";
+                public static readonly string UI = "UI";
+            }
+
             public class Font
             {
                 public static readonly string Arial_20 = "Arial_20";
@@ -30,6 +36,11 @@
                     public static readonly string Walk_Down = "Player_Walk_Down";
                     public static readonly string Walk_Right = "Player_Walk_Right";
                     public static readonly string Walk_Left = "Player_Walk_Left";
+                }
+
+                public class UI
+                {
+                    public static readonly string X_Button = "X_Button_PNG_16x16";
                 }
             }
         }

@@ -54,6 +54,10 @@
       <Link>Content\Player\Player_Walk_Up.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\Shared\Content\UI\X_Button_PNG_16x16.png">
+      <Link>Content\UI\X_Button_PNG_16x16.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />
 </Project>

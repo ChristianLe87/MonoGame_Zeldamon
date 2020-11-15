@@ -13,9 +13,9 @@ namespace Shared
             return newTexture;
         }
 
-        public static Texture2D GetTexture(string imageName)
+        public static Texture2D GetTexture(string imageName, string folder)
         {
-            string absolutePath = new DirectoryInfo( Path.Combine(Path.Combine(Game1.contentManager.RootDirectory, "Player"), $"{imageName}.png")).ToString();
+            string absolutePath = new DirectoryInfo( Path.Combine(Path.Combine(Game1.contentManager.RootDirectory, folder), $"{imageName}.png")).ToString();
 
             FileStream fileStream = new FileStream(absolutePath, FileMode.Open);
 

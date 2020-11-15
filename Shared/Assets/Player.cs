@@ -23,14 +23,14 @@ namespace Shared
 
             this.textures = new Dictionary<string, Texture2D>()
             {
-                { "texture_IdleUp",  Tools.GetTexture(WK.Content.Texture.Player.Idle_Up) },
-                { "texture_IdleDown" , Tools.GetTexture(WK.Content.Texture.Player.Idle_Down) },
-                { "texture_IdleRight" , Tools.GetTexture(WK.Content.Texture.Player.Idle_Right) },
-                { "texture_IdleLeft" , Tools.GetTexture(WK.Content.Texture.Player.Idle_Left) },
-                { "texture_WalkUp" , Tools.GetTexture(WK.Content.Texture.Player.Walk_Up) },
-                { "texture_WalkDown" , Tools.GetTexture(WK.Content.Texture.Player.Walk_Down) },
-                { "texture_WalkRight" , Tools.GetTexture(WK.Content.Texture.Player.Walk_Right) },
-                { "texture_WalkLeft" , Tools.GetTexture(WK.Content.Texture.Player.Walk_Left)}
+                { "texture_IdleUp",  Tools.GetTexture(WK.Content.Texture.Player.Idle_Up, WK.Content.Folder.Player) },
+                { "texture_IdleDown" , Tools.GetTexture(WK.Content.Texture.Player.Idle_Down, WK.Content.Folder.Player) },
+                { "texture_IdleRight" , Tools.GetTexture(WK.Content.Texture.Player.Idle_Right, WK.Content.Folder.Player) },
+                { "texture_IdleLeft" , Tools.GetTexture(WK.Content.Texture.Player.Idle_Left, WK.Content.Folder.Player) },
+                { "texture_WalkUp" , Tools.GetTexture(WK.Content.Texture.Player.Walk_Up, WK.Content.Folder.Player) },
+                { "texture_WalkDown" , Tools.GetTexture(WK.Content.Texture.Player.Walk_Down, WK.Content.Folder.Player) },
+                { "texture_WalkRight" , Tools.GetTexture(WK.Content.Texture.Player.Walk_Right, WK.Content.Folder.Player) },
+                { "texture_WalkLeft" , Tools.GetTexture(WK.Content.Texture.Player.Walk_Left, WK.Content.Folder.Player)}
             };
 
             rectangle = new Rectangle(startPosition.X, startPosition.Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
