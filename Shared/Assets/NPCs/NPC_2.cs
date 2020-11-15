@@ -11,6 +11,7 @@ namespace Shared
         public NPC_State npcState { get; set; }
         public Rectangle rectangle { get; set; }
         public string tag { get; private set; }
+        public Rectangle triggerArea { get; set; }
 
         public NPC_2(Point position, string tag)
         {

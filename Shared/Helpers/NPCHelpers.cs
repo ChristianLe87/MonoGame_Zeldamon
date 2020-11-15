@@ -1,15 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace Shared
 {
     public class NPCHelpers
     {
-        public static void Update(Inpc npc, Player player)
+        public static void Update(Inpc npc, Player player, IScene scene)
         {
             RotateToPlayer(player, npc);
-            // Face player
+            Trigger(scene);
         }
 
         public static void Draw(SpriteBatch spriteBatch, Inpc npc)
@@ -62,9 +65,18 @@ namespace Shared
             }
         }
 
-        public static void Trigger()
+        private static void Trigger(IScene scene)
         {
-            Console.WriteLine("Hello");
+
+            KeyboardState keyboardState = Keyboard.GetState();
+
+            if (keyboardState.IsKeyDown(Keys.Space))
+            {
+                if (scene.entities.Where(x => x.tag == "dialog").Count() == 0)
+                {
+                    scene.entities.Add(new Dialog(new string[] { "dfsafdsa" }, new Rectangle(0, 0, WK.Default.CanvasWidth, (WK.Default.CanvasHeight / 3)), "dialog"));
+                }
+            }
         }
     }
 

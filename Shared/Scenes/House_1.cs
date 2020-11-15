@@ -38,7 +38,7 @@ namespace Shared
             PlayerHelpers.Update(player);
 
             foreach (var portal in portals) PortalHelpers.Update(portal, player);
-            foreach (var npc in NPCs) NPCHelpers.Update(npc, player);
+            foreach (var npc in NPCs) NPCHelpers.Update(npc, player, this);
         }
 
         public void Draw(SpriteBatch spriteBatch)

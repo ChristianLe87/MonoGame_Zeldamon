@@ -11,6 +11,7 @@ namespace Shared
         public NPC_State npcState { get; set; }
         public Dictionary<string, Texture2D> textures { get; private set; }
         public Rectangle rectangle { get; set; }
+        public Rectangle triggerArea { get; set; }
 
         public NPC_1(Point position, string tag)
         {
@@ -26,6 +27,7 @@ namespace Shared
             };
 
             this.rectangle = new Rectangle(position.X * WK.Default.Pixels_X, position.Y * WK.Default.Pixels_Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
+            this.triggerArea = new Rectangle(position.X * WK.Default.Pixels_X, position.Y * WK.Default.Pixels_Y, WK.Default.Pixels_X + 1, WK.Default.Pixels_Y + 1);
         }
 
     }
