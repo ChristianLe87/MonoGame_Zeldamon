@@ -74,7 +74,7 @@ namespace Shared
             {
                 if (scene.entities.Where(x => x.tag == "dialog").Count() == 0)
                 {
-                    scene.entities.Add(new Dialog(new string[] { "dfsafdsa" }, new Rectangle(0, 0, WK.Default.CanvasWidth, (WK.Default.CanvasHeight / 3)), "dialog"));
+                    scene.entities.Add(new Dialog(new string[] { "Hello", "World" }, new Rectangle(0, 0, WK.Default.CanvasWidth, (WK.Default.CanvasHeight / 3)), "dialog"));
                 }
             }
         }
