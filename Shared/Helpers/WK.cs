@@ -4,6 +4,7 @@
     {
         public class Default
         {
+            public static readonly double FPS = 60;
             public static readonly int CanvasWidth = 500;
             public static readonly int CanvasHeight = 500;
 

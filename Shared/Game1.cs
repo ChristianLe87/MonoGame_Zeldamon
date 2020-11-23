@@ -32,7 +32,11 @@ namespace Shared
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            // FPS
+            this.IsFixedTimeStep = true;
+            this.TargetElapsedTime = TimeSpan.FromSeconds(1d / WK.Default.FPS);
 
+            // Scenes
             scenes = new Dictionary<string, IScene>()
             {
                 {WK.Scene.GameScene, new GameScene() },
