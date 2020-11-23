@@ -40,7 +40,7 @@ namespace Shared
 
             // if dialog, dont update player
             if (dialog != null)
-                Dialog_Helper.Update(dialog, player, this);
+                Dialog_Helper.Update(dialog, this);
             else
                 PlayerHelpers.Update(this);
 
