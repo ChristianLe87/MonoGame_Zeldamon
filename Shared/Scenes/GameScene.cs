@@ -7,7 +7,7 @@ namespace Shared
 {
     public class GameScene : IScene
     {
-        Camera camera;
+        public Camera camera { get; set; }
         public List<IEntity> entities { get; set; }
 
         public void Initialize(Point startPlayerPosition)
@@ -17,55 +17,10 @@ namespace Shared
                 new Player(startPlayerPosition, "player"),
                 new NPC_1(new Point(8, 15), "npc"),
                 new Portal(new Point(7 * WK.Default.Pixels_X, 13 * WK.Default.Pixels_Y), WK.Scene.House_1, new Point(4 * WK.Default.Pixels_Y, 12 * WK.Default.Pixels_Y), "portal"),
-                new Map(WK.Map.Map1, "map1")
+                new Map(WK.Map.Map1, "map")
             };
 
             camera = new Camera();
-        }
-
-        public void Update()
-        {
-            Player player = entities.First(x => x.tag == "player") as Player;
-            Map map = entities.First(x => x.tag == "map1") as Map;
-            List<Inpc> NPCs = entities.Where(x => x.tag == "npc").Select(x => x as Inpc).ToList();
-            List<Portal> portals = entities.Where(x => x.tag == "portal").Select(x => x as Portal).ToList();
-            Dialog dialog = entities.FirstOrDefault(x => x.tag == "dialog") as Dialog;
-
-            camera.Update(player);
-
-
-
-
-            foreach (var npc in NPCs) NPCHelpers.Update(npc, player, this);
-
-            // if dialog, dont update player
-            if (dialog != null)
-                Dialog_Helper.Update(dialog, this);
-            else
-                PlayerHelpers.Update(this);
-
-
-            foreach (var portal in portals) PortalHelpers.Update(portal, player);
-            MapHelpers.Update();
-        }
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            Player player = entities.First(x => x.tag == "player") as Player;
-            Map map = entities.First(x => x.tag == "map1") as Map;
-            List<Inpc> NPCs = entities.Where(x => x.tag == "npc").Select(x => x as Inpc).ToList();
-            List<Portal> portals = entities.Where(x => x.tag == "portal").Select(x => x as Portal).ToList();
-            Dialog dialog = entities.FirstOrDefault(x => x.tag == "dialog") as Dialog;
-
-            camera.Draw(spriteBatch);
-
-            MapHelpers.Draw(spriteBatch, map.tiles);
-            PlayerHelpers.Draw(spriteBatch, player);
-
-            foreach (var npc in NPCs) NPCHelpers.Draw(spriteBatch, npc);
-            foreach (var portal in portals) PortalHelpers.Draw(spriteBatch, portal);
-
-            if(dialog != null) Dialog_Helper.Draw(spriteBatch, dialog);
         }
     }
 }

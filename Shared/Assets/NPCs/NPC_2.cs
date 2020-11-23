@@ -12,6 +12,7 @@ namespace Shared
         public Rectangle rectangle { get; set; }
         public string tag { get; private set; }
         public Rectangle triggerArea { get; set; }
+        public string[] text { get; set; }
 
         public NPC_2(Point position, string tag)
         {
@@ -27,6 +28,8 @@ namespace Shared
             };
 
             this.rectangle = new Rectangle(position.X * WK.Default.Pixels_X, position.Y * WK.Default.Pixels_Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
+
+            this.text = new string[] { "Good By", "Christian" };
         }
     }
 }

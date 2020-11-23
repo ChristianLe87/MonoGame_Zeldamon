@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -12,7 +10,7 @@ namespace Shared
         public static void Update(Inpc npc, Player player, IScene scene)
         {
             RotateToPlayer(player, npc);
-            Trigger(scene);
+            Trigger(scene, npc);
         }
 
         public static void Draw(SpriteBatch spriteBatch, Inpc npc)
@@ -65,7 +63,7 @@ namespace Shared
             }
         }
 
-        private static void Trigger(IScene scene)
+        private static void Trigger(IScene scene, Inpc npc)
         {
 
             KeyboardState keyboardState = Keyboard.GetState();
@@ -78,7 +76,7 @@ namespace Shared
                     var x = player.rectangle.X - (WK.Default.CanvasWidth / 2) + (WK.Default.Pixels_X / 2);
                     var y = player.rectangle.Y + (WK.Default.CanvasHeight / 2) - (WK.Default.CanvasHeight / 3) + (WK.Default.Pixels_Y / 2);
 
-                    scene.entities.Add(new Dialog(new string[] { "Hello", "World" }, new Rectangle(x, y, WK.Default.CanvasWidth, (WK.Default.CanvasHeight / 3)), "dialog"));
+                    scene.entities.Add(new Dialog(npc, new Rectangle(x, y, WK.Default.CanvasWidth, (WK.Default.CanvasHeight / 3)), "dialog"));
                 }
             }
         }

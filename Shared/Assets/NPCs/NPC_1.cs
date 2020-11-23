@@ -12,9 +12,11 @@ namespace Shared
         public Dictionary<string, Texture2D> textures { get; private set; }
         public Rectangle rectangle { get; set; }
         public Rectangle triggerArea { get; set; }
+        public string[] text { get; set; }
 
         public NPC_1(Point position, string tag)
         {
+            this.text = new string[] { "Hello", "World" };
             this.npcState = NPC_State.IdleDown;
             this.tag = tag;
 

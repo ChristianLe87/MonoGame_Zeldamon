@@ -8,8 +8,9 @@ namespace Shared
     public interface IScene
     {
         public List<IEntity> entities { get; set; }
+        public Camera camera { get; set; }
         public void Initialize(Point startPlayerPosition);
-        public void Update();
-        public void Draw(SpriteBatch spriteBatch);
+        //public void Update();
+        //public void Draw(SpriteBatch spriteBatch);
     }
 }
