@@ -74,7 +74,11 @@ namespace Shared
             {
                 if (scene.entities.Where(x => x.tag == "dialog").Count() == 0)
                 {
-                    scene.entities.Add(new Dialog(new string[] { "Hello", "World" }, new Rectangle(0, 0, WK.Default.CanvasWidth, (WK.Default.CanvasHeight / 3)), "dialog"));
+                    Player player = scene.entities.First(x => x.tag == "player") as Player;
+                    var x = player.rectangle.X - (WK.Default.CanvasWidth / 2) + (WK.Default.Pixels_X / 2);
+                    var y = player.rectangle.Y + (WK.Default.CanvasHeight / 2) - (WK.Default.CanvasHeight / 3) + (WK.Default.Pixels_Y / 2);
+
+                    scene.entities.Add(new Dialog(new string[] { "Hello", "World" }, new Rectangle(x, y, WK.Default.CanvasWidth, (WK.Default.CanvasHeight / 3)), "dialog"));
                 }
             }
         }

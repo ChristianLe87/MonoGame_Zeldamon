@@ -40,7 +40,7 @@ namespace Shared
 
             // if dialog, dont update player
             if (dialog != null)
-                dialog.Update(this, new string[] { $"X: {player.rectangle.X}\nY:{player.rectangle.Y}" });
+                Dialog_Helper.Update(dialog, player, this);
             else
                 PlayerHelpers.Update(this);
 
@@ -59,12 +59,13 @@ namespace Shared
 
             camera.Draw(spriteBatch);
 
-            MapHelpers.Draw(spriteBatch,map.tiles);
+            MapHelpers.Draw(spriteBatch, map.tiles);
             PlayerHelpers.Draw(spriteBatch, player);
 
             foreach (var npc in NPCs) NPCHelpers.Draw(spriteBatch, npc);
             foreach (var portal in portals) PortalHelpers.Draw(spriteBatch, portal);
-            dialog.Draw(spriteBatch);
+
+            if(dialog != null) Dialog_Helper.Draw(spriteBatch, dialog);
         }
     }
 }
