@@ -27,18 +27,26 @@ namespace Shared
         {
             Player player = entities.First(x => x.tag == "player") as Player;
             Map map = entities.First(x => x.tag == "map1") as Map;
-            List<Inpc> NPCs = entities.Where(x => x.tag == "npc").Select(x=>x as Inpc).ToList();
+            List<Inpc> NPCs = entities.Where(x => x.tag == "npc").Select(x => x as Inpc).ToList();
             List<Portal> portals = entities.Where(x => x.tag == "portal").Select(x => x as Portal).ToList();
-            List<Dialog> dialogs = entities.Where(x => x.tag == "dialog").Select(x => x as Dialog).ToList();
+            Dialog dialog = entities.FirstOrDefault(x => x.tag == "dialog") as Dialog;
 
             camera.Update(player);
 
-            MapHelpers.Update();
-            PlayerHelpers.Update(this);
+
+
+
+            foreach (var npc in NPCs) NPCHelpers.Update(npc, player, this);
+
+            // if dialog, dont update player
+            if (dialog != null)
+                dialog.Update(this, new string[] { $"X: {player.rectangle.X}\nY:{player.rectangle.Y}" });
+            else
+                PlayerHelpers.Update(this);
+
 
             foreach (var portal in portals) PortalHelpers.Update(portal, player);
-            foreach (var dialog in dialogs) dialog.Update(this, new string[] { $"X: {player.rectangle.X}\nY:{player.rectangle.Y}" });
-            foreach (var npc in NPCs) NPCHelpers.Update(npc, player, this);
+            MapHelpers.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -47,7 +55,7 @@ namespace Shared
             Map map = entities.First(x => x.tag == "map1") as Map;
             List<Inpc> NPCs = entities.Where(x => x.tag == "npc").Select(x => x as Inpc).ToList();
             List<Portal> portals = entities.Where(x => x.tag == "portal").Select(x => x as Portal).ToList();
-            List<Dialog> dialogs = entities.Where(x => x.tag == "dialog").Select(x => x as Dialog).ToList();
+            Dialog dialog = entities.FirstOrDefault(x => x.tag == "dialog") as Dialog;
 
             camera.Draw(spriteBatch);
 
@@ -56,7 +64,7 @@ namespace Shared
 
             foreach (var npc in NPCs) NPCHelpers.Draw(spriteBatch, npc);
             foreach (var portal in portals) PortalHelpers.Draw(spriteBatch, portal);
-            foreach (var dialog in dialogs) dialog.Draw(spriteBatch);
+            dialog.Draw(spriteBatch);
         }
     }
 }
