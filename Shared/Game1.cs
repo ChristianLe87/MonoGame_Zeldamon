@@ -42,7 +42,7 @@ namespace Shared
                 {WK.Scene.GameScene, new GameScene() },
                 {WK.Scene.House_1, new House_1() }
             };
-            scenes[actualScene].Initialize(new Point(100, 150));
+            scenes[actualScene].Initialize(new Point(10, 15));
 
             base.Initialize();
 

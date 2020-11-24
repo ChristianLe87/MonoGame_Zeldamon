@@ -1,8 +1,5 @@
-﻿
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
@@ -22,7 +19,7 @@ namespace Shared
             {
                 new Player(startPlayerPosition,"player"),
                 new NPC_2(new Point(3, 11), "npc"),
-                new Portal(new Point(4 * WK.Default.Pixels_Y, 13 * WK.Default.Pixels_Y), WK.Scene.GameScene, new Point(7 * WK.Default.Pixels_X, 14 * WK.Default.Pixels_Y), "portal"),
+                new Portal(new Point(4, 13), WK.Scene.GameScene, new Point(7, 14), "portal"),
                 new Map(WK.Map.Map2, "map")
             };
 

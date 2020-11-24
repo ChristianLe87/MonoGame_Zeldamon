@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
@@ -20,9 +18,9 @@ namespace Shared
             {
                 new Player(startPlayerPosition, "player"),
                 new NPC_1(new Point(8, 15), "npc"),
-                new Portal(new Point(7 * WK.Default.Pixels_X, 13 * WK.Default.Pixels_Y), WK.Scene.House_1, new Point(4 * WK.Default.Pixels_Y, 12 * WK.Default.Pixels_Y), "portal"),
+                new Portal(new Point(7, 13), WK.Scene.House_1, new Point(4,12), "portal"),
                 new Map(WK.Map.Map1, "map"),
-                new Coin("coin", true, new Point(10,13))
+                new Coin("coin", true, new Point(10, 13))
             };
 
             camera = new Camera();

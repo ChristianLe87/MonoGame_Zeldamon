@@ -30,7 +30,7 @@ namespace Shared
                 { "texture_WalkLeft" , Tools.GetTexture(WK.Content.Texture.Player.Walk_Left, WK.Content.Folder.Player)}
             };
 
-            rectangle = new Rectangle(startPosition.X, startPosition.Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
+            rectangle = new Rectangle(startPosition.X * WK.Default.Pixels_X, startPosition.Y * WK.Default.Pixels_Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
 
             this.money = 0;
         }

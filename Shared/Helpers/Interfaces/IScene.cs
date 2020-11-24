@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
@@ -12,7 +10,5 @@ namespace Shared
         public void Initialize(Point startPlayerPosition);
         public int moneyValue { get; set; }
         public Text moneyText { get; set; }
-        //public void Update();
-        //public void Draw(SpriteBatch spriteBatch);
     }
 }
