@@ -11,6 +11,7 @@ namespace Shared
         public Rectangle rectangle;
         public CharacterDirecction characterDirecction = CharacterDirecction._null;
         public string tag { get; private set; }
+        public int money { get; set; }
 
         public Player(Point startPosition, string tag)
         {
@@ -30,6 +31,8 @@ namespace Shared
             };
 
             rectangle = new Rectangle(startPosition.X, startPosition.Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
+
+            this.money = 0;
         }
     }
 }

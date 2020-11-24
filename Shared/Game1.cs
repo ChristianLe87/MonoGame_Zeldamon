@@ -53,7 +53,7 @@ namespace Shared
             // TODO: Code
             if (true) this.IsMouseVisible = true;
 
-            Scene_Helper.Update(scenes[actualScene]);
+            SceneHelper.Update(scenes[actualScene]);
 
             base.Update(gameTime);
         }
@@ -63,7 +63,7 @@ namespace Shared
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            Scene_Helper.Draw(spriteBatch, scenes[actualScene]);
+            SceneHelper.Draw(spriteBatch, scenes[actualScene]);
 
             spriteBatch.End();
             base.Draw(gameTime);

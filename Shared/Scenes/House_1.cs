@@ -10,9 +10,14 @@ namespace Shared
     {
         public Camera camera { get; set; }
         public List<IEntity> entities { get; set; }
+        public int moneyValue { get; set; }
+        public Text moneyText { get; set; }
 
         public void Initialize(Point startPlayerPosition)
         {
+            this.moneyText = new Text("Coins: 0", new Vector2(0, 0));
+            this.moneyValue = 0;
+
             this.entities = new List<IEntity>()
             {
                 new Player(startPlayerPosition,"player"),

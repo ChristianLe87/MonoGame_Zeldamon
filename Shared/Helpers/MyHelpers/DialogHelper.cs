@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Shared
 {
-    public class Dialog_Helper
+    public class DialogHelper
     {
         public static void Update(Dialog dialog, IScene scene)
         {

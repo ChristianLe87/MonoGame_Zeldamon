@@ -22,14 +22,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Tile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\NPCs\NPC_1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\NPCs\NPC_2.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\NPCHelpers.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\Inpc.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Button.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\PlayerHelpers.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Dialog_Helper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Scene_Helper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\Coin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IPickable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\Text.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\CoinHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\DialogHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\NPCHelpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PlayerHelpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\SceneHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
@@ -37,5 +41,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Assets\" />
     <Folder Include="$(MSBuildThisFileDirectory)Assets\NPCs\" />
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\" />
   </ItemGroup>
 </Project>

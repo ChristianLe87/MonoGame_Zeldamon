@@ -12,6 +12,12 @@ namespace Shared
         public static void Update(IScene scene)
         {
             MovePlayer(scene);
+
+            // Log player position with 'p'
+            Player player = scene.entities.First(x => x.tag == "player") as Player;
+            KeyboardState keyboardState = Keyboard.GetState();
+            if (keyboardState.IsKeyDown(Keys.P))
+                Console.WriteLine($"X: {player.rectangle.X / WK.Default.Pixels_X} Y: {player.rectangle.Y / WK.Default.Pixels_Y}");
         }
 
         public static void Draw(SpriteBatch spriteBatch, Player player)
