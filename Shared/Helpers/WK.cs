@@ -18,6 +18,7 @@
             {
                 public static readonly string Player = "Player";
                 public static readonly string UI = "UI";
+                public static readonly string Other = "Other";
             }
 
             public class Font
@@ -42,6 +43,11 @@
                 public class UI
                 {
                     public static readonly string X_Button = "X_Button_PNG_16x16";
+                }
+
+                public class Other
+                {
+                    public static readonly string Coin = "Coin_PNG_10x10";
                 }
             }
         }
