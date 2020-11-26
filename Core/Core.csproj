@@ -62,6 +62,43 @@
       <Link>Content\Other\Coin_PNG_10x10.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\Shared\Content\Arial_20.xnb">
+      <Link>Content\Content\Arial_20.xnb</Link>
+    </None>
+    <None Include="..\Shared\Content\TileCollection_PNG_352x288.png">
+      <Link>Content\Content\TileCollection_PNG_352x288.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\UI\X_Button_PNG_16x16.png">
+      <Link>Content\Content\UI\X_Button_PNG_16x16.png</Link>
+    </None>
+    <None Include="..\Shared\Content\Other\Coin_PNG_10x10.png">
+      <Link>Content\Content\Other\Coin_PNG_10x10.png</Link>
+    </None>
+    <None Include="..\Shared\Content\Player\Player_Idle_Up.png">
+      <Link>Content\Content\Player\Player_Idle_Up.png</Link>
+    </None>
+    <None Include="..\Shared\Content\Player\Player_Idle_Right.png">
+      <Link>Content\Content\Player\Player_Idle_Right.png</Link>
+    </None>
+    <None Include="..\Shared\Content\Player\Player_Walk_Left.png">
+      <Link>Content\Content\Player\Player_Walk_Left.png</Link>
+    </None>
+    <None Include="..\Shared\Content\Player\Player_Idle_Left.png">
+      <Link>Content\Content\Player\Player_Idle_Left.png</Link>
+    </None>
+    <None Include="..\Shared\Content\Player\Player_Idle_Down.png">
+      <Link>Content\Content\Player\Player_Idle_Down.png</Link>
+    </None>
+    <None Include="..\Shared\Content\Player\Player_Walk_Down.png">
+      <Link>Content\Content\Player\Player_Walk_Down.png</Link>
+    </None>
+    <None Include="..\Shared\Content\Player\Player_Walk_Right.png">
+      <Link>Content\Content\Player\Player_Walk_Right.png</Link>
+    </None>
+    <None Include="..\Shared\Content\Player\Player_Walk_Up.png">
+      <Link>Content\Content\Player\Player_Walk_Up.png</Link>
+    </None>
   </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />
 </Project>
