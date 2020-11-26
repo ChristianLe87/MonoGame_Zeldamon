@@ -8,8 +8,8 @@
             public static readonly int CanvasWidth = 500;
             public static readonly int CanvasHeight = 500;
 
-            public static readonly int Pixels_X = 10;
-            public static readonly int Pixels_Y = 10;
+            public static readonly int Pixels_X = 16;
+            public static readonly int Pixels_Y = 16;
         }
 
         public class Content

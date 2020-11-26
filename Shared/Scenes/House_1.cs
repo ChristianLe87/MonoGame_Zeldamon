@@ -17,11 +17,12 @@ namespace Shared
 
             this.entities = new List<IEntity>()
             {
-                new Player(startPlayerPosition,"player"),
-                new NPC_2(new Point(3, 11), "npc"),
+                new Player(startPlayerPosition, Layer.Middle, "player"),
+                new NPC_2(new Point(3, 11), Layer.Middle, "npc"),
                 new Portal(new Point(4, 13), WK.Scene.GameScene, new Point(7, 14), "portal"),
-                new Map(WK.Map.Map2, "map")
             };
+
+            this.entities.AddRange(MapHelper.PopulateMap(WK.Map.Map2));
 
             this.camera = new Camera();
         }

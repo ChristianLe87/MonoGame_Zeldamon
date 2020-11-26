@@ -9,13 +9,14 @@ namespace Shared
         public string tag { get; private set; }
         public string targetScene;
         public Point targetPosition;
+        public Layer layer { get; }
 
         public Texture2D texture2D;
 
         public Portal(Point position, string targetScene, Point targetPosition, string tag, Texture2D texture2D = null)
         {
             this.tag = tag;
-
+            this.layer = layer;
             this.rectangle = new Rectangle(position.X * WK.Default.Pixels_X, position.Y * WK.Default.Pixels_Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
             this.targetScene = targetScene;
             this.targetPosition = targetPosition;

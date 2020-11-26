@@ -12,11 +12,13 @@ namespace Shared
         public string tag { get; private set; }
         public Rectangle triggerArea { get; set; }
         public string[] text { get; set; }
+        public Layer layer { get; }
 
-        public NPC_2(Point position, string tag)
+        public NPC_2(Point position, Layer layer, string tag)
         {
             this.npcState = NPC_State.IdleDown;
             this.tag = tag;
+            this.layer = layer;
 
             this.textures = new Dictionary<string, Texture2D>()
             {

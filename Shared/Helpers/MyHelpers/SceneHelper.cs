@@ -8,16 +8,16 @@ namespace Shared
     {
         public static void Update(IScene scene)
         {
-            Player player = scene.entities.First(x => x.tag == "player") as Player;
-            Map map = scene.entities.First(x => x.tag == "map") as Map;
-            List<Inpc> NPCs = scene.entities.Where(x => x.tag == "npc").Select(x => x as Inpc).ToList();
-            List<Portal> portals = scene.entities.Where(x => x.tag == "portal").Select(x => x as Portal).ToList();
-            Dialog dialog = scene.entities.FirstOrDefault(x => x.tag == "dialog") as Dialog;
-            List<IPickable> pickables = scene.entities.Where(x => x.tag == "coin").Select(x => x as IPickable).Where(x => x.isActive == true).ToList();
+            Player player = scene.entities.OfType<Player>().First();
+            //List<Tile> tiles = scene.entities.OfType<Tile>().ToList();
+            List<Inpc> NPCs = scene.entities.OfType<Inpc>().ToList();
+            List<Portal> portals = scene.entities.OfType<Portal>().ToList();
+            Dialog dialog = scene.entities.OfType<Dialog>().FirstOrDefault();
+            List<IPickable> pickables = scene.entities.OfType<IPickable>().Where(x => x.isActive == true).ToList();
 
             scene.camera.Update(player);
 
-            foreach (var npc in NPCs) NPCHelpers.Update(npc, player, scene);
+            foreach (var npc in NPCs) NPCHelper.Update(npc, player, scene);
             foreach (var pickable in pickables) CoinHelper.Update(player, pickable);
             foreach (var pickable in pickables) CoinHelper.Update(player, pickable);
 
@@ -26,31 +26,29 @@ namespace Shared
             if (dialog != null)
                 DialogHelper.Update(dialog, scene);
             else
-                PlayerHelpers.Update(scene);
+                PlayerHelper.Update(scene);
 
             foreach (var portal in portals) PortalHelpers.Update(portal, player);
-            scene.moneyText.Update($"Money: {player.money}");
 
-            MapHelpers.Update();
+            scene.moneyText.Update($"Money: {player.money}");
         }
 
         public static void Draw(SpriteBatch spriteBatch, IScene scene)
         {
-            Player player = scene.entities.First(x => x.tag == "player") as Player;
-            Map map = scene.entities.First(x => x.tag == "map") as Map;
-            List<Inpc> NPCs = scene.entities.Where(x => x.tag == "npc").Select(x => x as Inpc).ToList();
-            List<Portal> portals = scene.entities.Where(x => x.tag == "portal").Select(x => x as Portal).ToList();
-            Dialog dialog = scene.entities.FirstOrDefault(x => x.tag == "dialog") as Dialog;
-            List<IPickable> pickables = scene.entities.Where(x => x.tag == "coin").Select(x => x as IPickable).Where(x=>x.isActive == true).ToList();
-
+            Player player = scene.entities.OfType<Player>().First();
+            List<Tile> tiles = scene.entities.OfType<Tile>().ToList();
+            List<Inpc> NPCs = scene.entities.OfType<Inpc>().ToList();
+            List<Portal> portals = scene.entities.OfType<Portal>().ToList();
+            Dialog dialog = scene.entities.OfType<Dialog>().FirstOrDefault();
+            List<IPickable> pickables = scene.entities.OfType<IPickable>().Where(x => x.isActive == true).ToList();
 
             scene.camera.Draw(spriteBatch);
 
-            MapHelpers.Draw(spriteBatch, map.tiles);
-            PlayerHelpers.Draw(spriteBatch, player);
+            MapHelper.Draw(spriteBatch, tiles);
+            PlayerHelper.Draw(spriteBatch, player);
 
             foreach (var pickable in pickables) CoinHelper.Draw(spriteBatch, pickable);
-            foreach (var npc in NPCs) NPCHelpers.Draw(spriteBatch, npc);
+            foreach (var npc in NPCs) NPCHelper.Draw(spriteBatch, npc);
             foreach (var portal in portals) PortalHelpers.Draw(spriteBatch, portal);
             foreach (var pickable in pickables) CoinHelper.Draw(spriteBatch, pickable);
 

@@ -12,11 +12,13 @@ namespace Shared
         public CharacterDirecction characterDirecction = CharacterDirecction._null;
         public string tag { get; private set; }
         public int money { get; set; }
+        public Layer layer { get; }
 
-        public Player(Point startPosition, string tag)
+        public Player(Point startPosition, Layer layer, string tag)
         {
             this.tag = tag;
             this.playerState = PlayerState.IdleDown;
+            this.layer = layer;
 
             this.textures = new Dictionary<string, Texture2D>()
             {

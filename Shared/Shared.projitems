@@ -18,7 +18,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\House_1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Portal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Dialog.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\Map.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Tile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\NPCs\NPC_1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\NPCs\NPC_2.cs" />
@@ -31,9 +30,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Text.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\CoinHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\DialogHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\NPCHelpers.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PlayerHelpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\NPCHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PlayerHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\SceneHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\MapHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

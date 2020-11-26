@@ -9,13 +9,15 @@ namespace Shared
         public Rectangle rectangle { get; set; }
         public bool isActive { get; set; }
         public Texture2D texture { get; set; }
+        public Layer layer { get; }
 
-        public Coin(string tag, bool isActive, Point point)
+        public Coin(bool isActive, Point point, Layer layer, string tag)
         {
             this.rectangle = new Rectangle(point.X * WK.Default.Pixels_X, point.Y * WK.Default.Pixels_Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
             this.tag = tag;
             this.isActive = isActive;
             this.texture = Tools.GetTexture(WK.Content.Texture.Other.Coin, WK.Content.Folder.Other);
+            this.layer = layer;
         }
     }
 }

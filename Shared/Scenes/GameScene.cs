@@ -12,16 +12,29 @@ namespace Shared
 
         public void Initialize(Point startPlayerPosition)
         {
-            this.moneyText = new Text("Coins: 0", new Vector2(0, 0));
+            this.moneyText = new Text("", new Vector2(0, 0));
             this.moneyValue = 0;
+
+
+            // Populate entities
             this.entities = new List<IEntity>()
             {
-                new Player(startPlayerPosition, "player"),
-                new NPC_1(new Point(8, 15), "npc"),
-                new Portal(new Point(7, 13), WK.Scene.House_1, new Point(4,12), "portal"),
-                new Map(WK.Map.Map1, "map"),
-                new Coin("coin", true, new Point(10, 13))
+                // Add Player
+                new Player(startPlayerPosition, Layer.Middle, "player"),
+
+                // Add NPCs
+                new NPC_1(new Point(8, 15), Layer.Middle, "npc"),
+
+                // add Portals
+                new Portal(new Point(7, 13), WK.Scene.House_1, new Point(4, 12), "portal"),
+
+                // Add Coins
+                new Coin(true, new Point(10, 13), Layer.Middle, "coin")
             };
+
+
+            // Add Map
+            this.entities.AddRange(MapHelper.PopulateMap(WK.Map.Map1));
 
             camera = new Camera();
         }

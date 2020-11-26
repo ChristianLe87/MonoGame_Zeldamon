@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Shared
 {
-    public class NPCHelpers
+    public class NPCHelper
     {
         public static void Update(Inpc npc, Player player, IScene scene)
         {
@@ -76,7 +76,7 @@ namespace Shared
                     var x = player.rectangle.X - (WK.Default.CanvasWidth / 2) + (WK.Default.Pixels_X / 2);
                     var y = player.rectangle.Y + (WK.Default.CanvasHeight / 2) - (WK.Default.CanvasHeight / 3) + (WK.Default.Pixels_Y / 2);
 
-                    scene.entities.Add(new Dialog(npc, new Rectangle(x, y, WK.Default.CanvasWidth, (WK.Default.CanvasHeight / 3)), "dialog"));
+                    scene.entities.Add(new Dialog(npc, new Rectangle(x, y, WK.Default.CanvasWidth, (WK.Default.CanvasHeight / 3)), Layer.Front, "dialog"));
                 }
             }
         }

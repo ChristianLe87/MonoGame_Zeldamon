@@ -3,36 +3,28 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class Tile
+    public class Tile : IEntity
     {
-        Texture2D texture2D;
+        public Texture2D texture2D { get; }
         public Rectangle rectangle { get; private set; }
         public string tag { get; private set; }
-        public Layer layer { get; private set; }
+        public Layer layer { get; }
+        public bool isCollider;
 
-        public Tile(Texture2D texture, Layer layer, Point position, string tag)
+        public Tile(Texture2D texture, Point position, bool isCollider, Layer layer, string tag)
         {
             this.texture2D = texture;
-            this.rectangle = new Rectangle(position.X, position.Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
+            this.rectangle = new Rectangle(position.X * WK.Default.Pixels_X, position.Y * WK.Default.Pixels_Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
             this.tag = tag;
             this.layer = layer;
-        }
-
-        public void Update()
-        {
-        }
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(texture2D, rectangle, Color.White);
+            this.isCollider = isCollider;
         }
     }
 
     public enum Layer
     {
-        Background,
-        Main,
+        Back,
+        Middle,
         Front
     }
-
 }

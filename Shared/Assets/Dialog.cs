@@ -12,10 +12,11 @@ namespace Shared
         public SpriteFont font;
         public Rectangle rectangle;
         public string tag { get; private set; }
+        public Layer layer { get; }
         public bool isKeyRelease;
 
 
-        public Dialog(Inpc npc, Rectangle rectangle, string tag)
+        public Dialog(Inpc npc, Rectangle rectangle, Layer layer, string tag)
         {
             this.tag = tag;
             this.text = npc.text;
@@ -25,6 +26,7 @@ namespace Shared
             this.font = Game1.contentManager.Load<SpriteFont>(WK.Content.Font.Arial_20);
             this.rectangle = rectangle;
             this.isKeyRelease = true;
+            this.layer = layer;
         }
     }
 }
