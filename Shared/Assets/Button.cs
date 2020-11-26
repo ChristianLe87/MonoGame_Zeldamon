@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Shared
 {
-    public class Button
+    /*public class Button
     {
         Texture2D texture;
         Rectangle rectangle;
@@ -40,5 +40,5 @@ namespace Shared
         {
             spriteBatch.Draw(texture, rectangle, Color.White);
         }
-    }
+    }*/
 }

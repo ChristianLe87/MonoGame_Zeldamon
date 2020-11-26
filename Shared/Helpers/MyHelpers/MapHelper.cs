@@ -16,8 +16,8 @@ namespace Shared
         {
             Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>()
             {
-                { "map_x", Tools.CreateColorTexture(Color.Brown) },
-                { "map_p", Tools.CreateColorTexture(Color.Green) },
+                { "map_x", Tools.GetSubtextureFromAtlasTexture(new Point(3, 5)) },
+                { "map_p", Tools.GetSubtextureFromAtlasTexture(new Point(2, 5)) },
                 { "map_other", Tools.CreateColorTexture(Color.Red) }
             };
 

@@ -28,6 +28,11 @@
 
             public class Texture
             {
+                public class GeneralCollection
+                {
+                    public static readonly string TileCollection = "TileCollection_PNG_352x288";
+                }
+
                 public class Player
                 {
                     public static readonly string Idle_Up = "Player_Idle_Up";

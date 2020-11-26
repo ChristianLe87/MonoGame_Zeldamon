@@ -23,10 +23,10 @@ namespace Shared
 
             this.textures = new Dictionary<string, Texture2D>()
             {
-                {"texture_IdleUp",  Tools.GetTexture(WK.Content.Texture.Player.Idle_Up, WK.Content.Folder.Player) },
-                {"texture_IdleDown", Tools.GetTexture(WK.Content.Texture.Player.Idle_Down, WK.Content.Folder.Player) },
-                {"texture_IdleRight",  Tools.GetTexture(WK.Content.Texture.Player.Idle_Right, WK.Content.Folder.Player) },
-                {"texture_IdleLeft",  Tools.GetTexture(WK.Content.Texture.Player.Idle_Left, WK.Content.Folder.Player) }
+                { "texture_IdleUp",  Tools.GetSubtextureFromAtlasTexture(new Point(1, 4)) },
+                { "texture_IdleDown" , Tools.GetSubtextureFromAtlasTexture(new Point(1, 1)) },
+                { "texture_IdleRight" , Tools.GetSubtextureFromAtlasTexture(new Point(1, 3)) },
+                { "texture_IdleLeft" , Tools.GetSubtextureFromAtlasTexture(new Point(1, 2)) },
             };
 
             this.rectangle = new Rectangle(position.X * WK.Default.Pixels_X, position.Y * WK.Default.Pixels_Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);

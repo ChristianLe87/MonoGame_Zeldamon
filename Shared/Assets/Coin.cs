@@ -16,7 +16,7 @@ namespace Shared
             this.rectangle = new Rectangle(point.X * WK.Default.Pixels_X, point.Y * WK.Default.Pixels_Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
             this.tag = tag;
             this.isActive = isActive;
-            this.texture = Tools.GetTexture(WK.Content.Texture.Other.Coin, WK.Content.Folder.Other);
+            this.texture = Tools.GetSubtextureFromAtlasTexture(new Point(3, 4));
             this.layer = layer;
         }
     }
