@@ -13,9 +13,14 @@ namespace Shared
         {
             MovePlayer(scene);
 
-            // Log player position with 'p'
-            Player player = scene.entities.First(x => x.tag == "player") as Player;
             KeyboardState keyboardState = Keyboard.GetState();
+
+            Player player = scene.entities.OfType<Player>().First();
+
+            // Turn flash On/Off
+            FlashHelper.Turn_On_Off(scene);
+
+            // Log player position with 'p'
             if (keyboardState.IsKeyDown(Keys.P))
                 Console.WriteLine($"X: {player.rectangle.X / WK.Default.Pixels_X} Y: {player.rectangle.Y / WK.Default.Pixels_Y}");
         }

@@ -17,8 +17,7 @@
             public class Folder
             {
                 public static readonly string Player = "Player";
-                public static readonly string UI = "UI";
-                public static readonly string Other = "Other";
+                public static readonly string Flash = "Flash";
             }
 
             public class Font
@@ -53,6 +52,19 @@
                 public class Other
                 {
                     public static readonly string Coin = "Coin_PNG_10x10";
+                }
+
+                public class Flash
+                {
+                    public static readonly string FlashDayOn_Down_720x720_PNG = "FlashDayOn_Down_720x720_PNG";
+                    public static readonly string FlashDayOn_Left_720x720_PNG = "FlashDayOn_Left_720x720_PNG";
+                    public static readonly string FlashDayOn_Right_720x720_PNG = "FlashDayOn_Right_720x720_PNG";
+                    public static readonly string FlashDayOn_Up_720x720_PNG = "FlashDayOn_Up_720x720_PNG";
+                    public static readonly string FlashNightOff_720x720_PNG = "FlashNightOff_720x720_PNG";
+                    public static readonly string FlashNightOn_Down_720x720_PNG = "FlashNightOn_Down_720x720_PNG";
+                    public static readonly string FlashNightOn_Left_720x720_PNG = "FlashNightOn_Left_720x720_PNG";
+                    public static readonly string FlashNightOn_Up_720x720_PNG = "FlashNightOn_Up_720x720_PNG";
+                    public static readonly string FlashNightOn_Right_720x720_PNG = "FlashNightOn_Right_720x720_PNG";
                 }
             }
         }

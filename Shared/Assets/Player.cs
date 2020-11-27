@@ -13,9 +13,11 @@ namespace Shared
         public string tag { get; private set; }
         public int money { get; set; }
         public Layer layer { get; }
+        public Flash flash;
 
         public Player(Point startPosition, Layer layer, string tag)
         {
+            this.flash = new Flash(Layer.Front, "flash");
             this.tag = tag;
             this.playerState = PlayerState.IdleDown;
             this.layer = layer;

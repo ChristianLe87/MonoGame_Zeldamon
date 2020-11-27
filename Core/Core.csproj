@@ -55,6 +55,42 @@
       <Link>Content\Player\Player_Walk_Up.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\Shared\Content\Flash\FlashDayOn_Right_720x720_PNG.png">
+      <Link>Content\Flash\FlashDayOn_Right_720x720_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Flash\FlashNightOn_Down_720x720_PNG.png">
+      <Link>Content\Flash\FlashNightOn_Down_720x720_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Flash\FlashDayOn_Down_720x720_PNG.png">
+      <Link>Content\Flash\FlashDayOn_Down_720x720_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Flash\FlashNightOff_720x720_PNG.png">
+      <Link>Content\Flash\FlashNightOff_720x720_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Flash\FlashNightOn_Up_720x720_PNG.png">
+      <Link>Content\Flash\FlashNightOn_Up_720x720_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Flash\FlashDayOn_Up_720x720_PNG.png">
+      <Link>Content\Flash\FlashDayOn_Up_720x720_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Flash\FlashNightOn_Right_720x720_PNG.png">
+      <Link>Content\Flash\FlashNightOn_Right_720x720_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Flash\FlashDayOn_Left_720x720_PNG.png">
+      <Link>Content\Flash\FlashDayOn_Left_720x720_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Flash\FlashNightOn_Left_720x720_PNG.png">
+      <Link>Content\Flash\FlashNightOn_Left_720x720_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />
 </Project>

@@ -9,9 +9,11 @@ namespace Shared
         public List<IEntity> entities { get; set; }
         public int moneyValue { get; set; }
         public Text moneyText { get; set; }
+        public bool isDark { get; private set; }
 
         public void Initialize(Point startPlayerPosition)
         {
+            this.isDark = false;
             this.moneyText = new Text("Coins: 0", new Vector2(0, 0));
             this.moneyValue = 0;
 

@@ -10,5 +10,6 @@ namespace Shared
         public void Initialize(Point startPlayerPosition);
         public int moneyValue { get; set; }
         public Text moneyText { get; set; }
+        public bool isDark { get; }
     }
 }

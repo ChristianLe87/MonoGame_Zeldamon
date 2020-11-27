@@ -41,7 +41,6 @@ namespace Shared
             List<Portal> portals = scene.entities.OfType<Portal>().ToList();
             Dialog dialog = scene.entities.OfType<Dialog>().FirstOrDefault();
             List<IPickable> pickables = scene.entities.OfType<IPickable>().Where(x => x.isActive == true).ToList();
-
             scene.camera.Draw(spriteBatch);
 
             MapHelper.Draw(spriteBatch, tiles);
@@ -51,7 +50,7 @@ namespace Shared
             foreach (var npc in NPCs) NPCHelper.Draw(spriteBatch, npc);
             foreach (var portal in portals) PortalHelpers.Draw(spriteBatch, portal);
             foreach (var pickable in pickables) CoinHelper.Draw(spriteBatch, pickable);
-
+            FlashHelper.Draw(spriteBatch,scene);
             if (dialog != null) DialogHelper.Draw(spriteBatch, dialog);
             scene.moneyText.Draw(spriteBatch);
         }

@@ -34,6 +34,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PlayerHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\SceneHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\MapHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\FlashHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\Flash.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
