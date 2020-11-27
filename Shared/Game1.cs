@@ -40,7 +40,8 @@ namespace Shared
             scenes = new Dictionary<string, IScene>()
             {
                 {WK.Scene.GameScene, new GameScene() },
-                {WK.Scene.House_1, new House_1() }
+                {WK.Scene.House_1, new House_1() },
+                {WK.Scene.Cave, new Cave() }
             };
             scenes[actualScene].Initialize(new Point(10, 15));
 

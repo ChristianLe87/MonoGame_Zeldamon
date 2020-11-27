@@ -30,6 +30,7 @@ namespace Shared
 
                 // add Portals
                 new Portal(new Point(7, 13), WK.Scene.House_1, new Point(4, 12), "portal"),
+                new Portal(new Point(6, 8), WK.Scene.Cave, new Point(4, 12), "portal"),
 
                 // Add Coins
                 new Coin(true, new Point(10, 13), Layer.Middle, "coin"),
