@@ -8,9 +8,6 @@ namespace Shared
     {
         public Dictionary<string, Texture2D> flashTextures;
         public bool isFlashOn { get; set; }
-        public Rectangle rectangle => throw new System.NotImplementedException();
-        public Texture2D texture => throw new System.NotImplementedException();
-
         public bool isFlashKeyRelease;
 
         public Flash()

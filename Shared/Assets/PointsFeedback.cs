@@ -11,7 +11,6 @@ namespace Shared
         public int timeToDestroy { get; set; }
         public int actualTime { get; set; }
         public bool isAlive { get; set; }
-        public Texture2D texture { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public PointsFeedback(Point position, string text)
         {

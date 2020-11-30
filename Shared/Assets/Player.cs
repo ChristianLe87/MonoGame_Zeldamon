@@ -11,8 +11,6 @@ namespace Shared
         public Rectangle rectangle { get; set; }
         public CharacterDirecction characterDirecction = CharacterDirecction._null;
         public int money { get; set; }
-        public Texture2D texture => throw new System.NotImplementedException();
-
         public Flash flash;
 
         public Player(Point startPosition)

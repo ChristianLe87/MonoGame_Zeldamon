@@ -5,7 +5,5 @@ namespace Shared
 {
     public interface IEntity
     {
-        Rectangle rectangle { get; }
-        Texture2D texture { get; }
     }
 }

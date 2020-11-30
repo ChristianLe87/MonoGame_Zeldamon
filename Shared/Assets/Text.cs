@@ -8,8 +8,6 @@ namespace Shared
         public SpriteFont font;
         public string text;
         public Vector2 position;
-        public Rectangle rectangle => throw new System.NotImplementedException();
-        public Texture2D texture => throw new System.NotImplementedException();
 
         public Text(string text, Vector2 position)
         {
