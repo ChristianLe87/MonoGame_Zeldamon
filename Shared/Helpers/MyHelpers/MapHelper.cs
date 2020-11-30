@@ -9,7 +9,7 @@ namespace Shared
     {
         public static void Draw(SpriteBatch spriteBatch, List<Tile> tiles)
         {
-            foreach (var tile in tiles) spriteBatch.Draw(tile.texture2D, tile.rectangle, Color.White);
+            foreach (var tile in tiles) spriteBatch.Draw(tile.texture, tile.rectangle, Color.White);
         }
 
         public static List<IEntity> PopulateMap(char[,] originalMap)

@@ -15,7 +15,7 @@ namespace Shared
         {
             this.isDark = false;
 
-            this.moneyText = new Text("", new Vector2(0, 0));
+            this.moneyText = new Text("", new Vector2(0, 0), "text", Layer.Front);
             this.moneyValue = 0;
 
 

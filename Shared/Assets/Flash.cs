@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
@@ -9,6 +10,9 @@ namespace Shared
         public bool isFlashOn { get; set; }
         public string tag { get; }
         public Layer layer { get; }
+        public Rectangle rectangle => throw new System.NotImplementedException();
+        public Texture2D texture => throw new System.NotImplementedException();
+
         public bool isFlashKeyRelease;
 
         public Flash(Layer layer, string tag)

@@ -13,6 +13,7 @@ namespace Shared
         public Rectangle triggerArea { get; set; }
         public string[] text { get; set; }
         public Layer layer { get; }
+        public Texture2D texture => throw new System.NotImplementedException();
 
         public NPC_2(Point position, Layer layer, string tag)
         {

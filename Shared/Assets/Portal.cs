@@ -10,8 +10,7 @@ namespace Shared
         public string targetScene;
         public Point targetPosition;
         public Layer layer { get; }
-
-        public Texture2D texture2D;
+        public Texture2D texture { get; set; }
 
         public Portal(Point position, string targetScene, Point targetPosition, string tag, Texture2D texture2D = null)
         {
@@ -21,7 +20,7 @@ namespace Shared
             this.targetScene = targetScene;
             this.targetPosition = targetPosition;
 
-            this.texture2D = texture2D == null ? Tools.CreateColorTexture(Color.Red) : texture2D;
+            this.texture = texture2D == null ? Tools.CreateColorTexture(Color.Red) : texture2D;
         }
     }
 
@@ -37,7 +36,7 @@ namespace Shared
 
         public static void Draw(SpriteBatch spriteBatch, Portal portal)
         {
-            spriteBatch.Draw(portal.texture2D, portal.rectangle, Color.White);
+            spriteBatch.Draw(portal.texture, portal.rectangle, Color.White);
         }
     }
 }

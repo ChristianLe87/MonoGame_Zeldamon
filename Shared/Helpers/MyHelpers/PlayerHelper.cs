@@ -74,7 +74,7 @@ namespace Shared
 
                 if (GetCollideDirection(scene, CharacterDirecction.Up) == CharacterDirecction.Up) return;
 
-                player.rectangle.Y -= 1;
+                player.rectangle = new Rectangle(player.rectangle.X, player.rectangle.Y - 1, player.rectangle.Width, player.rectangle.Height);
 
                 // move until player until alligne with tile
                 if (player.rectangle.Y % WK.Default.Pixels_Y != 0)
@@ -89,7 +89,7 @@ namespace Shared
 
                 if (GetCollideDirection(scene, CharacterDirecction.Down) == CharacterDirecction.Down) return;
 
-                player.rectangle.Y += 1;
+                player.rectangle = new Rectangle(player.rectangle.X, player.rectangle.Y + 1, player.rectangle.Width, player.rectangle.Height);
 
                 // move until player until alligne with tile
                 if (player.rectangle.Y % WK.Default.Pixels_Y != 0)
@@ -104,7 +104,7 @@ namespace Shared
 
                 if (GetCollideDirection(scene, CharacterDirecction.Right) == CharacterDirecction.Right) return;
 
-                player.rectangle.X += 1;
+                player.rectangle = new Rectangle(player.rectangle.X + 1, player.rectangle.Y, player.rectangle.Width, player.rectangle.Height);
 
                 // move until player until alligne with tile
                 if (player.rectangle.X % WK.Default.Pixels_X != 0)
@@ -119,7 +119,7 @@ namespace Shared
 
                 if (GetCollideDirection(scene, CharacterDirecction.Left) == CharacterDirecction.Left) return;
 
-                player.rectangle.X -= 1;
+                player.rectangle = new Rectangle(player.rectangle.X - 1, player.rectangle.Y, player.rectangle.Width, player.rectangle.Height);
 
                 // move until player until alligne with tile
                 if (player.rectangle.X % WK.Default.Pixels_X != 0)

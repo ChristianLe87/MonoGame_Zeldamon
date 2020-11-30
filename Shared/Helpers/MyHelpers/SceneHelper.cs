@@ -14,12 +14,12 @@ namespace Shared
             List<Portal> portals = scene.entities.OfType<Portal>().ToList();
             Dialog dialog = scene.entities.OfType<Dialog>().FirstOrDefault();
             List<IPickable> pickables = scene.entities.OfType<IPickable>().Where(x => x.isActive == true).ToList();
-
+            List<My_PointFeedback> my_PointFeedbacks = scene.entities.OfType<My_PointFeedback>().ToList();
             scene.camera.Update(player);
 
             foreach (var npc in NPCs) NPCHelper.Update(npc, player, scene);
-            foreach (var pickable in pickables) CoinHelper.Update(player, pickable);
-            foreach (var pickable in pickables) CoinHelper.Update(player, pickable);
+            foreach (var pickable in pickables) CoinHelper.Update(scene, pickable);
+            foreach (var fed in my_PointFeedbacks) PointsFeedbackHelper.Update(fed);
 
 
             // if dialog, dont update player
@@ -30,7 +30,7 @@ namespace Shared
 
             foreach (var portal in portals) PortalHelpers.Update(portal, player);
 
-            scene.moneyText.Update($"Money: {player.money}");
+            TextHelper.Update(scene.moneyText, $"Money: {player.money}");
         }
 
         public static void Draw(SpriteBatch spriteBatch, IScene scene)
@@ -41,6 +41,8 @@ namespace Shared
             List<Portal> portals = scene.entities.OfType<Portal>().ToList();
             Dialog dialog = scene.entities.OfType<Dialog>().FirstOrDefault();
             List<IPickable> pickables = scene.entities.OfType<IPickable>().Where(x => x.isActive == true).ToList();
+            List<My_PointFeedback> my_PointFeedbacks = scene.entities.OfType<My_PointFeedback>().ToList();
+
             scene.camera.Draw(spriteBatch);
 
             MapHelper.Draw(spriteBatch, tiles);
@@ -50,9 +52,11 @@ namespace Shared
             foreach (var npc in NPCs) NPCHelper.Draw(spriteBatch, npc);
             foreach (var portal in portals) PortalHelpers.Draw(spriteBatch, portal);
             foreach (var pickable in pickables) CoinHelper.Draw(spriteBatch, pickable);
+            foreach (var fed in my_PointFeedbacks) PointsFeedbackHelper.Draw(spriteBatch, fed);
+
             FlashHelper.Draw(spriteBatch,scene);
             if (dialog != null) DialogHelper.Draw(spriteBatch, dialog);
-            scene.moneyText.Draw(spriteBatch);
+            TextHelper.Draw(spriteBatch, scene.moneyText);
         }
     }
 }

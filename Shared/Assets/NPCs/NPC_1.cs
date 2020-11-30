@@ -14,6 +14,8 @@ namespace Shared
         public string[] text { get; set; }
         public Layer layer { get; }
 
+        public Texture2D texture => throw new System.NotImplementedException();
+
         public NPC_1(Point position, Layer layer, string tag)
         {
             this.text = new string[] { "Hello", "World" };

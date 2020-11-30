@@ -14,7 +14,7 @@ namespace Shared
         public void Initialize(Point startPlayerPosition)
         {
             this.isDark = false;
-            this.moneyText = new Text("Coins: 0", new Vector2(0, 0));
+            this.moneyText = new Text("Coins: 0", new Vector2(0, 0), "text", Layer.Front);
             this.moneyValue = 0;
 
             this.entities = new List<IEntity>()

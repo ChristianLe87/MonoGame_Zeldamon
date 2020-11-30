@@ -37,6 +37,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\FlashHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Flash.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Cave.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IAutoDestroy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PointsFeedback.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IPointsFeedback.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

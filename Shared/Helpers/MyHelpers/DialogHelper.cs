@@ -14,7 +14,7 @@ namespace Shared
 
         public static void Draw(SpriteBatch spriteBatch, Dialog dialog)
         {
-            spriteBatch.Draw(dialog.backgrowndTexture, dialog.rectangle, Color.White);
+            spriteBatch.Draw(dialog.texture, dialog.rectangle, Color.White);
             spriteBatch.DrawString(dialog.font, dialog.actualText, new Vector2(dialog.rectangle.X, dialog.rectangle.Y), Color.Black);
         }
 
