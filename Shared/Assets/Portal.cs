@@ -6,37 +6,17 @@ namespace Shared
     public class Portal : IEntity
     {
         public Rectangle rectangle { get; private set; }
-        public string tag { get; private set; }
         public string targetScene;
         public Point targetPosition;
-        public Layer layer { get; }
         public Texture2D texture { get; set; }
 
-        public Portal(Point position, string targetScene, Point targetPosition, string tag, Texture2D texture2D = null)
+        public Portal(Point position, string targetScene, Point targetPosition, Texture2D texture2D = null)
         {
-            this.tag = tag;
-            this.layer = layer;
             this.rectangle = new Rectangle(position.X * WK.Default.Pixels_X, position.Y * WK.Default.Pixels_Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
             this.targetScene = targetScene;
             this.targetPosition = targetPosition;
 
             this.texture = texture2D == null ? Tools.CreateColorTexture(Color.Red) : texture2D;
-        }
-    }
-
-    public class PortalHelpers
-    {
-        public static void Update(Portal portal, Player player)
-        {
-            if (player.rectangle.Intersects(portal.rectangle))
-            {
-                Game1.ChangeScene(portal.targetScene, portal.targetPosition);
-            }
-        }
-
-        public static void Draw(SpriteBatch spriteBatch, Portal portal)
-        {
-            spriteBatch.Draw(portal.texture, portal.rectangle, Color.White);
         }
     }
 }

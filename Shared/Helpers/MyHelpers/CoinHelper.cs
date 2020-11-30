@@ -6,7 +6,7 @@ namespace Shared
 {
     public class CoinHelper
     {
-        public static void Update(IScene scene, IPickable pickable)
+        public static void Update(IScene scene, Coin pickable)
         {
             Player player = scene.entities.OfType<Player>().First();
 
@@ -14,7 +14,7 @@ namespace Shared
             {
                 pickable.isActive = false;
                 player.money++;
-                scene.entities.Add(new My_PointFeedback(new Point(pickable.rectangle.X, pickable.rectangle.Y), "+1", "feedback"));
+                scene.entities.Add(new PointsFeedback(new Point(pickable.rectangle.X, pickable.rectangle.Y), "+1"));
             }
         }
 

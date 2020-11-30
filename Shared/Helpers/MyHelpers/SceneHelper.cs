@@ -9,13 +9,13 @@ namespace Shared
         public static void Update(IScene scene)
         {
             Player player = scene.entities.OfType<Player>().First();
-            //List<Tile> tiles = scene.entities.OfType<Tile>().ToList();
-            List<Inpc> NPCs = scene.entities.OfType<Inpc>().ToList();
+            List<NPC> NPCs = scene.entities.OfType<NPC>().ToList();
             List<Portal> portals = scene.entities.OfType<Portal>().ToList();
             Dialog dialog = scene.entities.OfType<Dialog>().FirstOrDefault();
-            List<IPickable> pickables = scene.entities.OfType<IPickable>().Where(x => x.isActive == true).ToList();
-            List<My_PointFeedback> my_PointFeedbacks = scene.entities.OfType<My_PointFeedback>().ToList();
-            scene.camera.Update(player);
+            List<Coin> pickables = scene.entities.OfType<Coin>().Where(x => x.isActive == true).ToList();
+            List<PointsFeedback> my_PointFeedbacks = scene.entities.OfType<PointsFeedback>().ToList();
+
+            CameraHelper.Update(scene.camera, player);
 
             foreach (var npc in NPCs) NPCHelper.Update(npc, player, scene);
             foreach (var pickable in pickables) CoinHelper.Update(scene, pickable);
@@ -37,13 +37,13 @@ namespace Shared
         {
             Player player = scene.entities.OfType<Player>().First();
             List<Tile> tiles = scene.entities.OfType<Tile>().ToList();
-            List<Inpc> NPCs = scene.entities.OfType<Inpc>().ToList();
+            List<NPC> NPCs = scene.entities.OfType<NPC>().ToList();
             List<Portal> portals = scene.entities.OfType<Portal>().ToList();
             Dialog dialog = scene.entities.OfType<Dialog>().FirstOrDefault();
             List<IPickable> pickables = scene.entities.OfType<IPickable>().Where(x => x.isActive == true).ToList();
-            List<My_PointFeedback> my_PointFeedbacks = scene.entities.OfType<My_PointFeedback>().ToList();
+            List<PointsFeedback> my_PointFeedbacks = scene.entities.OfType<PointsFeedback>().ToList();
 
-            scene.camera.Draw(spriteBatch);
+            CameraHelper.Draw(spriteBatch, scene.camera);
 
             MapHelper.Draw(spriteBatch, tiles);
             PlayerHelper.Draw(spriteBatch, player);

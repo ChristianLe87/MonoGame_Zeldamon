@@ -29,7 +29,7 @@ namespace Shared
                 int index = Array.IndexOf(dialog.text, dialog.actualText);
 
                 if (index + 1 == dialog.text.Length)
-                    scene.entities.RemoveAll(x => x.tag == "dialog");
+                    scene.entities.RemoveAll(x => x.GetType() == typeof(Dialog));
                 else
                     dialog.actualText = dialog.text[index + 1];
 

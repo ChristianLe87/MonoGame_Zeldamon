@@ -60,7 +60,7 @@ namespace Shared
 
         private static void MovePlayer(IScene scene)
         {
-            Player player = scene.entities.First(x => x.tag == "player") as Player;
+            Player player = scene.entities.OfType<Player>().First();
 
             List<Rectangle> NPCs = scene.entities.OfType<Inpc>().Select(x => x.rectangle).ToList();
             List<Rectangle> tiles = scene.entities.OfType<Tile>().Select(x => x.rectangle).ToList();
@@ -133,7 +133,7 @@ namespace Shared
 
         private static CharacterDirecction GetCollideDirection(IScene scene, CharacterDirecction moveDirection)
         {
-            Player player = scene.entities.First(x => x.tag == "player") as Player;
+            Player player = scene.entities.OfType<Player>().First();
 
             List<Rectangle> NPCs = scene.entities.OfType<Inpc>().Select(x => x.rectangle).ToList();
             List<Rectangle> tiles = scene.entities.OfType<Tile>().Where(x=>x.isCollider == true).Select(x => x.rectangle).ToList();

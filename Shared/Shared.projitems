@@ -36,10 +36,17 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\MapHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\FlashHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Flash.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Cave.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IAutoDestroy.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)PointsFeedback.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IPointsFeedback.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\Cave.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IAutoDestroy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IPointsFeedback.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\PointsFeedback.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\CameraHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Enums.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Templates\NPC.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PointsFeedbackHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PortalHelpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\TextHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Templates\Scene.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
@@ -48,5 +55,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Assets\NPCs\" />
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\" />
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Templates\" />
   </ItemGroup>
 </Project>

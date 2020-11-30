@@ -4,22 +4,17 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class NPC_2 : Inpc, IEntity
+    public class NPC_2: NPC
     {
-        public Dictionary<string, Texture2D> textures { get; private set; }
-        public NPC_State npcState { get; set; }
-        public Rectangle rectangle { get; set; }
-        public string tag { get; private set; }
-        public Rectangle triggerArea { get; set; }
-        public string[] text { get; set; }
-        public Layer layer { get; }
-        public Texture2D texture => throw new System.NotImplementedException();
+        public override Dictionary<string, Texture2D> textures { get; set; }
+        public override NPC_State npcState { get; set; }
+        public override Rectangle rectangle { get; set; }
+        public override Rectangle triggerArea { get; set; }
+        public override string[] text { get; set; }
 
-        public NPC_2(Point position, Layer layer, string tag)
+        public NPC_2(Point position)
         {
             this.npcState = NPC_State.IdleDown;
-            this.tag = tag;
-            this.layer = layer;
 
             this.textures = new Dictionary<string, Texture2D>()
             {

@@ -7,13 +7,13 @@ namespace Shared
 {
     public class NPCHelper
     {
-        public static void Update(Inpc npc, Player player, IScene scene)
+        public static void Update(NPC npc, Player player, IScene scene)
         {
             RotateToPlayer(player, npc);
             Trigger(scene, npc);
         }
 
-        public static void Draw(SpriteBatch spriteBatch, Inpc npc)
+        public static void Draw(SpriteBatch spriteBatch, NPC npc)
         {
             switch (npc.npcState)
             {
@@ -34,7 +34,7 @@ namespace Shared
             }
         }
 
-        private static void RotateToPlayer(Player player, Inpc npc)
+        private static void RotateToPlayer(Player player, NPC npc)
         {
             int y = player.rectangle.Y - npc.rectangle.Y;
             if(y == 0)
@@ -70,23 +70,17 @@ namespace Shared
 
             if (keyboardState.IsKeyDown(Keys.Space))
             {
-                if (scene.entities.Where(x => x.tag == "dialog").Count() == 0)
+                if (scene.entities.OfType<Dialog>().Count() == 0)
                 {
-                    Player player = scene.entities.First(x => x.tag == "player") as Player;
+                    Player player = scene.entities.OfType<Player>().First();
                     var x = player.rectangle.X - (WK.Default.CanvasWidth / 2) + (WK.Default.Pixels_X / 2);
                     var y = player.rectangle.Y + (WK.Default.CanvasHeight / 2) - (WK.Default.CanvasHeight / 3) + (WK.Default.Pixels_Y / 2);
 
-                    scene.entities.Add(new Dialog(npc, new Rectangle(x, y, WK.Default.CanvasWidth, (WK.Default.CanvasHeight / 3)), Layer.Front, "dialog"));
+                    scene.entities.Add(new Dialog(npc, new Rectangle(x, y, WK.Default.CanvasWidth, (WK.Default.CanvasHeight / 3))));
                 }
             }
         }
     }
 
-    public enum NPC_State
-    {
-        IdleUp,
-        IdleDown,
-        IdleRight,
-        IdleLeft
-    }
+
 }

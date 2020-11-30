@@ -10,19 +10,15 @@ namespace Shared
         public PlayerState playerState;
         public Rectangle rectangle { get; set; }
         public CharacterDirecction characterDirecction = CharacterDirecction._null;
-        public string tag { get; private set; }
         public int money { get; set; }
-        public Layer layer { get; }
         public Texture2D texture => throw new System.NotImplementedException();
 
         public Flash flash;
 
-        public Player(Point startPosition, Layer layer, string tag)
+        public Player(Point startPosition)
         {
-            this.flash = new Flash(Layer.Front, "flash");
-            this.tag = tag;
+            this.flash = new Flash();
             this.playerState = PlayerState.IdleDown;
-            this.layer = layer;
 
             this.textures = new Dictionary<string, Texture2D>()
             {

@@ -5,8 +5,8 @@ namespace Shared
 {
     public interface IPickable
     {
-        public bool isActive { get; set; }
-        public Rectangle rectangle { get; set; }
-        public Texture2D texture { get; set; }
+        bool isActive { get; }
+        Rectangle rectangle { get; }
+        Texture2D texture { get; }
     }
 }

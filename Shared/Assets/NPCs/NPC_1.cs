@@ -4,24 +4,18 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class NPC_1: Inpc, IEntity
+    public class NPC_1 : NPC
     {
-        public string tag { get; private set; }
-        public NPC_State npcState { get; set; }
-        public Dictionary<string, Texture2D> textures { get; private set; }
-        public Rectangle rectangle { get; set; }
-        public Rectangle triggerArea { get; set; }
-        public string[] text { get; set; }
-        public Layer layer { get; }
+        public override NPC_State npcState { get; set; }
+        public override Dictionary<string, Texture2D> textures { get; set; }
+        public override Rectangle rectangle { get; set; }
+        public override Rectangle triggerArea { get; set; }
+        public override string[] text { get; set; }
 
-        public Texture2D texture => throw new System.NotImplementedException();
-
-        public NPC_1(Point position, Layer layer, string tag)
+        public NPC_1(Point position)
         {
             this.text = new string[] { "Hello", "World" };
             this.npcState = NPC_State.IdleDown;
-            this.tag = tag;
-            this.layer = layer;
 
             this.textures = new Dictionary<string, Texture2D>()
             {
@@ -34,6 +28,5 @@ namespace Shared
             this.rectangle = new Rectangle(position.X * WK.Default.Pixels_X, position.Y * WK.Default.Pixels_Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
             this.triggerArea = new Rectangle(position.X * WK.Default.Pixels_X, position.Y * WK.Default.Pixels_Y, WK.Default.Pixels_X + 1, WK.Default.Pixels_Y + 1);
         }
-
     }
 }

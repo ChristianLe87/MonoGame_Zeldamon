@@ -15,7 +15,7 @@ namespace Shared
         public static SpriteBatch spriteBatch;
 
         private static string actualScene = WK.Scene.GameScene;
-        private static Dictionary<string, IScene> scenes;
+        private static Dictionary<string, Scene> scenes;
 
         public Game1()
         {
@@ -37,7 +37,7 @@ namespace Shared
             this.TargetElapsedTime = TimeSpan.FromSeconds(1d / WK.Default.FPS);
 
             // Scenes
-            scenes = new Dictionary<string, IScene>()
+            scenes = new Dictionary<string, Scene>()
             {
                 {WK.Scene.GameScene, new GameScene() },
                 {WK.Scene.House_1, new House_1() },

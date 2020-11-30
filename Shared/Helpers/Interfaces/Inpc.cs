@@ -6,10 +6,10 @@ namespace Shared
 {
     public interface Inpc
     {
-        public NPC_State npcState { get; set; }
-        public Dictionary<string, Texture2D> textures { get; }
-        public Rectangle rectangle { get; set; }
-        public Rectangle triggerArea { get; set; }
-        public string[] text { get; set; }
+        NPC_State npcState { get; }
+        Dictionary<string, Texture2D> textures { get; }
+        Rectangle rectangle { get; }
+        Rectangle triggerArea { get; }
+        string[] text { get; }
     }
 }
