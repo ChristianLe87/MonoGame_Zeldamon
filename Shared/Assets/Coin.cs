@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class Coin : IPickable
+    public class Coin : IEntity, IPickable
     {
         public string tag { get; private set; }
         public Rectangle rectangle { get; set; }

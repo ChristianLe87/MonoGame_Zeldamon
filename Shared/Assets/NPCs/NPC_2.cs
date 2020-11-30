@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class NPC_2 : Inpc
+    public class NPC_2 : Inpc, IEntity
     {
         public Dictionary<string, Texture2D> textures { get; private set; }
         public NPC_State npcState { get; set; }

@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class NPC_1: Inpc
+    public class NPC_1: Inpc, IEntity
     {
         public string tag { get; private set; }
         public NPC_State npcState { get; set; }

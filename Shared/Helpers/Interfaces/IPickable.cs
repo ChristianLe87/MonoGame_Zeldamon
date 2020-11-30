@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public interface IPickable : IEntity
+    public interface IPickable
     {
         public bool isActive { get; set; }
         public Rectangle rectangle { get; set; }
