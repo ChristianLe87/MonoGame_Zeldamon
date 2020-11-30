@@ -25,6 +25,7 @@ namespace Shared
             };
 
             this.rectangle = new Rectangle(position.X * WK.Default.Pixels_X, position.Y * WK.Default.Pixels_Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
+            this.triggerArea = new Rectangle(position.X * WK.Default.Pixels_X - 1, position.Y * WK.Default.Pixels_Y - 1, WK.Default.Pixels_X + 2, WK.Default.Pixels_Y + 2);
 
             this.text = new string[] { "Good By", "Christian" };
         }

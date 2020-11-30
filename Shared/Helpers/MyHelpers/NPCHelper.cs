@@ -63,20 +63,23 @@ namespace Shared
             }
         }
 
-        private static void Trigger(IScene scene, Inpc npc)
+        private static void Trigger(IScene scene, NPC npc)
         {
+            Player player = scene.entities.OfType<Player>().First();
 
             KeyboardState keyboardState = Keyboard.GetState();
 
             if (keyboardState.IsKeyDown(Keys.Space))
             {
-                if (scene.entities.OfType<Dialog>().Count() == 0)
+                if (npc.triggerArea.Intersects(player.rectangle))
                 {
-                    Player player = scene.entities.OfType<Player>().First();
-                    var x = player.rectangle.X - (WK.Default.CanvasWidth / 2) + (WK.Default.Pixels_X / 2);
-                    var y = player.rectangle.Y + (WK.Default.CanvasHeight / 2) - (WK.Default.CanvasHeight / 3) + (WK.Default.Pixels_Y / 2);
+                       if (scene.entities.OfType<Dialog>().Count() == 0)
+                    {
+                        var x = player.rectangle.X - (WK.Default.CanvasWidth / 2) + (WK.Default.Pixels_X / 2);
+                        var y = player.rectangle.Y + (WK.Default.CanvasHeight / 2) - (WK.Default.CanvasHeight / 3) + (WK.Default.Pixels_Y / 2);
 
-                    scene.entities.Add(new Dialog(npc, new Rectangle(x, y, WK.Default.CanvasWidth, (WK.Default.CanvasHeight / 3))));
+                        scene.entities.Add(new Dialog(npc, new Rectangle(x, y, WK.Default.CanvasWidth, (WK.Default.CanvasHeight / 3))));
+                    }
                 }
             }
         }
