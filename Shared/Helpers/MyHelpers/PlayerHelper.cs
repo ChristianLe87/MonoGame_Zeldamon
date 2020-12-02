@@ -62,10 +62,6 @@ namespace Shared
         {
             Player player = scene.entities.OfType<Player>().First();
 
-            List<Rectangle> NPCs = scene.entities.OfType<Inpc>().Select(x => x.rectangle).ToList();
-            List<Rectangle> tiles = scene.entities.OfType<Tile>().Select(x => x.rectangle).ToList();
-            List<Rectangle> rectangles = NPCs.Concat(tiles).ToList();
-
             KeyboardState keyboardState = Keyboard.GetState();
 
             if (keyboardState.IsKeyDown(Keys.W) || keyboardState.IsKeyDown(Keys.Up) || player.characterDirecction == CharacterDirecction.Up)
@@ -137,7 +133,8 @@ namespace Shared
 
             List<Rectangle> NPCs = scene.entities.OfType<Inpc>().Select(x => x.rectangle).ToList();
             List<Rectangle> tiles = scene.entities.OfType<Tile>().Where(x=>x.isCollider == true).Select(x => x.rectangle).ToList();
-            List<Rectangle> rectangles = NPCs.Concat(tiles).ToList();
+            List<Rectangle> cubes = scene.entities.OfType<Cube>().Select(x => x.rectangle).ToList();
+            List<Rectangle> rectangles = NPCs.Concat(tiles).Concat(cubes).ToList();
 
             Rectangle futurePlayerRectangle = player.rectangle;
 

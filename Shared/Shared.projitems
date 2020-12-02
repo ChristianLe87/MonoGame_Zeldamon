@@ -47,6 +47,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PortalHelpers.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\TextHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Templates\Scene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cube.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

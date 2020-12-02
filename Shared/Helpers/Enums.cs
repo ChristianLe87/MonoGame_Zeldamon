@@ -14,4 +14,13 @@
         IdleRight,
         IdleLeft
     }
+
+    public enum Cube_Moving
+    {
+        Up,
+        Down,
+        Right,
+        Left,
+        No
+    }
 }

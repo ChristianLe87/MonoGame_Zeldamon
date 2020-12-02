@@ -34,6 +34,9 @@ namespace Shared
 
                 // Add Coins
                 new Coin(true, new Point(10, 13)),
+
+                // Add cube
+                new Cube(new Point(10, 17)),
             };
 
 
