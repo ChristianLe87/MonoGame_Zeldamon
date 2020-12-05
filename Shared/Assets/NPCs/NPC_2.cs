@@ -12,8 +12,9 @@ namespace Shared
         public override Rectangle triggerArea { get; set; }
         public override string[] text { get; set; }
 
-        public NPC_2(Point position)
+        public NPC_2(Point position, Layer layer)
         {
+            this.layer = layer;
             this.npcState = NPC_State.IdleDown;
 
             this.textures = new Dictionary<string, Texture2D>()

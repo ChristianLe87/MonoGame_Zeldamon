@@ -50,8 +50,9 @@ namespace Shared
 
             Player player = scene.entities.OfType<Player>().First();
 
-            List<Rectangle> rectangles = scene.entities.OfType<Tile>()
-                                                    //.Where(x => x.GetType() != typeof(Cube))
+            List<Rectangle> rectangles = scene.entities
+                                                    .Where(x => x.GetType() != typeof(Cube))
+                                                    .Where(x => x.GetType() != typeof(Player))
                                                     .Where(x => x.layer == Layer.Middle)
                                                     .Select(x => x.rectangle).ToList();
 
