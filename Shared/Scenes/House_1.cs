@@ -19,9 +19,9 @@ namespace Shared
 
             this.entities = new List<IEntity>()
             {
-                new Player(startPlayerPosition),
-                new NPC_2(new Point(3, 11)),
-                new Portal(new Point(4, 13), WK.Scene.GameScene, new Point(7, 14)),
+                new Player(startPlayerPosition, Layer.Middle),
+                new NPC_2(new Point(3, 11), Layer.Middle),
+                new Portal(new Point(4, 13), WK.Scene.GameScene, new Point(7, 14), Layer.Back),
             };
 
             this.entities.AddRange(MapHelper.PopulateMap(WK.Map.Map2));

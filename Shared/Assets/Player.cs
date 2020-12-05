@@ -11,9 +11,12 @@ namespace Shared
         public Rectangle rectangle { get; set; }
         public CharacterDirecction characterDirecction = CharacterDirecction._null;
         public int money { get; set; }
+
+        public Layer layer { get; }
+
         public Flash flash;
 
-        public Player(Point startPosition)
+        public Player(Point startPosition, Layer layer)
         {
             this.flash = new Flash();
             this.playerState = PlayerState.IdleDown;
@@ -31,6 +34,8 @@ namespace Shared
             };
 
             rectangle = new Rectangle(startPosition.X * WK.Default.Pixels_X, startPosition.Y * WK.Default.Pixels_Y, WK.Default.Pixels_X, WK.Default.Pixels_Y);
+
+            this.layer = layer;
 
             this.money = 0;
         }

@@ -20,8 +20,8 @@ namespace Shared
 
             this.entities = new List<IEntity>()
             {
-                new Player(startPlayerPosition),
-                new Portal(new Point(4, 13), WK.Scene.GameScene, new Point(6, 9)),
+                new Player(startPlayerPosition, Layer.Middle),
+                new Portal(new Point(4, 13), WK.Scene.GameScene, new Point(6, 9), Layer.Back),
             };
 
             this.entities.AddRange(MapHelper.PopulateMap(WK.Map.Cave));

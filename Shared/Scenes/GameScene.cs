@@ -23,20 +23,20 @@ namespace Shared
             this.entities = new List<IEntity>()
             {
                 // Add Player
-                new Player(startPlayerPosition),
+                new Player(startPlayerPosition, Layer.Middle),
 
                 // Add NPCs
-                new NPC_1(new Point(8, 15)),
+                new NPC_1(new Point(8, 15), Layer.Middle),
 
                 // add Portals
-                new Portal(new Point(7, 13), WK.Scene.House_1, new Point(4, 12)),
-                new Portal(new Point(6, 8), WK.Scene.Cave, new Point(4, 12)),
+                new Portal(new Point(7, 13), WK.Scene.House_1, new Point(4, 12), Layer.Back),
+                new Portal(new Point(6, 8), WK.Scene.Cave, new Point(4, 12), Layer.Back),
 
                 // Add Coins
-                new Coin(true, new Point(10, 13)),
+                new Coin(true, new Point(10, 13), Layer.Middle),
 
                 // Add cube
-                new Cube(new Point(10, 17)),
+                new Cube(new Point(10, 17), Layer.Middle),
             };
 
 

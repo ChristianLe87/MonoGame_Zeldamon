@@ -30,13 +30,13 @@ namespace Shared
                     switch (originalMap[row, elem])
                     {
                         case 'x':
-                            map.Add(new Tile(textures["map_x"], new Point(elem, row), true));
+                            map.Add(new Tile(textures["map_x"], new Point(elem, row), Layer.Middle));
                             break;
                         case '.':
-                            map.Add(new Tile(textures["map_p"], new Point(elem, row), false));
+                            map.Add(new Tile(textures["map_p"], new Point(elem, row), Layer.Back));
                             break;
                         default:
-                            map.Add(new Tile(textures["map_other"], new Point(elem, row), false)); ;
+                            map.Add(new Tile(textures["map_other"], new Point(elem, row), Layer.Back)); ;
                             break;
                     }
                 }

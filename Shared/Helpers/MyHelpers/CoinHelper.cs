@@ -14,7 +14,7 @@ namespace Shared
             {
                 pickable.isActive = false;
                 player.money++;
-                scene.entities.Add(new PointsFeedback(new Point(pickable.rectangle.X, pickable.rectangle.Y), "+1"));
+                scene.entities.Add(new PointsFeedback(new Point(pickable.rectangle.X, pickable.rectangle.Y), "+1", Layer.Front));
             }
         }
 

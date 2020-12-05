@@ -132,7 +132,7 @@ namespace Shared
             Player player = scene.entities.OfType<Player>().First();
 
             List<Rectangle> NPCs = scene.entities.OfType<Inpc>().Select(x => x.rectangle).ToList();
-            List<Rectangle> tiles = scene.entities.OfType<Tile>().Where(x=>x.isCollider == true).Select(x => x.rectangle).ToList();
+            List<Rectangle> tiles = scene.entities.OfType<Tile>().Where(x=>x.layer == Layer.Middle).Select(x => x.rectangle).ToList();
             List<Rectangle> cubes = scene.entities.OfType<Cube>().Select(x => x.rectangle).ToList();
             List<Rectangle> rectangles = NPCs.Concat(tiles).Concat(cubes).ToList();
 

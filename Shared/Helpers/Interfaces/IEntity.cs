@@ -5,5 +5,7 @@ namespace Shared
 {
     public interface IEntity
     {
+        Layer layer { get; }
+        Rectangle rectangle { get; }
     }
 }

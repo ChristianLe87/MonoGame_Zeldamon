@@ -8,6 +8,11 @@ namespace Shared
     {
         public Dictionary<string, Texture2D> flashTextures;
         public bool isFlashOn { get; set; }
+
+        public Layer layer { get; }
+
+        public Rectangle rectangle { get; set; }
+
         public bool isFlashKeyRelease;
 
         public Flash()

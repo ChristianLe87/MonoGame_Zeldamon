@@ -14,6 +14,10 @@ namespace Shared
             this.text = text;
             this.position = position;
             this.font = Game1.contentManager.Load<SpriteFont>(WK.Content.Font.Arial_20);
-        }        
+        }
+
+        public Layer layer => throw new System.NotImplementedException();
+
+        public Rectangle rectangle => throw new System.NotImplementedException();
     }
 }
