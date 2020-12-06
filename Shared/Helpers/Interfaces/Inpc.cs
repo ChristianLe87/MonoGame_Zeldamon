@@ -4,11 +4,10 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public interface Inpc
+    public interface Inpc : IEntity
     {
-        NPC_State npcState { get; }
+        NPC_State npcState { get; set; }
         Dictionary<string, Texture2D> textures { get; }
-        Rectangle rectangle { get; }
         Rectangle triggerArea { get; }
         string[] text { get; }
     }

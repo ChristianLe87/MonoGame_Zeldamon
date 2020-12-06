@@ -9,7 +9,7 @@ namespace Shared
         public static void Update(IScene scene)
         {
             Player player = scene.entities.OfType<Player>().First();
-            List<NPC> NPCs = scene.entities.OfType<NPC>().ToList();
+            List<Inpc> NPCs = scene.entities.OfType<Inpc>().ToList();
             List<Portal> portals = scene.entities.OfType<Portal>().ToList();
             Dialog dialog = scene.entities.OfType<Dialog>().FirstOrDefault();
             List<Coin> pickables = scene.entities.OfType<Coin>().Where(x => x.isActive == true).ToList();
@@ -38,7 +38,7 @@ namespace Shared
         {
             Player player = scene.entities.OfType<Player>().First();
             List<Tile> tiles = scene.entities.OfType<Tile>().ToList();
-            List<NPC> NPCs = scene.entities.OfType<NPC>().ToList();
+            List<Inpc> NPCs = scene.entities.OfType<Inpc>().ToList();
             List<Portal> portals = scene.entities.OfType<Portal>().ToList();
             Dialog dialog = scene.entities.OfType<Dialog>().FirstOrDefault();
             List<IPickable> pickables = scene.entities.OfType<IPickable>().Where(x => x.isActive == true).ToList();

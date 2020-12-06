@@ -3,15 +3,15 @@ using Microsoft.Xna.Framework;
 
 namespace Shared
 {
-    public class GameScene : Scene
+    public class GameScene : IScene
     {
-        public override Camera camera { get; set; }
-        public override List<IEntity> entities { get; set; }
-        public override int moneyValue { get; set; }
-        public override Text moneyText { get; set; }
-        public override bool isDark { get; set; }
+        public List<IEntity> entities { get; set; }
+        public Camera camera { get; set; }
+        public int moneyValue { get; set; }
+        public Text moneyText { get; set; }
+        public bool isDark { get; set; }
 
-        public override void Initialize(Point startPlayerPosition)
+        public void Initialize(Point startPlayerPosition)
         {
             this.isDark = false;
 

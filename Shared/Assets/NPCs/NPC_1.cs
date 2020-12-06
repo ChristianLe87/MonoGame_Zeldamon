@@ -4,13 +4,14 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class NPC_1 : NPC
+    public class NPC_1 : Inpc
     {
-        public override NPC_State npcState { get; set; }
-        public override Dictionary<string, Texture2D> textures { get; set; }
-        public override Rectangle rectangle { get; set; }
-        public override Rectangle triggerArea { get; set; }
-        public override string[] text { get; set; }
+        public NPC_State npcState { get; set; }
+        public Dictionary<string, Texture2D> textures { get; }
+        public Rectangle triggerArea { get; }
+        public string[] text { get; }
+        public Layer layer { get; }
+        public Rectangle rectangle { get; }
 
         public NPC_1(Point position, Layer layer)
         {

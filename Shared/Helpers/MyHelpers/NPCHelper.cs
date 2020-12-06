@@ -7,13 +7,13 @@ namespace Shared
 {
     public class NPCHelper
     {
-        public static void Update(NPC npc, Player player, IScene scene)
+        public static void Update(Inpc npc, Player player, IScene scene)
         {
             RotateToPlayer(player, npc);
             Trigger(scene, npc);
         }
 
-        public static void Draw(SpriteBatch spriteBatch, NPC npc)
+        public static void Draw(SpriteBatch spriteBatch, Inpc npc)
         {
             switch (npc.npcState)
             {
@@ -34,7 +34,7 @@ namespace Shared
             }
         }
 
-        private static void RotateToPlayer(Player player, NPC npc)
+        private static void RotateToPlayer(Player player, Inpc npc)
         {
             int y = player.rectangle.Y - npc.rectangle.Y;
             if(y == 0)
@@ -63,7 +63,7 @@ namespace Shared
             }
         }
 
-        private static void Trigger(IScene scene, NPC npc)
+        private static void Trigger(IScene scene, Inpc npc)
         {
             Player player = scene.entities.OfType<Player>().First();
 
@@ -84,6 +84,4 @@ namespace Shared
             }
         }
     }
-
-
 }

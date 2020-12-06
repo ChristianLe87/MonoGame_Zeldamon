@@ -42,11 +42,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Assets\PointsFeedback.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\CameraHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Enums.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Templates\NPC.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PointsFeedbackHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PortalHelpers.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\TextHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Templates\Scene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Cube.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Cards\Card_0.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\ICard.cs" />
@@ -59,7 +57,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Assets\NPCs\" />
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\" />
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Templates\" />
     <Folder Include="$(MSBuildThisFileDirectory)Assets\Cards\" />
   </ItemGroup>
 </Project>

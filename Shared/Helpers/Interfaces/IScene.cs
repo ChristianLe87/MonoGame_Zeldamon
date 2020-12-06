@@ -5,11 +5,11 @@ namespace Shared
 {
     public interface IScene
     {
-        List<IEntity> entities { get; }
-        Camera camera { get; }
-        int moneyValue { get; }
-        Text moneyText { get; }
-        bool isDark { get; }
+        List<IEntity> entities { get; set; }
+        Camera camera { get; set; }
+        int moneyValue { get; set; }
+        Text moneyText { get; set; }
+        bool isDark { get; set; }
         void Initialize(Point startPlayerPosition);
     }
 }
