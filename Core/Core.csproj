@@ -91,6 +91,46 @@
       <Link>Content\Flash\FlashNightOn_Left_720x720_PNG.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\Shared\Content\Cartas\Carta_8_48x64_PNG.png">
+      <Link>Content\Cartas\Carta_8_48x64_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Cartas\Carta_2_48x64_PNG.png">
+      <Link>Content\Cartas\Carta_2_48x64_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Cartas\Carta_6_48x64_PNG.png">
+      <Link>Content\Cartas\Carta_6_48x64_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Cartas\Carta_1_48x64_PNG.png">
+      <Link>Content\Cartas\Carta_1_48x64_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Cartas\Carta_5_48x64_PNG.png">
+      <Link>Content\Cartas\Carta_5_48x64_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Cartas\Carta_4_48x64_PNG.png">
+      <Link>Content\Cartas\Carta_4_48x64_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Cartas\Carta_0_48x64_PNG.png">
+      <Link>Content\Cartas\Carta_0_48x64_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Cartas\Carta_7_48x64_PNG.png">
+      <Link>Content\Cartas\Carta_7_48x64_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Cartas\Carta_3_48x64_PNG.png">
+      <Link>Content\Cartas\Carta_3_48x64_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Shared\Content\Cartas\Carta_9_48x64_PNG.png">
+      <Link>Content\Cartas\Carta_9_48x64_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />
 </Project>

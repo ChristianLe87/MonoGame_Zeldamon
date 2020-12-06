@@ -44,7 +44,7 @@ namespace Shared
             List<IPickable> pickables = scene.entities.OfType<IPickable>().Where(x => x.isActive == true).ToList();
             List<PointsFeedback> my_PointFeedbacks = scene.entities.OfType<PointsFeedback>().ToList();
             List<Cube> cubes = scene.entities.OfType<Cube>().ToList();
-
+            List<ICard> cards = scene.entities.OfType<ICard>().ToList();
             CameraHelper.Draw(spriteBatch, scene.camera);
 
             MapHelper.Draw(spriteBatch, tiles);
@@ -56,6 +56,7 @@ namespace Shared
             foreach (var pickable in pickables) CoinHelper.Draw(spriteBatch, pickable);
             foreach (var fed in my_PointFeedbacks) PointsFeedbackHelper.Draw(spriteBatch, fed);
             foreach (var cube in cubes) CubeHelper.Draw(spriteBatch, cube);
+            foreach (var card in cards) CardHelper.Draw(spriteBatch, card);
 
             FlashHelper.Draw(spriteBatch,scene);
             if (dialog != null) DialogHelper.Draw(spriteBatch, dialog);

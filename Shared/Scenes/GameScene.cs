@@ -37,6 +37,9 @@ namespace Shared
 
                 // Add cube
                 new Cube(new Point(10, 17), Layer.Middle),
+
+                // Add Cards
+                new Card_0(new Point(1, 1), Layer.Front),
             };
 
 

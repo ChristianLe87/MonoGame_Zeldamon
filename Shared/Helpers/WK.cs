@@ -18,6 +18,7 @@
             {
                 public static readonly string Player = "Player";
                 public static readonly string Flash = "Flash";
+                public static readonly string Cartas = "Cartas";
             }
 
             public class Font
@@ -52,6 +53,20 @@
                 public class Other
                 {
                     public static readonly string Coin = "Coin_PNG_10x10";
+                }
+
+                public class Card
+                {
+                    public static readonly string Carta_0 = "Carta_0_48x64_PNG";
+                    public static readonly string Carta_1 = "Carta_1_48x64_PNG";
+                    public static readonly string Carta_2 = "Carta_2_48x64_PNG";
+                    public static readonly string Carta_3 = "Carta_3_48x64_PNG";
+                    public static readonly string Carta_4 = "Carta_4_48x64_PNG";
+                    public static readonly string Carta_5 = "Carta_5_48x64_PNG";
+                    public static readonly string Carta_6 = "Carta_6_48x64_PNG";
+                    public static readonly string Carta_7 = "Carta_7_48x64_PNG";
+                    public static readonly string Carta_8 = "Carta_8_48x64_PNG";
+                    public static readonly string Carta_9 = "Carta_9_48x64_PNG";
                 }
 
                 public class Flash

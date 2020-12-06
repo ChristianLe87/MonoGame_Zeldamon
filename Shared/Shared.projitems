@@ -48,6 +48,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\TextHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Templates\Scene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Cube.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\Cards\Card_0.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\ICard.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\CardHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
@@ -57,5 +60,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\" />
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\" />
     <Folder Include="$(MSBuildThisFileDirectory)Templates\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Assets\Cards\" />
   </ItemGroup>
 </Project>
