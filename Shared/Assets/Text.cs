@@ -17,7 +17,6 @@ namespace Shared
         }
 
         public Layer layer => throw new System.NotImplementedException();
-
-        public Rectangle rectangle => throw new System.NotImplementedException();
+        public Rectangle rectangle { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     }
 }

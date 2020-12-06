@@ -11,7 +11,7 @@ namespace Shared
         public Rectangle triggerArea { get; }
         public string[] text { get; }
         public Layer layer { get; }
-        public Rectangle rectangle { get; }
+        public Rectangle rectangle { get; set; }
 
         public NPC_2(Point position, Layer layer)
         {

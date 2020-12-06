@@ -36,7 +36,7 @@ namespace Shared
                 new Coin(true, new Point(10, 13), Layer.Middle),
 
                 // Add cube
-                new Cube(new Point(10, 17), Layer.Middle),
+                new Cube_1(new Point(10, 17), Layer.Middle),
 
                 // Add Cards
                 new Card_0(new Point(1, 1), Layer.Front),

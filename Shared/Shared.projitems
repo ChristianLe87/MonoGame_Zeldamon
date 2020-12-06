@@ -45,10 +45,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PointsFeedbackHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PortalHelpers.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\TextHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\Cube.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\Cube_1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Cards\Card_0.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\ICard.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\CardHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IPushable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PushableHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

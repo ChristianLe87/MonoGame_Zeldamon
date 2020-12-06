@@ -14,14 +14,14 @@ namespace Shared
             Dialog dialog = scene.entities.OfType<Dialog>().FirstOrDefault();
             List<Coin> pickables = scene.entities.OfType<Coin>().Where(x => x.isActive == true).ToList();
             List<PointsFeedback> my_PointFeedbacks = scene.entities.OfType<PointsFeedback>().ToList();
-            List<Cube> cubes = scene.entities.OfType<Cube>().ToList();
+            List<IPushable> pushables = scene.entities.OfType<IPushable>().ToList();
 
             CameraHelper.Update(scene.camera, player);
 
             foreach (var npc in NPCs) NPCHelper.Update(npc, player, scene);
             foreach (var pickable in pickables) CoinHelper.Update(scene, pickable);
             foreach (var fed in my_PointFeedbacks) PointsFeedbackHelper.Update(fed);
-            foreach (var cube in cubes) CubeHelper.Update(scene, cube);
+            foreach (var pushable in pushables) PushableHelper.Update(scene, pushable);
 
             // if dialog, dont update player
             if (dialog != null)
@@ -43,7 +43,7 @@ namespace Shared
             Dialog dialog = scene.entities.OfType<Dialog>().FirstOrDefault();
             List<IPickable> pickables = scene.entities.OfType<IPickable>().Where(x => x.isActive == true).ToList();
             List<PointsFeedback> my_PointFeedbacks = scene.entities.OfType<PointsFeedback>().ToList();
-            List<Cube> cubes = scene.entities.OfType<Cube>().ToList();
+            List<IPushable> pushables = scene.entities.OfType<IPushable>().ToList();
             List<ICard> cards = scene.entities.OfType<ICard>().ToList();
             CameraHelper.Draw(spriteBatch, scene.camera);
 
@@ -55,7 +55,7 @@ namespace Shared
             foreach (var portal in portals) PortalHelpers.Draw(spriteBatch, portal);
             foreach (var pickable in pickables) CoinHelper.Draw(spriteBatch, pickable);
             foreach (var fed in my_PointFeedbacks) PointsFeedbackHelper.Draw(spriteBatch, fed);
-            foreach (var cube in cubes) CubeHelper.Draw(spriteBatch, cube);
+            foreach (var pushable in pushables) PushableHelper.Draw(spriteBatch, pushable);
             foreach (var card in cards) CardHelper.Draw(spriteBatch, card);
 
             FlashHelper.Draw(spriteBatch,scene);

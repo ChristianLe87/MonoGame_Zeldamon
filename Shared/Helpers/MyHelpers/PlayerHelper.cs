@@ -133,8 +133,8 @@ namespace Shared
 
             List<Rectangle> NPCs = scene.entities.OfType<Inpc>().Select(x => x.rectangle).ToList();
             List<Rectangle> tiles = scene.entities.OfType<Tile>().Where(x=>x.layer == Layer.Middle).Select(x => x.rectangle).ToList();
-            List<Rectangle> cubes = scene.entities.OfType<Cube>().Select(x => x.rectangle).ToList();
-            List<Rectangle> rectangles = NPCs.Concat(tiles).Concat(cubes).ToList();
+            List<Rectangle> pushables = scene.entities.OfType<IPushable>().Select(x => x.rectangle).ToList();
+            List<Rectangle> rectangles = NPCs.Concat(tiles).Concat(pushables).ToList();
 
             Rectangle futurePlayerRectangle = player.rectangle;
 

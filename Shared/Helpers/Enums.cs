@@ -15,7 +15,7 @@
         IdleLeft
     }
 
-    public enum Cube_Moving
+    public enum Pushable_State
     {
         Up,
         Down,

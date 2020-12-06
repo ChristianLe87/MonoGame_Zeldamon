@@ -6,7 +6,7 @@ namespace Shared
     public class Tile : IEntity
     {
         public Texture2D texture { get; }
-        public Rectangle rectangle { get; private set; }
+        public Rectangle rectangle { get; set; }
 
         public Layer layer { get; }
 

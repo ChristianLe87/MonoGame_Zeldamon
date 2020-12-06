@@ -5,7 +5,7 @@ namespace Shared
 {
     public class Portal : IEntity
     {
-        public Rectangle rectangle { get; private set; }
+        public Rectangle rectangle { get; set; }
         public string targetScene;
         public Point targetPosition;
         public Texture2D texture { get; set; }
