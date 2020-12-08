@@ -3,13 +3,13 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class Text : IEntity
+    public class MoneyText : IEntity
     {
         public SpriteFont font;
         public string text;
         public Vector2 position;
 
-        public Text(string text, Vector2 position)
+        public MoneyText(string text, Vector2 position)
         {
             this.text = text;
             this.position = position;

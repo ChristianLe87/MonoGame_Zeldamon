@@ -27,7 +27,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Button.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Assets\Coin.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IPickable.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\Text.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\CoinHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\DialogHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\NPCHelper.cs" />
@@ -51,6 +50,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\CardHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IPushable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PushableHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Assets\UI\Text.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
@@ -60,5 +60,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\" />
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\" />
     <Folder Include="$(MSBuildThisFileDirectory)Assets\Cards\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Assets\UI\" />
   </ItemGroup>
 </Project>

@@ -8,13 +8,13 @@ namespace Shared
         public List<IEntity> entities { get; set; }
         public Camera camera { get; set; }
         public int moneyValue { get; set; }
-        public Text moneyText { get; set; }
+        public MoneyText moneyText { get; set; }
         public bool isDark { get; set; }
 
         public void Initialize(Point startPlayerPosition)
         {
             this.isDark = false;
-            this.moneyText = new Text("Coins: 0", new Vector2(0, 0));
+            this.moneyText = new MoneyText("Coins: 0", new Vector2(0, 0));
             this.moneyValue = 0;
 
             this.entities = new List<IEntity>()

@@ -3,6 +3,6 @@ namespace Shared
 {
     public interface IPointsFeedback : IEntity, IAutoDestroy
     {
-        Text text { get; }
+        MoneyText text { get; }
     }
 }

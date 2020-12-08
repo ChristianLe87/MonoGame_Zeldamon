@@ -31,7 +31,7 @@ namespace Shared
 
             foreach (var portal in portals) PortalHelpers.Update(portal, player);
 
-            TextHelper.Update(scene.moneyText, $"Money: {player.money}");
+            TextHelper.Update(scene.moneyText, scene, $"Money: {player.money}");
         }
 
         public static void Draw(SpriteBatch spriteBatch, IScene scene)
