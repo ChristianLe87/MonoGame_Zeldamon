@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Shared
 {
-    public interface IPointsFeedback
+    public interface IPointsFeedback : IEntity, IAutoDestroy
     {
         Text text { get; }
     }

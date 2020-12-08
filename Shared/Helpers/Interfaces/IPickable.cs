@@ -3,10 +3,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public interface IPickable
+    public interface IPickable: IEntity
     {
-        bool isActive { get; }
-        Rectangle rectangle { get; }
+        bool isActive { get; set; }
         Texture2D texture { get; }
     }
 }

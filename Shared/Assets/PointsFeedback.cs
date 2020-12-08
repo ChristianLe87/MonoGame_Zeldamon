@@ -1,18 +1,15 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
 
 namespace Shared
 {
-    public class PointsFeedback : IEntity, IAutoDestroy, IPointsFeedback
+    public class PointsFeedback : IPointsFeedback
     {
-        public Text text { get; set; }
-        public Rectangle rectangle { get; set; }
-        public int timeToDestroy { get; set; }
-        public int actualTime { get; set; }
-        public bool isAlive { get; set; }
-
         public Layer layer { get; }
+        public Rectangle rectangle { get; set; }
+        public int timeToDestroy { get; }
+        public bool isAlive { get; set; }
+        public Text text { get; }
+        public int actualTime { get; set; }
 
         public PointsFeedback(Point position, string text, Layer layer)
         {

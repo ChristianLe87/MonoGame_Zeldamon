@@ -3,11 +3,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class Coin : IEntity, IPickable
+    public class Coin : IPickable
     {
         public Rectangle rectangle { get; set; }
         public bool isActive { get; set; }
-        public Texture2D texture { get; set; }
+        public Texture2D texture { get; }
 
         public Layer layer { get; }
 
