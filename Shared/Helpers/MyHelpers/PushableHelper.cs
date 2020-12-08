@@ -14,7 +14,7 @@ namespace Shared
 
             KeyboardState keyboardState = Keyboard.GetState();
 
-            if (player.rectangle.Intersects(pushable.areaOfIntersection) && keyboardState.IsKeyDown(Keys.M))
+            if (player.frontIntesection.Intersects(pushable.rectangle) && keyboardState.IsKeyDown(Keys.M))
             {
                 Pushable_MoveDirection moveDirection = player.playerState switch
                 {

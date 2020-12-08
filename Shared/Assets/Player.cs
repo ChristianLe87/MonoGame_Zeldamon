@@ -9,6 +9,7 @@ namespace Shared
         public Dictionary<string, Texture2D> textures;
         public PlayerState playerState;
         public Rectangle rectangle { get; set; }
+        public Rectangle frontIntesection { get => GetFrontIntesection(); }
         public CharacterDirecction characterDirecction = CharacterDirecction._null;
         public int money { get; set; }
 
@@ -38,6 +39,21 @@ namespace Shared
             this.layer = layer;
 
             this.money = 0;
+        }
+
+        private Rectangle GetFrontIntesection()
+        {
+            return playerState switch
+            {
+                PlayerState.IdleUp => new Rectangle(rectangle.X, rectangle.Y - 1, rectangle.Width, rectangle.Height),
+                PlayerState.IdleDown => new Rectangle(rectangle.X, rectangle.Y + 1, rectangle.Width, rectangle.Height),
+                PlayerState.IdleRight => new Rectangle(rectangle.X + 1, rectangle.Y, rectangle.Width, rectangle.Height),
+                PlayerState.IdleLeft => new Rectangle(rectangle.X - 1, rectangle.Y, rectangle.Width, rectangle.Height),
+                PlayerState.WalkUp => new Rectangle(rectangle.X, rectangle.Y - 1, rectangle.Width, rectangle.Height),
+                PlayerState.WalkDown => new Rectangle(rectangle.X, rectangle.Y + 1, rectangle.Width, rectangle.Height),
+                PlayerState.WalkRight => new Rectangle(rectangle.X + 1, rectangle.Y, rectangle.Width, rectangle.Height),
+                PlayerState.WalkLeft => new Rectangle(rectangle.X - 1, rectangle.Y, rectangle.Width, rectangle.Height),
+            };
         }
     }
 }
