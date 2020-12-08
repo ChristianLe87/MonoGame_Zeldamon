@@ -15,7 +15,7 @@
         IdleLeft
     }
 
-    public enum Pushable_State
+    public enum Pushable_MoveDirection
     {
         Up,
         Down,

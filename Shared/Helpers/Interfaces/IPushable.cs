@@ -8,6 +8,6 @@ namespace Shared
     {
         Texture2D texture2D { get; }
         Rectangle areaOfIntersection { get; }
-        Pushable_State pushable_State { get; set; }
+        Pushable_MoveDirection pushable_State { get; set; }
     }
 }
