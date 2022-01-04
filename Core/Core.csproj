@@ -13,124 +13,17 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Shared\Content\Arial_20.xnb">
-      <Link>Content\Arial_20.xnb</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\TileCollection_PNG_352x288.png">
-      <Link>Content\TileCollection_PNG_352x288.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Player\Player_Idle_Up.png">
-      <Link>Content\Player\Player_Idle_Up.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Player\Player_Idle_Right.png">
-      <Link>Content\Player\Player_Idle_Right.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Player\Player_Walk_Left.png">
-      <Link>Content\Player\Player_Walk_Left.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Player\Player_Idle_Left.png">
-      <Link>Content\Player\Player_Idle_Left.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Player\Player_Idle_Down.png">
-      <Link>Content\Player\Player_Idle_Down.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Player\Player_Walk_Down.png">
-      <Link>Content\Player\Player_Walk_Down.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Player\Player_Walk_Right.png">
-      <Link>Content\Player\Player_Walk_Right.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Player\Player_Walk_Up.png">
-      <Link>Content\Player\Player_Walk_Up.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Flash\FlashDayOn_Right_720x720_PNG.png">
-      <Link>Content\Flash\FlashDayOn_Right_720x720_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Flash\FlashNightOn_Down_720x720_PNG.png">
-      <Link>Content\Flash\FlashNightOn_Down_720x720_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Flash\FlashDayOn_Down_720x720_PNG.png">
-      <Link>Content\Flash\FlashDayOn_Down_720x720_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Flash\FlashNightOff_720x720_PNG.png">
-      <Link>Content\Flash\FlashNightOff_720x720_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Flash\FlashNightOn_Up_720x720_PNG.png">
-      <Link>Content\Flash\FlashNightOn_Up_720x720_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Flash\FlashDayOn_Up_720x720_PNG.png">
-      <Link>Content\Flash\FlashDayOn_Up_720x720_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Flash\FlashNightOn_Right_720x720_PNG.png">
-      <Link>Content\Flash\FlashNightOn_Right_720x720_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Flash\FlashDayOn_Left_720x720_PNG.png">
-      <Link>Content\Flash\FlashDayOn_Left_720x720_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Flash\FlashNightOn_Left_720x720_PNG.png">
-      <Link>Content\Flash\FlashNightOn_Left_720x720_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Cartas\Carta_8_48x64_PNG.png">
-      <Link>Content\Cartas\Carta_8_48x64_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Cartas\Carta_2_48x64_PNG.png">
-      <Link>Content\Cartas\Carta_2_48x64_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Cartas\Carta_6_48x64_PNG.png">
-      <Link>Content\Cartas\Carta_6_48x64_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Cartas\Carta_1_48x64_PNG.png">
-      <Link>Content\Cartas\Carta_1_48x64_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Cartas\Carta_5_48x64_PNG.png">
-      <Link>Content\Cartas\Carta_5_48x64_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Cartas\Carta_4_48x64_PNG.png">
-      <Link>Content\Cartas\Carta_4_48x64_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Cartas\Carta_0_48x64_PNG.png">
-      <Link>Content\Cartas\Carta_0_48x64_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Cartas\Carta_7_48x64_PNG.png">
-      <Link>Content\Cartas\Carta_7_48x64_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Cartas\Carta_3_48x64_PNG.png">
-      <Link>Content\Cartas\Carta_3_48x64_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\Shared\Content\Cartas\Carta_9_48x64_PNG.png">
-      <Link>Content\Cartas\Carta_9_48x64_PNG.png</Link>
+    <None Remove="Newtonsoft.Json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Content\TileCollection_352x288_PNG.png">
+      <Link>Content\TileCollection_352x288_PNG.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />
+  <Import Project="..\..\Monogame_ChristianTools\ChristianTools\ChristianTools.projitems" Label="Shared" Condition="Exists('..\..\Monogame_ChristianTools\ChristianTools\ChristianTools.projitems')" />
 </Project>

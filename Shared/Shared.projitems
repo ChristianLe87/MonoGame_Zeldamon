@@ -3,63 +3,22 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>{E720104F-56BE-4537-9166-5CC2425162C0}</SharedGUID>
+    <SharedGUID>{88476326-DEE2-4797-AF31-D1825109B1BD}</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Game1.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Scenes\GameScene.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Tools.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\Player.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\WK.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\Camera.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Scenes\House_1.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\Portal.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\Dialog.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\Tile.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\NPCs\NPC_1.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\NPCs\NPC_2.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IEntity.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\Inpc.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IScene.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\Button.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\Coin.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IPickable.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\CoinHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\DialogHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\NPCHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PlayerHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\SceneHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\MapHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\FlashHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\Flash.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Scenes\Cave.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IAutoDestroy.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IPointsFeedback.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\PointsFeedback.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\CameraHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Enums.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PointsFeedbackHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PortalHelpers.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\TextHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\Cube_1.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\Cards\Card_0.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\ICard.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\CardHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\IPushable.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\PushableHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Assets\UI\Text.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\SceneCave.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\SceneMap1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\SceneMap2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Player.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
     <Folder Include="$(MSBuildThisFileDirectory)Scenes\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Assets\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Assets\NPCs\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Helpers\Interfaces\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Helpers\MyHelpers\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Assets\Cards\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Assets\UI\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Entities\" />
   </ItemGroup>
 </Project>
