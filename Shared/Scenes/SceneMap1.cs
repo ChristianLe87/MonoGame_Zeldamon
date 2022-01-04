@@ -23,7 +23,7 @@ namespace Shared
         {
             this.entities = new List<IEntity>()
             {
-                new Player(new Vector2(10*16, 15*16))
+                new Player(new Vector2(10*WK.Default.ScaleFactor*WK.Default.AssetSize, 15*WK.Default.ScaleFactor*WK.Default.AssetSize))
             };
 
             this.map = new Map(WK.Textures.Map.Map1.textures, WK.Map.Map1);

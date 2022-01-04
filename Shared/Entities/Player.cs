@@ -1,7 +1,12 @@
-﻿using ChristianTools.Components;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using ChristianTools.Components;
 using ChristianTools.Helpers;
-using ChristianTools.Systems;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
+
+
 
 namespace Shared
 {
@@ -19,6 +24,7 @@ namespace Shared
         public DxEntityUpdateSystem dxEntityUpdateSystem { get; private set; }
         public DxEntityDrawSystem dxEntityDrawSystem { get; private set; }
 
+
         public Player(Vector2 centerPosition)
         {
             this.animation = new Animation(WK.Textures.Pink);
@@ -27,12 +33,63 @@ namespace Shared
             this.isActive = true;
 
             this.dxEntityUpdateSystem = (InputState lastInputState, InputState inputState, IEntity entity) => Update(inputState);
+
+            this.characterState = CharacterState.IdleDown;
         }
 
 
         private void Update(InputState inputState)
         {
-            Systems.Update.Player.Basic_XY_Movement(inputState, this, WK.Default.ScaleFactor);
+            // Implementation
+            {
+                Move();
+            }
+            
+
+            // Helpers
+            void Move()
+            {
+                if (inputState.Up || characterState == CharacterState.MoveUp)
+                {
+                    rigidbody.Move_Y(-WK.Default.ScaleFactor);
+
+                    // move until player until alligne with tile
+                    if (rigidbody.rectangle.Y % WK.Default.AssetSize * WK.Default.ScaleFactor != 0)
+                        characterState = CharacterState.MoveUp;
+                    else
+                        characterState = CharacterState.IdleUp;
+                }
+                else if (inputState.Down || characterState == CharacterState.MoveDown)
+                {
+                    rigidbody.Move_Y(WK.Default.ScaleFactor);
+
+                    // move until player until alligne with tile
+                    if (rigidbody.rectangle.Y % WK.Default.AssetSize * WK.Default.ScaleFactor != 0)
+                        characterState = CharacterState.MoveDown;
+                    else
+                        characterState = CharacterState.IdleDown;
+                }
+                else if (inputState.Right || characterState == CharacterState.MoveRight)
+                {
+                    rigidbody.Move_X(WK.Default.ScaleFactor);
+
+                    // move until player until alligne with tile
+                    if (rigidbody.rectangle.X % WK.Default.AssetSize * WK.Default.ScaleFactor != 0)
+                        characterState = CharacterState.MoveRight;
+                    else
+                        characterState = CharacterState.IdleRight;
+                }
+                else if (inputState.Left || characterState == CharacterState.MoveLeft)
+                {
+                    rigidbody.Move_X(-WK.Default.ScaleFactor);
+
+                    // move until player until alligne with tile
+                    if (rigidbody.rectangle.X % WK.Default.AssetSize * WK.Default.ScaleFactor != 0)
+                        characterState = CharacterState.MoveLeft;
+                    else
+                        characterState = CharacterState.IdleLeft;
+                }
+            }
         }
     }
 }
