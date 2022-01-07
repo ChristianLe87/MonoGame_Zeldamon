@@ -14,7 +14,7 @@ namespace Shared
             public static double FPS => 60;
             public static bool IsFullScreen = false;
             public static bool AllowUserResizing = true;
-            public static int ScaleFactor => 1;
+            public static int ScaleFactor => 2;
             public static int Width { get => AssetSize * 28 * ScaleFactor; }
             public static int Height { get => AssetSize * 16 * ScaleFactor; }
             public static Point Center => new Point(Width / 2, Height / 2);
@@ -67,14 +67,7 @@ namespace Shared
                     { CharacterState.IdleDown, (idleDownArr, AnimationOption.Loop) },
                     { CharacterState.IdleRight, (idleRightArr, AnimationOption.Loop) },
                     { CharacterState.IdleLeft, (idleLeftArr, AnimationOption.Loop) },
-
-                    /*
-                    { CharacterState.IdleUp, (new Texture2D[]{ WK.Textures.Pink }, AnimationOption.Loop) },
-                    { CharacterState.IdleDown, (new Texture2D[]{ WK.Textures.Pink }, AnimationOption.Loop) },
-                    { CharacterState.IdleRight, (new Texture2D[]{ WK.Textures.Pink }, AnimationOption.Loop) },
-                    { CharacterState.IdleLeft, (new Texture2D[]{ WK.Textures.Pink }, AnimationOption.Loop) },
-                    */
-
+                    
                     { CharacterState.MoveUp, (moveUpArr, AnimationOption.Loop) },
                     { CharacterState.MoveDown, (moveDownArr, AnimationOption.Loop) },
                     { CharacterState.MoveRight, (moveRightArr, AnimationOption.Loop) },

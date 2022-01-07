@@ -1,5 +1,6 @@
 ﻿using ChristianTools.Components;
 using ChristianTools.Helpers;
+using ChristianTools.Systems;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -30,70 +31,13 @@ namespace Shared
             this.isActive = true;
 
             this.dxEntityUpdateSystem = (InputState lastInputState, InputState inputState, IEntity entity) => Update(inputState);
-            //this.dxEntityDrawSystem = (SpriteBatch spriteBatch, IEntity entity) => Draw(spriteBatch);
 
             this.characterState = CharacterState.IdleDown;
         }
 
-
         private void Update(InputState inputState)
         {
-            // Implementation
-            {
-                Move();
-                animation.Update();
-            }
-            
-
-            // Helpers
-            void Move()
-            {
-                if (inputState.Up || characterState == CharacterState.MoveUp)
-                {
-                    rigidbody.Move_Y(-WK.Default.ScaleFactor);
-
-                    // move until player until alligne with tile
-                    if (rigidbody.rectangle.Y % WK.Default.AssetSize * WK.Default.ScaleFactor != 0)
-                        characterState = CharacterState.MoveUp;
-                    else
-                        characterState = CharacterState.IdleUp;
-                }
-                else if (inputState.Down || characterState == CharacterState.MoveDown)
-                {
-                    rigidbody.Move_Y(WK.Default.ScaleFactor);
-
-                    // move until player until alligne with tile
-                    if (rigidbody.rectangle.Y % WK.Default.AssetSize * WK.Default.ScaleFactor != 0)
-                        characterState = CharacterState.MoveDown;
-                    else
-                        characterState = CharacterState.IdleDown;
-                }
-                else if (inputState.Right || characterState == CharacterState.MoveRight)
-                {
-                    rigidbody.Move_X(WK.Default.ScaleFactor);
-
-                    // move until player until alligne with tile
-                    if (rigidbody.rectangle.X % WK.Default.AssetSize * WK.Default.ScaleFactor != 0)
-                        characterState = CharacterState.MoveRight;
-                    else
-                        characterState = CharacterState.IdleRight;
-                }
-                else if (inputState.Left || characterState == CharacterState.MoveLeft)
-                {
-                    rigidbody.Move_X(-WK.Default.ScaleFactor);
-
-                    // move until player until alligne with tile
-                    if (rigidbody.rectangle.X % WK.Default.AssetSize * WK.Default.ScaleFactor != 0)
-                        characterState = CharacterState.MoveLeft;
-                    else
-                        characterState = CharacterState.IdleLeft;
-                }
-            }
-        }
-
-        private void Draw(SpriteBatch spriteBatch)
-        {
-
+            Systems.Update.Player.Zeldamon_Movement(inputState, this, WK.Default.ScaleFactor, WK.Default.AssetSize);
         }
     }
 }
