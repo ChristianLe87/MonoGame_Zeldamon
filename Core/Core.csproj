@@ -23,6 +23,10 @@
       <Link>Content\TileCollection_352x288_PNG.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\Content\Player_96x128_PNG.png">
+      <Link>Content\Player_96x128_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />
   <Import Project="..\..\Monogame_ChristianTools\ChristianTools\ChristianTools.projitems" Label="Shared" Condition="Exists('..\..\Monogame_ChristianTools\ChristianTools\ChristianTools.projitems')" />

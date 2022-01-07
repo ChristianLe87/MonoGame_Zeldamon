@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ChristianTools.Helpers;
 using ChristianTools.Tools;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -32,17 +33,53 @@ namespace Shared
 
             public class Player
             {
-                /*public static Dictionary<CharacterState, (Texture2D[], CharacterState)> textures = new Dictionary<CharacterState, (Texture2D[], CharacterState)>()
+                static Texture2D atlasTexture = Tools.Texture.GetTexture("Player_96x128_PNG");
+
+                static Texture2D idleUp = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 0 * WK.Default.AssetSize, 1 * WK.Default.AssetSize, WK.Default.AssetSize), WK.Default.ScaleFactor);
+                static Texture2D[] idleUpArr = new Texture2D[] { idleUp };
+
+                static Texture2D idleDown = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 1 * WK.Default.AssetSize, 1 * WK.Default.AssetSize, WK.Default.AssetSize), WK.Default.ScaleFactor);
+                static Texture2D[] idleDownArr = new Texture2D[] { idleDown };
+
+                static Texture2D idleRight = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 2 * WK.Default.AssetSize, 1 * WK.Default.AssetSize, WK.Default.AssetSize), WK.Default.ScaleFactor);
+                static Texture2D[] idleRightArr = new Texture2D[] { idleRight };
+
+                static Texture2D idleLeft = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 3 * WK.Default.AssetSize, 1 * WK.Default.AssetSize, WK.Default.AssetSize), WK.Default.ScaleFactor);
+                static Texture2D[] idleLeftArr = new Texture2D[] { idleLeft };
+
+
+                static Texture2D moveUp = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 4 * WK.Default.AssetSize, 6 * WK.Default.AssetSize, WK.Default.AssetSize), WK.Default.ScaleFactor);
+                static Texture2D[] moveUpArr = Tools.Texture.SliceHorizontalTexture(moveUp, 6);
+
+                static Texture2D moveDown = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 5 * WK.Default.AssetSize, 6 * WK.Default.AssetSize, WK.Default.AssetSize), WK.Default.ScaleFactor);
+                static Texture2D[] moveDownArr = Tools.Texture.SliceHorizontalTexture(moveDown, 6);
+
+                static Texture2D moveRight = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 6 * WK.Default.AssetSize, 6 * WK.Default.AssetSize, WK.Default.AssetSize), WK.Default.ScaleFactor);
+                static Texture2D[] moveRightArr = Tools.Texture.SliceHorizontalTexture(moveRight, 6);
+
+                static Texture2D moveLeft = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 7 * WK.Default.AssetSize, 6 * WK.Default.AssetSize, WK.Default.AssetSize), WK.Default.ScaleFactor);
+                static Texture2D[] moveLeftArr = Tools.Texture.SliceHorizontalTexture(moveLeft, 6);
+
+
+                public static Dictionary<CharacterState, (Texture2D[], AnimationOption)> animations = new Dictionary<CharacterState, (Texture2D[], AnimationOption)>()
                 {
-                    {"Idle_Up", },
-                    {"Idle_Down", },
-                    {"Idle_Right", },
-                    {"Idle_Left", },
-                    {"Walk_Up", },
-                    {"Walk_Down", },
-                    {"Walk_Right", },
-                    {"Walk_Left", },
-                };*/
+                    { CharacterState.IdleUp, (idleUpArr, AnimationOption.Loop) },
+                    { CharacterState.IdleDown, (idleDownArr, AnimationOption.Loop) },
+                    { CharacterState.IdleRight, (idleRightArr, AnimationOption.Loop) },
+                    { CharacterState.IdleLeft, (idleLeftArr, AnimationOption.Loop) },
+
+                    /*
+                    { CharacterState.IdleUp, (new Texture2D[]{ WK.Textures.Pink }, AnimationOption.Loop) },
+                    { CharacterState.IdleDown, (new Texture2D[]{ WK.Textures.Pink }, AnimationOption.Loop) },
+                    { CharacterState.IdleRight, (new Texture2D[]{ WK.Textures.Pink }, AnimationOption.Loop) },
+                    { CharacterState.IdleLeft, (new Texture2D[]{ WK.Textures.Pink }, AnimationOption.Loop) },
+                    */
+
+                    { CharacterState.MoveUp, (moveUpArr, AnimationOption.Loop) },
+                    { CharacterState.MoveDown, (moveDownArr, AnimationOption.Loop) },
+                    { CharacterState.MoveRight, (moveRightArr, AnimationOption.Loop) },
+                    { CharacterState.MoveLeft, (moveLeftArr, AnimationOption.Loop) }
+                };
             }
 
             public class Map

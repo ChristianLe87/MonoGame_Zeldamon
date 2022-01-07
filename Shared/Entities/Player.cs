@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using ChristianTools.Components;
+﻿using ChristianTools.Components;
 using ChristianTools.Helpers;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-
-
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
@@ -27,12 +22,15 @@ namespace Shared
 
         public Player(Vector2 centerPosition)
         {
-            this.animation = new Animation(WK.Textures.Pink);
+            this.animation = new Animation(WK.Textures.Player.animations);
+
+            //this.animation = new Animation(WK.Textures.Pink);
             this.rigidbody = new Rigidbody(centerPosition, this);
             //this.characterState = CharacterState.IdleDown;
             this.isActive = true;
 
             this.dxEntityUpdateSystem = (InputState lastInputState, InputState inputState, IEntity entity) => Update(inputState);
+            //this.dxEntityDrawSystem = (SpriteBatch spriteBatch, IEntity entity) => Draw(spriteBatch);
 
             this.characterState = CharacterState.IdleDown;
         }
@@ -43,6 +41,7 @@ namespace Shared
             // Implementation
             {
                 Move();
+                animation.Update();
             }
             
 
@@ -90,6 +89,11 @@ namespace Shared
                         characterState = CharacterState.IdleLeft;
                 }
             }
+        }
+
+        private void Draw(SpriteBatch spriteBatch)
+        {
+
         }
     }
 }
