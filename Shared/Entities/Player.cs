@@ -24,10 +24,14 @@ namespace Shared
         public Player(Vector2 centerPosition)
         {
             this.animation = new Animation(WK.Textures.Player.animations);
-
-            //this.animation = new Animation(WK.Textures.Pink);
-            this.rigidbody = new Rigidbody(centerPosition, this);
-            //this.characterState = CharacterState.IdleDown;
+            this.rigidbody = new Rigidbody(
+                new Rectangle(
+                    (int)(centerPosition.X),
+                    (int)(centerPosition.Y),
+                    WK.Default.AssetSize * WK.Default.ScaleFactor,
+                    WK.Default.AssetSize * WK.Default.ScaleFactor
+                )
+            );
             this.isActive = true;
 
             this.dxEntityUpdateSystem = (InputState lastInputState, InputState inputState, IEntity entity) => Update(inputState);
