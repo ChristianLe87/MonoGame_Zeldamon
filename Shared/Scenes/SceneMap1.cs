@@ -20,13 +20,13 @@ namespace Shared
         public DxSceneUpdateSystem dxSceneUpdateSystem { get; private set; }
         public DxSceneDrawSystem dxSceneDrawSystem { get; private set; }
 
-        public void Initialize()
+        public void Initialize(Vector2? playerPosition = null)
         {
             this.camera = new Camera();
             this.entities = new List<IEntity>()
             {
-                new Player(new Vector2(10*WK.Default.ScaleFactor*WK.Default.AssetSize, 15*WK.Default.ScaleFactor*WK.Default.AssetSize)),
-                new Portal1(new Vector2(7,13), WK.Textures.Red, WK.Scene.House_1)
+                new Player(new Vector2(10, 15)),
+                new Portal1(new Vector2(7,13), WK.Textures.Red, WK.Scene.House_1, new Vector2(4,14))
             };
 
             this.map = new Map(WK.Textures.Map.Map1.textures, WK.Map.Map1);

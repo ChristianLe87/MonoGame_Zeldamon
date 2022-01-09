@@ -23,9 +23,12 @@ namespace Shared
 
 
         private string targetScene;
+        private Vector2 targetPlayerPosition;
 
-        public Portal1(Vector2 position, Texture2D texture2D, string targetScene)
+        public Portal1(Vector2 position, Texture2D texture2D, string targetScene, Vector2 targetPlayerPosition)
         {
+            this.targetPlayerPosition = targetPlayerPosition;
+
             this.rigidbody = new Rigidbody(
                 new Rectangle(
                     (int)(position.X * WK.Default.AssetSize * WK.Default.ScaleFactor),
@@ -48,7 +51,7 @@ namespace Shared
 
             if (player.rigidbody.rectangle.Intersects(rigidbody.rectangle))
             {
-                ChristianGame.ChangeToScene(targetScene);
+                ChristianGame.ChangeToScene(targetScene, targetPlayerPosition);
             }
         }
     }

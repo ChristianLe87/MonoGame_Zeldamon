@@ -26,8 +26,8 @@ namespace Shared
             this.animation = new Animation(WK.Textures.Player.animations);
             this.rigidbody = new Rigidbody(
                 new Rectangle(
-                    (int)(centerPosition.X),
-                    (int)(centerPosition.Y),
+                    (int)(centerPosition.X * WK.Default.ScaleFactor * WK.Default.AssetSize),
+                    (int)(centerPosition.Y * WK.Default.ScaleFactor * WK.Default.AssetSize),
                     WK.Default.AssetSize * WK.Default.ScaleFactor,
                     WK.Default.AssetSize * WK.Default.ScaleFactor
                 )

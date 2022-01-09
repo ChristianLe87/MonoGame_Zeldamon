@@ -14,7 +14,7 @@ namespace Shared
             public static double FPS => 60;
             public static bool IsFullScreen = false;
             public static bool AllowUserResizing = true;
-            public static int ScaleFactor => 2;
+            public static int ScaleFactor => 1;
             public static int Width { get => AssetSize * 28 * ScaleFactor; }
             public static int Height { get => AssetSize * 16 * ScaleFactor; }
             public static Point Center => new Point(Width / 2, Height / 2);
@@ -89,8 +89,24 @@ namespace Shared
             }
         }
 
+        public class Font
+        {
+            static Texture2D myFont = Tools.Texture.GetTexture("MyFont_130x28_PNG");
+
+            private static readonly char[,] chars = new char[,]
+            {
+                    { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' },
+                    { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' },
+                    { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'Ñ', 'ñ', 'ß','\0','\0','\0','\0','\0','\0','\0','\0','\0','\0','\0','\0','\0' },
+                    { ',', ':', ';', '?', '.', '!', ' ','\'','(',')','_','\"','<','>','-','+','\\','\0','\0','\0','\0','\0','\0','\0','\0','\0' }
+            };
+
+            public static SpriteFont MyFont = Tools.Font.GenerateFont(myFont, chars);
+        }
+
         public class Scene
         {
+            public static string Menu => "GameMenu";
             public static string GameScene => "GameScene";
             public static string House_1 => "House_1";
             public static string Cave => "Cave";
@@ -135,6 +151,8 @@ namespace Shared
                 { 1, 0, 0, 1, 0, 0, 0, 0, 0, 1 },
                 { 1, 0, 0, 1, 0, 0, 0, 0, 0, 1 },
                 { 1, 0, 0, 1, 1, 1, 1, 0, 0, 1 },
+                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
                 { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
                 { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
                 { 1, 1, 1, 1, 0, 1, 1, 1, 1, 1 }

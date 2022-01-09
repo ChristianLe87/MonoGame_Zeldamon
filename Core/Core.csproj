@@ -19,12 +19,16 @@
     <None Remove="Newtonsoft.Json" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Content\TileCollection_352x288_PNG.png">
-      <Link>Content\TileCollection_352x288_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="..\Content\Player_96x128_PNG.png">
       <Link>Content\Player_96x128_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Content\TileCollection_32x32_PNG.png">
+      <Link>Content\TileCollection_32x32_PNG.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Content\MyFont_130x28_PNG.png">
+      <Link>Content\MyFont_130x28_PNG.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
