@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using ChristianTools.Components;
 using ChristianTools.Helpers;
 using Microsoft.Xna.Framework;
@@ -21,12 +22,21 @@ namespace Shared
 
         public void Initialize()
         {
+            this.camera = new Camera();
             this.entities = new List<IEntity>()
             {
-                new Player(new Vector2(10*WK.Default.ScaleFactor*WK.Default.AssetSize, 15*WK.Default.ScaleFactor*WK.Default.AssetSize))
+                new Player(new Vector2(10*WK.Default.ScaleFactor*WK.Default.AssetSize, 15*WK.Default.ScaleFactor*WK.Default.AssetSize)),
+                new Portal1(new Vector2(7,13), WK.Textures.Red, WK.Scene.House_1)
             };
 
             this.map = new Map(WK.Textures.Map.Map1.textures, WK.Map.Map1);
+            this.dxSceneUpdateSystem = (InputState lastInputState, InputState inputState) => Update();
+        }
+
+        private void Update()
+        {
+            Player player = entities.OfType<Player>().First();
+            camera.Update(player.rigidbody.centerPosition);
         }
     }
 }
