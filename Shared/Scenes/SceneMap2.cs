@@ -22,11 +22,24 @@ namespace Shared
 
         public void Initialize(Vector2? playerPosition = null)
         {
+            int assetSize_x_scaleFactor = WK.Default.AssetSize * WK.Default.ScaleFactor;
+
             this.camera = new Camera();
             this.entities = new List<IEntity>()
             {
                 new Player(playerPosition.Value),
-                new Portal1(new Vector2(4, 15), WK.Textures.Red, WK.Scene.GameScene, new Vector2(10, 15))
+                new Portal(
+                    position: new Vector2(
+                        4 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                        15 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
+                    ),
+                    texture2D: WK.Textures.Red,
+                    targetScene: WK.Scene.GameScene,
+                    targetPlayerPosition: new Vector2(
+                        7 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                        14 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
+                    )
+                )
             };
 
             this.map = new Map(WK.Textures.Map.Map1.textures, WK.Map.Map2);

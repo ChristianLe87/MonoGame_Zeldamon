@@ -22,11 +22,39 @@ namespace Shared
 
         public void Initialize(Vector2? playerPosition = null)
         {
+            int assetSize_x_scaleFactor = WK.Default.AssetSize * WK.Default.ScaleFactor;
+
+            if(playerPosition == null)
+            {
+                playerPosition = new Vector2(
+                    10 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                    15 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
+                );
+            }
+
             this.camera = new Camera();
             this.entities = new List<IEntity>()
             {
-                new Player(new Vector2(10, 15)),
-                new Portal1(new Vector2(7,13), WK.Textures.Red, WK.Scene.House_1, new Vector2(4,14))
+                new Player(playerPosition.Value),
+                new Portal(
+                    position: new Vector2(
+                        7 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                        13 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
+                    ),
+                    texture2D: WK.Textures.Red,
+                    targetScene: WK.Scene.House_1,
+                    targetPlayerPosition: new Vector2(
+                        4 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                        14 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
+                    )
+                ),
+                new Coin(
+                    WK.Textures.Other.coin,
+                    new Vector2(
+                        8 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                        15 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
+                    )
+                ),
             };
 
             this.map = new Map(WK.Textures.Map.Map1.textures, WK.Map.Map1);

@@ -15,7 +15,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\SceneMap1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\SceneMap2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Player.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Portal1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Coin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Portal1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Portal.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Scenes\" />

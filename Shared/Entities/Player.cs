@@ -24,14 +24,7 @@ namespace Shared
         public Player(Vector2 centerPosition)
         {
             this.animation = new Animation(WK.Textures.Player.animations);
-            this.rigidbody = new Rigidbody(
-                new Rectangle(
-                    (int)(centerPosition.X * WK.Default.ScaleFactor * WK.Default.AssetSize),
-                    (int)(centerPosition.Y * WK.Default.ScaleFactor * WK.Default.AssetSize),
-                    WK.Default.AssetSize * WK.Default.ScaleFactor,
-                    WK.Default.AssetSize * WK.Default.ScaleFactor
-                )
-            );
+            this.rigidbody = new Rigidbody(centerPosition, this);
             this.isActive = true;
 
             this.dxEntityUpdateSystem = (InputState lastInputState, InputState inputState, IEntity entity) => Update(inputState);

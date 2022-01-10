@@ -24,12 +24,17 @@ namespace Shared
 
         public class Textures
         {
-            public static Texture2D atlasTexture => Tools.Texture.GetTexture("TileCollection_352x288_PNG");
 
             public static Texture2D Pink => Tools.Texture.CreateColorTexture(Color.Pink, WK.Default.ScaleFactor * WK.Default.AssetSize, WK.Default.ScaleFactor * WK.Default.AssetSize);
             public static Texture2D Red => Tools.Texture.CreateColorTexture(Color.Red, WK.Default.ScaleFactor * WK.Default.AssetSize, WK.Default.ScaleFactor * WK.Default.AssetSize);
             public static Texture2D LightGray => Tools.Texture.CreateColorTexture(Color.LightGray, WK.Default.ScaleFactor * WK.Default.AssetSize, WK.Default.ScaleFactor * WK.Default.AssetSize);
 
+            public class Other
+            {
+                static Texture2D atlasTexture => Tools.Texture.GetTexture("TileCollection_32x32_PNG");
+
+                public static Texture2D coin = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 0 * WK.Default.AssetSize, 1 * WK.Default.AssetSize, WK.Default.AssetSize), WK.Default.ScaleFactor);
+            }
 
             public class Player
             {
