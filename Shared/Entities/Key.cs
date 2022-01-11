@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Linq;
 using ChristianTools.Entities;
 using ChristianTools.Helpers;
+using ChristianTools.UI;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class Coin : Entity
+    public class Key : Entity
     {
-        public Coin(Texture2D texture, Vector2 centerPosition) : base(texture, centerPosition)
+        public Key(Texture2D texture, Vector2 centerPosition) : base(texture, centerPosition)
         {
             base.dxEntityUpdateSystem = (InputState lastInputState, InputState inputState, IEntity entity) => Update();
         }
@@ -23,7 +23,11 @@ namespace Shared
                 if (player.rigidbody.rectangle.Intersects(rigidbody.rectangle))
                 {
                     isActive = false;
-                    ChristianGame.gameData.coins++;
+
+                    ChristianGame.gameData.pickable_key1 = false;
+                    ChristianGame.gameData.ui_key1 = true;
+
+                    ChristianGame.GetScene.UIs.Add(new Image(texture: WK.Textures.Other.key, new Vector2(40, 20), ChristianGame.GetScene.camera, "key1"));
                 }
             }
         }

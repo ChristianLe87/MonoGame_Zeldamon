@@ -31,9 +31,10 @@ namespace Shared
 
             public class Other
             {
-                static Texture2D atlasTexture => Tools.Texture.GetTexture("TileCollection_32x32_PNG");
-
+                static Texture2D atlasTexture => Tools.Texture.GetTexture("TileCollection_32x96_PNG");
                 public static Texture2D coin = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 0 * WK.Default.AssetSize, 1 * WK.Default.AssetSize, WK.Default.AssetSize), WK.Default.ScaleFactor);
+                public static Texture2D hammer = Tools.Texture.CropTexture(atlasTexture, new Rectangle(1 * WK.Default.AssetSize, 0 * WK.Default.AssetSize, 1 * WK.Default.AssetSize, WK.Default.AssetSize), WK.Default.ScaleFactor);
+                public static Texture2D key = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0 * WK.Default.AssetSize, 2 * WK.Default.AssetSize, 1 * WK.Default.AssetSize, WK.Default.AssetSize), WK.Default.ScaleFactor);
             }
 
             public class Player

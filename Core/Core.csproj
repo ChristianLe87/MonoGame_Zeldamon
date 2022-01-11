@@ -24,8 +24,8 @@
       <Link>Content\Player_96x128_PNG.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\Content\TileCollection_32x32_PNG.png">
-      <Link>Content\TileCollection_32x32_PNG.png</Link>
+    <None Include="..\Content\TileCollection_32x96_PNG.png">
+      <Link>Content\TileCollection_32x96_PNG.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
