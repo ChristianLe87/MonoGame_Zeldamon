@@ -1,11 +1,11 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{FE4797D9-7313-434C-88F9-7C9E40BE2DA1}"
-EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared", "Shared\Shared.shproj", "{88476326-DEE2-4797-AF31-D1825109B1BD}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ChristianTools", "..\Monogame_ChristianTools\ChristianTools\ChristianTools.shproj", "{859C4805-7FB8-4BF8-82A3-8523829756FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{9D33CEB3-6D4F-46B1-980A-A82B1CFF3F45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,9 +13,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FE4797D9-7313-434C-88F9-7C9E40BE2DA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FE4797D9-7313-434C-88F9-7C9E40BE2DA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FE4797D9-7313-434C-88F9-7C9E40BE2DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FE4797D9-7313-434C-88F9-7C9E40BE2DA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D33CEB3-6D4F-46B1-980A-A82B1CFF3F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D33CEB3-6D4F-46B1-980A-A82B1CFF3F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D33CEB3-6D4F-46B1-980A-A82B1CFF3F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D33CEB3-6D4F-46B1-980A-A82B1CFF3F45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
