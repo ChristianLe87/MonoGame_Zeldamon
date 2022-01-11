@@ -2,6 +2,7 @@
 using System.Linq;
 using ChristianTools.Components;
 using ChristianTools.Helpers;
+using ChristianTools.UI;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 
@@ -24,7 +25,12 @@ namespace Shared
         {
             int assetSize_x_scaleFactor = WK.Default.AssetSize * WK.Default.ScaleFactor;
 
+
             this.camera = new Camera();
+
+            this.UIs = Helpers.GetGameUI();
+
+
             this.entities = new List<IEntity>()
             {
                 new Player(playerPosition.Value),
@@ -39,8 +45,20 @@ namespace Shared
                         7 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
                         14 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
                     )
-                )
+                ),
+               
             };
+
+            if (ChristianGame.gameData.hammer_entity_isVisible == true)
+                entities.Add(
+                    new Hammer(
+                        texture: WK.Textures.Other.hammer,
+                        centerPosition: new Vector2(
+                            1 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                            13 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
+                        )
+                    )
+                );
 
             this.map = new Map(WK.Textures.Map.Map1.textures, WK.Map.Map2);
             this.dxSceneUpdateSystem = (InputState lastInputState, InputState inputState) => Update();
@@ -50,6 +68,9 @@ namespace Shared
         {
             Player player = entities.OfType<Player>().First();
             camera.Update(player.rigidbody.centerPosition);
+
+            Label coin = UIs.OfType<Label>().Where(x => x.tag == "coin").First();
+            coin.UpdateText($"Coins: {ChristianGame.gameData.coins}");
         }
     }
 }

@@ -35,10 +35,8 @@ namespace Shared
 
             this.camera = new Camera();
 
-            this.UIs = new List<IUI>()
-            {
-                new Label(new Rectangle(0,0,16,16), WK.Font.MyFont, "coin", Label.TextAlignment.Top_Left, "coin", camera)
-            };
+            this.UIs = Helpers.GetGameUI();
+          
 
             this.entities = new List<IEntity>()
             {
@@ -62,8 +60,11 @@ namespace Shared
                         15 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
                     )
                 ),
-                new Key(WK.Textures.Other.key, new Vector2(100, 100))
             };
+
+            if (ChristianGame.gameData.key1_entity_isVisible == true)
+                entities.Add(new Key(WK.Textures.Other.key, new Vector2(100, 100)));
+
 
             this.map = new Map(WK.Textures.Map.Map1.textures, WK.Map.Map1);
             this.dxSceneUpdateSystem = (InputState lastInputState, InputState inputState) => Update();
@@ -72,23 +73,10 @@ namespace Shared
         private void Update()
         {
             Player player = entities.OfType<Player>().First();
-            Label coin = UIs.OfType<Label>().Where(x => x.tag == "coin").First();
-
-            coin.UpdateText($"Coins: {ChristianGame.gameData.coins}");
-
             camera.Update(player.rigidbody.centerPosition);
 
-
-
-            /*
-
-            if (ChristianGame.gameData.hammer == true)
-            {
-                UIs.Add(new Image(texture: WK.Textures.Other.hammer, new Vector2(20, 20), camera, "hammer"));
-            }
-               */ 
-
-
+            Label coin = UIs.OfType<Label>().Where(x => x.tag == "coin").First();
+            coin.UpdateText($"Coins: {ChristianGame.gameData.coins}");
         }
     }
 }

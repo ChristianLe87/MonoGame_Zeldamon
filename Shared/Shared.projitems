@@ -12,13 +12,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Game1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\WK.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\SceneCave.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Scenes\SceneMap1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\SceneMap2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Player.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Coin.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\Portal1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Portal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Key.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Helpers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Hammer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scenes\SceneMap1.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Scenes\" />

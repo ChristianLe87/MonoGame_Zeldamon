@@ -7,9 +7,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class Key : Entity
+    public class Hammer : Entity
     {
-        public Key(Texture2D texture, Vector2 centerPosition) : base(texture, centerPosition)
+        public Hammer(Texture2D texture, Vector2 centerPosition) : base(texture, centerPosition)
         {
             base.dxEntityUpdateSystem = (InputState lastInputState, InputState inputState, IEntity entity) => Update();
         }
@@ -23,11 +23,10 @@ namespace Shared
                 if (player.rigidbody.rectangle.Intersects(rigidbody.rectangle))
                 {
                     isActive = false;
+                    ChristianGame.gameData.hammer_entity_isVisible = false;
+                    ChristianGame.gameData.hammer_ui_isVisible = true;
 
-                    ChristianGame.gameData.key1_entity_isVisible = false;
-                    ChristianGame.gameData.key1_ui_isVisible = true;
-
-                    ChristianGame.GetScene.UIs.Add(new Image(texture: WK.Textures.Other.key, new Vector2(40, 20), "key1"));
+                    ChristianGame.GetScene.UIs.Add(new Image(texture: WK.Textures.Other.hammer, new Vector2(20, 20), "hammer"));
                 }
             }
         }
