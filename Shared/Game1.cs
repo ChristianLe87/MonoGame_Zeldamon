@@ -6,7 +6,7 @@ namespace Shared
 {
     public class Game1 : ChristianGame
     {
-        public Game1() : base(WK.Default.GameDataFileName)
+        public Game1() : base(WK.Default.GameDataFileName, canvasWidth: WK.Default.Width, canvasHeight: WK.Default.Height)
         {
             Dictionary<string, IScene> scenes = new Dictionary<string, IScene>()
             {
@@ -15,7 +15,7 @@ namespace Shared
                 { WK.Scene.House_1,  new SceneMap2() },
                 { WK.Scene.Cave, new SeneCave() }
             };
-            
+
             base.SetupScenes(scenes, WK.Scene.GameScene);
         }
     }

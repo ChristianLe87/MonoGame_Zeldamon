@@ -21,6 +21,8 @@ namespace Shared
         public DxSceneUpdateSystem dxSceneUpdateSystem { get; private set; }
         public DxSceneDrawSystem dxSceneDrawSystem { get; private set; }
 
+        int frameCount = 0;
+
         public void Initialize(Vector2? playerPosition = null)
         {
             int assetSize_x_scaleFactor = WK.Default.AssetSize * WK.Default.ScaleFactor;
@@ -46,7 +48,7 @@ namespace Shared
                         14 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
                     )
                 ),
-               
+
             };
 
             if (ChristianGame.gameData.hammer_entity_isVisible == true)

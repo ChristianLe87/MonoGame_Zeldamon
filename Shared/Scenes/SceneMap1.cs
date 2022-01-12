@@ -21,11 +21,13 @@ namespace Shared
         public DxSceneUpdateSystem dxSceneUpdateSystem { get; private set; }
         public DxSceneDrawSystem dxSceneDrawSystem { get; private set; }
 
+        int frameCount = 0;
+
         public void Initialize(Vector2? playerPosition = null)
         {
             int assetSize_x_scaleFactor = WK.Default.AssetSize * WK.Default.ScaleFactor;
 
-            if(playerPosition == null)
+            if (playerPosition == null)
             {
                 playerPosition = new Vector2(
                     10 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
@@ -36,7 +38,7 @@ namespace Shared
             this.camera = new Camera();
 
             this.UIs = Helpers.GetGameUI();
-          
+            UIs.Add(new Transition.FadeIn());
 
             this.entities = new List<IEntity>()
             {
