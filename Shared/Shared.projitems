@@ -20,6 +20,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Helpers.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Hammer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\SceneMap1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\KeyDoor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Scenes\" />

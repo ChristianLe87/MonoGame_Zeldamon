@@ -31,11 +31,11 @@ namespace Shared
             this.camera = new Camera();
 
             this.UIs = Helpers.GetGameUI();
-
+            this.UIs.Add(new Transition.FadeIn());
 
             this.entities = new List<IEntity>()
             {
-                new Player(playerPosition.Value),
+                new Player(playerPosition.Value, CharacterState.IdleUp),
                 new Portal(
                     position: new Vector2(
                         4 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
@@ -68,9 +68,6 @@ namespace Shared
 
         private void Update()
         {
-            Player player = entities.OfType<Player>().First();
-            camera.Update(player.rigidbody.centerPosition);
-
             Label coin = UIs.OfType<Label>().Where(x => x.tag == "coin").First();
             coin.UpdateText($"Coins: {ChristianGame.gameData.coins}");
         }

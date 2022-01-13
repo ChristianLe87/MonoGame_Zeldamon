@@ -42,13 +42,13 @@ namespace Shared
 
             this.entities = new List<IEntity>()
             {
-                new Player(playerPosition.Value),
+                new Player(playerPosition.Value, CharacterState.IdleDown),
                 new Portal(
                     position: new Vector2(
                         7 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
                         13 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
                     ),
-                    texture2D: WK.Textures.Red,
+                    texture2D: WK.Textures.Transparent,
                     targetScene: WK.Scene.House_1,
                     targetPlayerPosition: new Vector2(
                         4 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
@@ -69,14 +69,25 @@ namespace Shared
 
 
             this.map = new Map(WK.Textures.Map.Map1.textures, WK.Map.Map1);
-            this.dxSceneUpdateSystem = (InputState lastInputState, InputState inputState) => Update();
+
+            this.map.tiles.Add(
+                new KeyDoor(
+                    WK.Textures.Other.keyDoor,
+                    new Rectangle(
+                        7 * assetSize_x_scaleFactor,
+                        13 * assetSize_x_scaleFactor,
+                        WK.Textures.Other.keyDoor.Width,
+                        WK.Textures.Other.keyDoor.Height
+                    ),
+                    "keyDoor"
+                )
+            );
+
+            this.dxSceneUpdateSystem = (InputState lastInputState, InputState inputState) => UpdateSystem();
         }
 
-        private void Update()
+        private void UpdateSystem()
         {
-            Player player = entities.OfType<Player>().First();
-            camera.Update(player.rigidbody.centerPosition);
-
             Label coin = UIs.OfType<Label>().Where(x => x.tag == "coin").First();
             coin.UpdateText($"Coins: {ChristianGame.gameData.coins}");
         }

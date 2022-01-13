@@ -24,7 +24,7 @@ namespace Shared
 
         public class Textures
         {
-
+            public static Texture2D Transparent => Tools.Texture.CreateColorTexture(Color.Transparent, WK.Default.ScaleFactor * WK.Default.AssetSize, WK.Default.ScaleFactor * WK.Default.AssetSize);
             public static Texture2D Pink => Tools.Texture.CreateColorTexture(Color.Pink, WK.Default.ScaleFactor * WK.Default.AssetSize, WK.Default.ScaleFactor * WK.Default.AssetSize);
             public static Texture2D Red => Tools.Texture.CreateColorTexture(Color.Red, WK.Default.ScaleFactor * WK.Default.AssetSize, WK.Default.ScaleFactor * WK.Default.AssetSize);
             public static Texture2D LightGray => Tools.Texture.CreateColorTexture(Color.LightGray, WK.Default.ScaleFactor * WK.Default.AssetSize, WK.Default.ScaleFactor * WK.Default.AssetSize);
@@ -35,6 +35,7 @@ namespace Shared
                 public static Texture2D coin = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 0 * WK.Default.AssetSize, 1 * WK.Default.AssetSize, WK.Default.AssetSize), WK.Default.ScaleFactor);
                 public static Texture2D hammer = Tools.Texture.CropTexture(atlasTexture, new Rectangle(1 * WK.Default.AssetSize, 0 * WK.Default.AssetSize, 1 * WK.Default.AssetSize, WK.Default.AssetSize), WK.Default.ScaleFactor);
                 public static Texture2D key = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0 * WK.Default.AssetSize, 2 * WK.Default.AssetSize, 1 * WK.Default.AssetSize, WK.Default.AssetSize), WK.Default.ScaleFactor);
+                public static Texture2D keyDoor = Tools.Texture.CropTexture(atlasTexture, new Rectangle(1 * WK.Default.AssetSize, 2 * WK.Default.AssetSize, 1 * WK.Default.AssetSize, WK.Default.AssetSize), WK.Default.ScaleFactor);
             }
 
             public class Player

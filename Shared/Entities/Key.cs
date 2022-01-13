@@ -11,10 +11,10 @@ namespace Shared
     {
         public Key(Texture2D texture, Vector2 centerPosition) : base(texture, centerPosition)
         {
-            base.dxEntityUpdateSystem = (InputState lastInputState, InputState inputState, IEntity entity) => Update();
+            base.dxEntityUpdateSystem = (InputState lastInputState, InputState inputState, IEntity entity) => UpdateSystem();
         }
 
-        private void Update()
+        private void UpdateSystem()
         {
             if (isActive)
             {

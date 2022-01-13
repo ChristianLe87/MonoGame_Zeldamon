@@ -20,8 +20,7 @@ namespace Shared
         public DxEntityUpdateSystem dxEntityUpdateSystem { get; private set; }
         public DxEntityDrawSystem dxEntityDrawSystem { get; private set; }
 
-
-        public Player(Vector2 centerPosition)
+        public Player(Vector2 centerPosition, CharacterState initialState)
         {
             this.animation = new Animation(WK.Textures.Player.animations);
             this.rigidbody = new Rigidbody(centerPosition, this);
@@ -29,12 +28,22 @@ namespace Shared
 
             this.dxEntityUpdateSystem = (InputState lastInputState, InputState inputState, IEntity entity) => Update(inputState);
 
-            this.characterState = CharacterState.IdleDown;
+            this.characterState = initialState;
+            this.isActive = true;
+            this.tag = "player";
         }
 
+        int frameCount = 0;
         private void Update(InputState inputState)
         {
-            Systems.Update.Player.Zeldamon_Movement(inputState, this, WK.Default.ScaleFactor, WK.Default.AssetSize);
+            if (frameCount < 30)
+            {
+                frameCount++;
+            }
+            else
+            {
+                Systems.Update.Player.Zeldamon_Movement(inputState, this, WK.Default.ScaleFactor, WK.Default.AssetSize);
+            }
         }
     }
 }
