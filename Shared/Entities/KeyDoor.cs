@@ -12,10 +12,8 @@ namespace Shared
         public Rigidbody rigidbody { get; private set; }
         public bool isActive { get; set; }
 
-        public DxTileInitializeSystem dxTileInitializeSystem { get; private set; }
         public DxTileUpdateSystem dxTileUpdateSystem { get; private set; }
 		public DxTileDrawSystem dxTileDrawSystem { get; private set; }
-
 
 		public KeyDoor(Texture2D texture2D, Rectangle rectangle, string tag)
 		{

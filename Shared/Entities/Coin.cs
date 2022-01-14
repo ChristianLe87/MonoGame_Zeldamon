@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using ChristianTools.Components;
 using ChristianTools.Entities;
 using ChristianTools.Helpers;
 using Microsoft.Xna.Framework;
@@ -7,14 +8,29 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Shared
 {
-    public class Coin : Entity
+    public class Coin : IEntity
     {
-        public Coin(Texture2D texture, Vector2 centerPosition) : base(texture, centerPosition)
+        public Rigidbody rigidbody { get; }
+        public bool isActive { get; set; }
+        public string tag { get; }
+        public int health { get; }
+
+        public Animation animation { get; }
+        public CharacterState characterState { get; set; }
+
+        public DxEntityUpdateSystem dxEntityUpdateSystem { get; }
+        public DxEntityDrawSystem dxEntityDrawSystem { get; }
+
+        public Coin(Texture2D texture, Vector2 centerPosition)
         {
-            base.dxEntityUpdateSystem = (InputState lastInputState, InputState inputState, IEntity entity) => Update();
+            this.rigidbody = new Rigidbody(centerPosition, this);
+            this.isActive = true;
+            this.animation = new Animation(texture);
+
+            this.dxEntityUpdateSystem = (InputState lastInputState, InputState inputState) => UpdateSystem();
         }
 
-        private void Update()
+        private void UpdateSystem()
         {
             if (isActive)
             {

@@ -17,7 +17,6 @@ namespace Shared
         public Camera camera { get; private set; }
         public Map map { get; private set; }
 
-        public DxSceneInitializeSystem dxSceneInitializeSystem { get; private set; }
         public DxSceneUpdateSystem dxSceneUpdateSystem { get; private set; }
         public DxSceneDrawSystem dxSceneDrawSystem { get; private set; }
 
@@ -37,7 +36,7 @@ namespace Shared
             {
                 new Player(playerPosition.Value, CharacterState.IdleUp),
                 new Portal(
-                    position: new Vector2(
+                    centerPosition: new Vector2(
                         4 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
                         15 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
                     ),

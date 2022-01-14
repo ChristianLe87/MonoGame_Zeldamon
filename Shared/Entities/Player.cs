@@ -8,17 +8,16 @@ namespace Shared
 {
     public class Player : IEntity
     {
-        public Animation animation { get; private set; }
-        public Rigidbody rigidbody { get; private set; }
-        public CharacterState characterState { get; set; }
+        public Rigidbody rigidbody { get; }
         public bool isActive { get; set; }
-        public string tag { get; private set; }
-        public int health { get; private set; }
-        public ExtraComponents extraComponents { get; set; }
+        public string tag { get; }
+        public int health { get; }
 
-        public DxEntityInitializeSystem dxEntityInitializeSystem { get; private set; }
-        public DxEntityUpdateSystem dxEntityUpdateSystem { get; private set; }
-        public DxEntityDrawSystem dxEntityDrawSystem { get; private set; }
+        public Animation animation { get; }
+        public CharacterState characterState { get; set; }
+
+        public DxEntityUpdateSystem dxEntityUpdateSystem { get; }
+        public DxEntityDrawSystem dxEntityDrawSystem { get; }
 
         public Player(Vector2 centerPosition, CharacterState initialState)
         {
@@ -26,7 +25,7 @@ namespace Shared
             this.rigidbody = new Rigidbody(centerPosition, this);
             this.isActive = true;
 
-            this.dxEntityUpdateSystem = (InputState lastInputState, InputState inputState, IEntity entity) => Update(inputState);
+            this.dxEntityUpdateSystem = (InputState lastInputState, InputState inputState) => Update(inputState);
 
             this.characterState = initialState;
             this.isActive = true;
