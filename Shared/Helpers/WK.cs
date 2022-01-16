@@ -14,7 +14,7 @@ namespace Shared
             public static double FPS => 60;
             public static bool IsFullScreen = false;
             public static bool AllowUserResizing = true;
-            public static int ScaleFactor => 1;
+            public static int ScaleFactor => 2;
             public static int Width { get => AssetSize * 28 * ScaleFactor; }
             public static int Height { get => AssetSize * 16 * ScaleFactor; }
             public static Point Center => new Point(Width / 2, Height / 2);

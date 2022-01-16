@@ -54,11 +54,51 @@ namespace Shared
                         14 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
                     )
                 ),
+
+
                 new Coin(
                     WK.Textures.Other.coin,
                     new Vector2(
                         8 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
                         15 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
+                    )
+                ),
+
+                new Coin(
+                    WK.Textures.Other.coin,
+                    new Vector2(
+                        8 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                        16 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
+                    )
+                ),
+                new Coin(
+                    WK.Textures.Other.coin,
+                    new Vector2(
+                        8 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                        17 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
+                    )
+                ),
+
+                new Coin(
+                    WK.Textures.Other.coin,
+                    new Vector2(
+                        9 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                        15 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
+                    )
+                ),
+
+                new Coin(
+                    WK.Textures.Other.coin,
+                    new Vector2(
+                        9 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                        16 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
+                    )
+                ),
+                new Coin(
+                    WK.Textures.Other.coin,
+                    new Vector2(
+                        9 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                        17 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
                     )
                 ),
             };
