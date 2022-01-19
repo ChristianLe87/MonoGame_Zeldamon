@@ -21,6 +21,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Hammer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Scenes\SceneMap1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\KeyDoor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Minimimap.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Scenes\" />

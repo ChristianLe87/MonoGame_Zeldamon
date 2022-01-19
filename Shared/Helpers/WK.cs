@@ -84,6 +84,17 @@ namespace Shared
 
             public class Map
             {
+                public class Map0
+                {
+                    public static Dictionary<int, Color> minimapColors => new Dictionary<int, Color>()
+                    {
+                        { 0, Color.Green },
+                        { 1, Color.LightGray },
+                        { 2, Color.Red }
+                    };
+                }
+
+
                 public class Map1
                 {
                     public static Dictionary<int, Texture2D> textures => new Dictionary<int, Texture2D>()
@@ -92,6 +103,8 @@ namespace Shared
                         { 1, LightGray },
                         { 2, Red }
                     };
+
+                   
                 }
             }
         }
@@ -121,6 +134,13 @@ namespace Shared
 
         public class Map
         {
+            public static int[,] map0 = new int[,]
+            {
+                {1,1,1,1,1,1,1,1,1,1 },
+                {1,0,0,0,0,0,0,0,0,1 },
+                {1,1,1,1,1,1,1,1,1,1 }
+            };
+
             public static int[,] Map1 = new int[,]
             {
                 { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },

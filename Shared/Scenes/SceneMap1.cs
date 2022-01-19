@@ -39,6 +39,16 @@ namespace Shared
             this.UIs = Helpers.GetGameUI();
             UIs.Add(new Transition.FadeIn());
 
+            UIs.Add(
+                new Minimimap(
+                    WK.Textures.Map.Map0.minimapColors,
+                    WK.Map.Map1,
+                    new Vector2(
+                        10 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                        15 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2))
+                    )
+            );
+
             this.entities = new List<IEntity>()
             {
                 new Player(playerPosition.Value, CharacterState.IdleDown),
