@@ -36,6 +36,8 @@ namespace Shared
 
             this.camera = new Camera();
 
+            Player player = new Player(playerPosition.Value, CharacterState.IdleDown);
+
             this.UIs = Helpers.GetGameUI();
             UIs.Add(new Transition.FadeIn());
 
@@ -47,13 +49,14 @@ namespace Shared
                         24 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
                         1 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
                     ),
-                    ChristianGame.Setup.ScaleFactor
+                    ChristianGame.Setup.ScaleFactor,
+                    player
                 )
             );
 
             this.entities = new List<IEntity>()
             {
-                new Player(playerPosition.Value, CharacterState.IdleDown),
+                player,
                 new Portal(
                     centerPosition: new Vector2(
                         7 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),

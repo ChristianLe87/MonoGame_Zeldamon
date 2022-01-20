@@ -10,7 +10,7 @@ namespace Shared
         public static List<IUI> GetGameUI()
         {
             List<IUI> UIs = new List<IUI>();
-            UIs.Add(new Label(new Rectangle(0, 0, 16, 16), WK.Font.MyFont, "coin", Label.TextAlignment.Top_Left, "coin", ChristianGame.GetScene.camera));
+            UIs.Add(new Label(new Rectangle(0, 0, 16, 16), WK.Font.MyFont, "coin", Label.TextAlignment.Top_Left, "coin"));
 
 
             if (ChristianGame.gameData.key1_ui_isVisible == true)
