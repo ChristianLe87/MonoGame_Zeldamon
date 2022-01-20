@@ -41,7 +41,7 @@ namespace Shared
             }
             else
             {
-                Systems.Update.Player.Zeldamon_Movement(inputState, this, WK.Default.ScaleFactor, WK.Default.AssetSize);
+                Systems.Update.Player.Zeldamon_Movement(inputState, this, ChristianGame.Setup.ScaleFactor, ChristianGame.Setup.AssetSize);
             }
         }
     }

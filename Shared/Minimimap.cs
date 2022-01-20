@@ -97,13 +97,13 @@ namespace Shared
 
 
             // center player in the minimap
-            int assetSize_x_scaleFactor = WK.Default.AssetSize * WK.Default.ScaleFactor;
+            int assetSize_x_scaleFactor = ChristianGame.Setup.AssetSize * ChristianGame.Setup.ScaleFactor;
 
             int adjust_x = (int)((player.rigidbody.centerPosition.X - (assetSize_x_scaleFactor / 2)) / (assetSize_x_scaleFactor));
             int adjust_y = (int)((player.rigidbody.centerPosition.Y - (assetSize_x_scaleFactor / 2)) / (assetSize_x_scaleFactor));
 
-            miniPlayer.X += adjust_x * WK.Default.ScaleFactor;
-            miniPlayer.Y += adjust_y * WK.Default.ScaleFactor;
+            miniPlayer.X += adjust_x * ChristianGame.Setup.ScaleFactor;
+            miniPlayer.Y += adjust_y * ChristianGame.Setup.ScaleFactor;
 
             spriteBatch.Draw(miniPlayerTexture, miniPlayer, Color.White);
         }

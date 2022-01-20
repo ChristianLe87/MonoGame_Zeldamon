@@ -31,7 +31,7 @@ namespace Shared
 
 			Player player = ChristianGame.GetScene.entities.OfType<Player>().First();
 
-			if (rigidbody.rectangle.Intersects(player.rigidbody.rectangleUp(WK.Default.ScaleFactor)))
+			if (rigidbody.rectangle.Intersects(player.rigidbody.rectangleUp(ChristianGame.Setup.ScaleFactor)))
 			{
 				if (lastInputState.Action == false && inputState.Action == true)
 				{
