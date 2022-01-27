@@ -24,7 +24,7 @@ namespace Shared
 
         public void Initialize(Vector2? playerPosition = null)
         {
-            int assetSize_x_scaleFactor = ChristianGame.Setup.AssetSize * ChristianGame.Setup.ScaleFactor;
+            int assetSize_x_scaleFactor = ChristianGame.Default.AssetSize * ChristianGame.Default.ScaleFactor;
 
             if (playerPosition == null)
             {
@@ -49,7 +49,7 @@ namespace Shared
                         24 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
                         1 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
                     ),
-                    ChristianGame.Setup.ScaleFactor,
+                    ChristianGame.Default.ScaleFactor,
                     player
                 )
             );

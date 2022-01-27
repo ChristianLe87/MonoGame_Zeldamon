@@ -24,7 +24,7 @@ namespace Shared
 
         public void Initialize(Vector2? playerPosition = null)
         {
-            int assetSize_x_scaleFactor = ChristianGame.Setup.AssetSize * ChristianGame.Setup.ScaleFactor;
+            int assetSize_x_scaleFactor = ChristianGame.Default.AssetSize * ChristianGame.Default.ScaleFactor;
 
 
             this.camera = new Camera();

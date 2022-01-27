@@ -8,7 +8,7 @@ namespace Shared
 {
     public class WK
     {
-        public class Default : ISetup
+        public class Default : IDefault
         {
             public string WindowTitle => "Monogame_Zeldamon";
             public double FPS => 60;
@@ -24,47 +24,47 @@ namespace Shared
 
         public class Textures
         {
-            public static Texture2D Transparent => Tools.Texture.CreateColorTexture(Color.Transparent, ChristianGame.Setup.ScaleFactor * ChristianGame.Setup.AssetSize, ChristianGame.Setup.ScaleFactor * ChristianGame.Setup.AssetSize);
-            public static Texture2D Pink => Tools.Texture.CreateColorTexture(Color.Pink, ChristianGame.Setup.ScaleFactor * ChristianGame.Setup.AssetSize, ChristianGame.Setup.ScaleFactor * ChristianGame.Setup.AssetSize);
-            public static Texture2D Red => Tools.Texture.CreateColorTexture(Color.Red, ChristianGame.Setup.ScaleFactor * ChristianGame.Setup.AssetSize, ChristianGame.Setup.ScaleFactor * ChristianGame.Setup.AssetSize);
-            public static Texture2D LightGray => Tools.Texture.CreateColorTexture(Color.LightGray, ChristianGame.Setup.ScaleFactor * ChristianGame.Setup.AssetSize, ChristianGame.Setup.ScaleFactor * ChristianGame.Setup.AssetSize);
+            public static Texture2D Transparent => Tools.Texture.CreateColorTexture(Color.Transparent, ChristianGame.Default.ScaleFactor * ChristianGame.Default.AssetSize, ChristianGame.Default.ScaleFactor * ChristianGame.Default.AssetSize);
+            public static Texture2D Pink => Tools.Texture.CreateColorTexture(Color.Pink, ChristianGame.Default.ScaleFactor * ChristianGame.Default.AssetSize, ChristianGame.Default.ScaleFactor * ChristianGame.Default.AssetSize);
+            public static Texture2D Red => Tools.Texture.CreateColorTexture(Color.Red, ChristianGame.Default.ScaleFactor * ChristianGame.Default.AssetSize, ChristianGame.Default.ScaleFactor * ChristianGame.Default.AssetSize);
+            public static Texture2D LightGray => Tools.Texture.CreateColorTexture(Color.LightGray, ChristianGame.Default.ScaleFactor * ChristianGame.Default.AssetSize, ChristianGame.Default.ScaleFactor * ChristianGame.Default.AssetSize);
 
             public class Other
             {
                 static Texture2D atlasTexture => Tools.Texture.GetTexture("TileCollection_32x96_PNG");
-                public static Texture2D coin = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 0 * ChristianGame.Setup.AssetSize, 1 * ChristianGame.Setup.AssetSize, ChristianGame.Setup.AssetSize), ChristianGame.Setup.ScaleFactor);
-                public static Texture2D hammer = Tools.Texture.CropTexture(atlasTexture, new Rectangle(1 * ChristianGame.Setup.AssetSize, 0 * ChristianGame.Setup.AssetSize, 1 * ChristianGame.Setup.AssetSize, ChristianGame.Setup.AssetSize), ChristianGame.Setup.ScaleFactor);
-                public static Texture2D key = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0 * ChristianGame.Setup.AssetSize, 2 * ChristianGame.Setup.AssetSize, 1 * ChristianGame.Setup.AssetSize, ChristianGame.Setup.AssetSize), ChristianGame.Setup.ScaleFactor);
-                public static Texture2D keyDoor = Tools.Texture.CropTexture(atlasTexture, new Rectangle(1 * ChristianGame.Setup.AssetSize, 2 * ChristianGame.Setup.AssetSize, 1 * ChristianGame.Setup.AssetSize, ChristianGame.Setup.AssetSize), ChristianGame.Setup.ScaleFactor);
+                public static Texture2D coin = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 0 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
+                public static Texture2D hammer = Tools.Texture.CropTexture(atlasTexture, new Rectangle(1 * ChristianGame.Default.AssetSize, 0 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
+                public static Texture2D key = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0 * ChristianGame.Default.AssetSize, 2 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
+                public static Texture2D keyDoor = Tools.Texture.CropTexture(atlasTexture, new Rectangle(1 * ChristianGame.Default.AssetSize, 2 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
             }
 
             public class Player
             {
                 static Texture2D atlasTexture = Tools.Texture.GetTexture("Player_96x128_PNG");
 
-                static Texture2D idleUp = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 0 * ChristianGame.Setup.AssetSize, 1 * ChristianGame.Setup.AssetSize, ChristianGame.Setup.AssetSize), ChristianGame.Setup.ScaleFactor);
+                static Texture2D idleUp = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 0 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
                 static Texture2D[] idleUpArr = new Texture2D[] { idleUp };
 
-                static Texture2D idleDown = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 1 * ChristianGame.Setup.AssetSize, 1 * ChristianGame.Setup.AssetSize, ChristianGame.Setup.AssetSize), ChristianGame.Setup.ScaleFactor);
+                static Texture2D idleDown = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 1 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
                 static Texture2D[] idleDownArr = new Texture2D[] { idleDown };
 
-                static Texture2D idleRight = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 2 * ChristianGame.Setup.AssetSize, 1 * ChristianGame.Setup.AssetSize, ChristianGame.Setup.AssetSize), ChristianGame.Setup.ScaleFactor);
+                static Texture2D idleRight = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 2 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
                 static Texture2D[] idleRightArr = new Texture2D[] { idleRight };
 
-                static Texture2D idleLeft = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 3 * ChristianGame.Setup.AssetSize, 1 * ChristianGame.Setup.AssetSize, ChristianGame.Setup.AssetSize), ChristianGame.Setup.ScaleFactor);
+                static Texture2D idleLeft = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 3 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
                 static Texture2D[] idleLeftArr = new Texture2D[] { idleLeft };
 
 
-                static Texture2D moveUp = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 4 * ChristianGame.Setup.AssetSize, 6 * ChristianGame.Setup.AssetSize, ChristianGame.Setup.AssetSize), ChristianGame.Setup.ScaleFactor);
+                static Texture2D moveUp = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 4 * ChristianGame.Default.AssetSize, 6 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
                 static Texture2D[] moveUpArr = Tools.Texture.SliceHorizontalTexture(moveUp, 6);
 
-                static Texture2D moveDown = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 5 * ChristianGame.Setup.AssetSize, 6 * ChristianGame.Setup.AssetSize, ChristianGame.Setup.AssetSize), ChristianGame.Setup.ScaleFactor);
+                static Texture2D moveDown = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 5 * ChristianGame.Default.AssetSize, 6 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
                 static Texture2D[] moveDownArr = Tools.Texture.SliceHorizontalTexture(moveDown, 6);
 
-                static Texture2D moveRight = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 6 * ChristianGame.Setup.AssetSize, 6 * ChristianGame.Setup.AssetSize, ChristianGame.Setup.AssetSize), ChristianGame.Setup.ScaleFactor);
+                static Texture2D moveRight = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 6 * ChristianGame.Default.AssetSize, 6 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
                 static Texture2D[] moveRightArr = Tools.Texture.SliceHorizontalTexture(moveRight, 6);
 
-                static Texture2D moveLeft = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 7 * ChristianGame.Setup.AssetSize, 6 * ChristianGame.Setup.AssetSize, ChristianGame.Setup.AssetSize), ChristianGame.Setup.ScaleFactor);
+                static Texture2D moveLeft = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 7 * ChristianGame.Default.AssetSize, 6 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
                 static Texture2D[] moveLeftArr = Tools.Texture.SliceHorizontalTexture(moveLeft, 6);
 
 
