@@ -12,8 +12,8 @@ namespace Shared
         public Rigidbody rigidbody { get; private set; }
         public bool isActive { get; set; }
 
-        public DxTileUpdateSystem dxTileUpdateSystem { get; private set; }
-		public DxTileDrawSystem dxTileDrawSystem { get; private set; }
+		public DxUpdateSystem dxUpdateSystem { get; }
+		public DxDrawSystem dxDrawSystem { get; }
 
 		public KeyDoor(Texture2D texture2D, Rectangle rectangle, string tag)
 		{
@@ -21,7 +21,7 @@ namespace Shared
 			this.texture = texture2D;
 			this.isActive = true;
 
-			this.dxTileUpdateSystem = (InputState lastInputState, InputState inputState) => UpdateSyste(lastInputState, inputState);
+			this.dxUpdateSystem = (InputState lastInputState, InputState inputState) => UpdateSyste(lastInputState, inputState);
 		}
 
 		private void UpdateSyste(InputState lastInputState, InputState inputState)
@@ -42,5 +42,11 @@ namespace Shared
 				}
 			}
 		}
-	}
+
+        public Color GetShadow(List<Light> lights)
+        {
+			//throw new NotImplementedException();
+			return Shadow.Shadow_0;
+        }
+    }
 }

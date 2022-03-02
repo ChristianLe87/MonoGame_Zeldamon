@@ -16,8 +16,8 @@ namespace Shared
         public Animation animation { get; }
         public CharacterState characterState { get; set; }
 
-        public DxEntityUpdateSystem dxEntityUpdateSystem { get; }
-        public DxEntityDrawSystem dxEntityDrawSystem { get; }
+        public DxUpdateSystem dxUpdateSystem { get; }
+        public DxDrawSystem dxDrawSystem { get; }
 
         public Player(Vector2 centerPosition, CharacterState initialState)
         {
@@ -25,7 +25,7 @@ namespace Shared
             this.rigidbody = new Rigidbody(centerPosition, this);
             this.isActive = true;
 
-            this.dxEntityUpdateSystem = (InputState lastInputState, InputState inputState) => Update(inputState);
+            this.dxUpdateSystem = (InputState lastInputState, InputState inputState) => Update(inputState);
 
             this.characterState = initialState;
             this.isActive = true;

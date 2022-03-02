@@ -18,8 +18,8 @@ namespace Shared
         public Animation animation { get; }
         public CharacterState characterState { get; set; }
 
-        public DxEntityUpdateSystem dxEntityUpdateSystem { get; }
-        public DxEntityDrawSystem dxEntityDrawSystem { get; }
+        public DxUpdateSystem dxUpdateSystem { get; private set; }
+        public DxDrawSystem dxDrawSystem { get; }
 
         public Coin(Texture2D texture, Vector2 centerPosition)
         {
@@ -27,7 +27,7 @@ namespace Shared
             this.isActive = true;
             this.animation = new Animation(texture);
 
-            this.dxEntityUpdateSystem = (InputState lastInputState, InputState inputState) => UpdateSystem();
+            this.dxUpdateSystem = (InputState lastInputState, InputState inputState) => UpdateSystem();
         }
 
         private void UpdateSystem()

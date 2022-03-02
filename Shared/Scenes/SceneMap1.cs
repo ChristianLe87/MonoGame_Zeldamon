@@ -17,8 +17,9 @@ namespace Shared
         public Camera camera { get; private set; }
         public Map map { get; private set; }
 
-        public DxSceneUpdateSystem dxSceneUpdateSystem { get; private set; }
-        public DxSceneDrawSystem dxSceneDrawSystem { get; private set; }
+        public DxUpdateSystem dxUpdateSystem { get; private set; }
+        public DxDrawSystem dxDrawSystem { get; }
+        public List<Light> lights { get; set; }
 
         int frameCount = 0;
 
@@ -137,7 +138,7 @@ namespace Shared
                 )
             );
 
-            this.dxSceneUpdateSystem = (InputState lastInputState, InputState inputState) => UpdateSystem();
+            this.dxUpdateSystem = (InputState lastInputState, InputState inputState) => UpdateSystem();
         }
 
         private void UpdateSystem()

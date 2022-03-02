@@ -17,9 +17,10 @@ namespace Shared
         public Camera camera { get; private set; }
         public Map map { get; private set; }
 
-        public DxSceneUpdateSystem dxSceneUpdateSystem { get; private set; }
-        public DxSceneDrawSystem dxSceneDrawSystem { get; private set; }
+        public DxUpdateSystem dxUpdateSystem { get; private set; }
+        public DxDrawSystem dxDrawSystem { get; }
 
+        public List<Light> lights { get; set; }
         int frameCount = 0;
 
         public void Initialize(Vector2? playerPosition = null)
@@ -62,7 +63,7 @@ namespace Shared
                 );
 
             this.map = new Map(WK.Textures.Map.Map1.textures, WK.Map.Map2);
-            this.dxSceneUpdateSystem = (InputState lastInputState, InputState inputState) => Update();
+            this.dxUpdateSystem = (InputState lastInputState, InputState inputState) => Update();
         }
 
         private void Update()
