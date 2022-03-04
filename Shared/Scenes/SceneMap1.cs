@@ -42,7 +42,7 @@ namespace Shared
             this.UIs = Helpers.GetGameUI();
             UIs.Add(new Transition.FadeIn());
 
-            UIs.Add(
+            /*UIs.Add(
                 new Minimimap(
                     WK.Textures.Map.Map0.minimapColors,
                     WK.Map.Map1,
@@ -53,7 +53,7 @@ namespace Shared
                     ChristianGame.Default.ScaleFactor,
                     player
                 )
-            );
+            );*/
 
             this.entities = new List<IEntity>()
             {
@@ -122,8 +122,7 @@ namespace Shared
             if (ChristianGame.gameData.key1_entity_isVisible == true)
                 entities.Add(new Key(WK.Textures.Other.key, new Vector2(100, 100)));
 
-
-            this.map = new Map(WK.Textures.Map.Map1.textures, WK.Map.Map1);
+            this.map = new Map(textures: WK.Map.Map1.textures, tiled: WK.Map.Map1.tiled);
 
             this.map.tiles.Add(
                 new KeyDoor(
@@ -133,8 +132,7 @@ namespace Shared
                         13 * assetSize_x_scaleFactor,
                         WK.Textures.Other.keyDoor.Width,
                         WK.Textures.Other.keyDoor.Height
-                    ),
-                    "keyDoor"
+                    )
                 )
             );
 

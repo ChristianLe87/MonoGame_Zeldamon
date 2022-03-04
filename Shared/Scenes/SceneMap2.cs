@@ -62,7 +62,7 @@ namespace Shared
                     )
                 );
 
-            this.map = new Map(WK.Textures.Map.Map1.textures, WK.Map.Map2);
+            //this.map = new Map(WK.Map.Map1.textures);
             this.dxUpdateSystem = (InputState lastInputState, InputState inputState) => Update();
         }
 

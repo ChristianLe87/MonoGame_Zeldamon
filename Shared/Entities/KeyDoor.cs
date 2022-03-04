@@ -15,13 +15,16 @@ namespace Shared
 		public DxUpdateSystem dxUpdateSystem { get; }
 		public DxDrawSystem dxDrawSystem { get; }
 
-		public KeyDoor(Texture2D texture2D, Rectangle rectangle, string tag)
+        public Tiled.LayerId layerID { get; private set; }
+
+        public KeyDoor(Texture2D texture2D, Rectangle rectangle)
 		{
 			this.rigidbody = new Rigidbody(rectangle);
 			this.texture = texture2D;
 			this.isActive = true;
 
 			this.dxUpdateSystem = (InputState lastInputState, InputState inputState) => UpdateSyste(lastInputState, inputState);
+			this.layerID = Tiled.LayerId.Entities;
 		}
 
 		private void UpdateSyste(InputState lastInputState, InputState inputState)
@@ -45,7 +48,6 @@ namespace Shared
 
         public Color GetShadow(List<Light> lights)
         {
-			//throw new NotImplementedException();
 			return Shadow.Shadow_0;
         }
     }

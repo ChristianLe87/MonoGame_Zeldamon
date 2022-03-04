@@ -31,11 +31,12 @@ namespace Shared
 
             public class Other
             {
-                static Texture2D atlasTexture => Tools.Texture.GetTexture("TileCollection_32x96_PNG");
-                public static Texture2D coin = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 0 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
-                public static Texture2D hammer = Tools.Texture.CropTexture(atlasTexture, new Rectangle(1 * ChristianGame.Default.AssetSize, 0 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
-                public static Texture2D key = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0 * ChristianGame.Default.AssetSize, 2 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
-                public static Texture2D keyDoor = Tools.Texture.CropTexture(atlasTexture, new Rectangle(1 * ChristianGame.Default.AssetSize, 2 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
+                static Texture2D atlasTexture => Tools.Texture.GetTexture("AtlasTiles_PNG");
+
+                public static Texture2D coin = Tools.Texture.GetUnitTileFromAtlasTexture(atlasTexture, 0, 5, ChristianGame.Default.ScaleFactor);
+                public static Texture2D hammer = Tools.Texture.CropTexture(atlasTexture, new Rectangle(1 * ChristianGame.Default.AssetSize, 5 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
+                public static Texture2D key = Tools.Texture.CropTexture(atlasTexture, new Rectangle(2 * ChristianGame.Default.AssetSize, 5 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
+                public static Texture2D keyDoor = Tools.Texture.CropTexture(atlasTexture, new Rectangle(3 * ChristianGame.Default.AssetSize, 5 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
             }
 
             public class Player
@@ -74,38 +75,12 @@ namespace Shared
                     { CharacterState.IdleDown, (idleDownArr, AnimationOption.Loop) },
                     { CharacterState.IdleRight, (idleRightArr, AnimationOption.Loop) },
                     { CharacterState.IdleLeft, (idleLeftArr, AnimationOption.Loop) },
-                    
+
                     { CharacterState.MoveUp, (moveUpArr, AnimationOption.Loop) },
                     { CharacterState.MoveDown, (moveDownArr, AnimationOption.Loop) },
                     { CharacterState.MoveRight, (moveRightArr, AnimationOption.Loop) },
                     { CharacterState.MoveLeft, (moveLeftArr, AnimationOption.Loop) }
                 };
-            }
-
-            public class Map
-            {
-                public class Map0
-                {
-                    public static Dictionary<int, Color> minimapColors => new Dictionary<int, Color>()
-                    {
-                        { 0, Color.Green },
-                        { 1, Color.LightGray },
-                        { 2, Color.Red }
-                    };
-                }
-
-
-                public class Map1
-                {
-                    public static Dictionary<int, Texture2D> textures => new Dictionary<int, Texture2D>()
-                    {
-                        { 0, null },
-                        { 1, LightGray },
-                        { 2, Red }
-                    };
-
-                   
-                }
             }
         }
 
@@ -134,74 +109,21 @@ namespace Shared
 
         public class Map
         {
-            public static int[,] map0 = new int[,]
+            public class Map1
             {
-                {1,1,1,1,1,1,1,1,1,1 },
-                {1,0,0,0,0,0,0,0,0,1 },
-                {1,1,1,1,1,1,1,1,1,1 }
-            };
+                static Texture2D atlasTexture => Tools.Texture.GetTexture("AtlasTiles_PNG");
 
-            public static int[,] Map1 = new int[,]
-            {
-                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
-            };
+                public static Dictionary<int, Texture2D> textures = Tools.Texture.GetTileTextures(atlasTexture);
 
-            public static int[,] Map2 = new int[,]
-            {
-                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 1, 1, 1, 1, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
-                { 1, 0, 0, 1, 1, 1, 1, 0, 0, 1 },
-                { 1, 0, 0, 1, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 1, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 1, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 1, 1, 1, 1, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 1, 1, 1, 0, 1, 1, 1, 1, 1 }
-            };
+                public static Tiled tiled = Tiled_JsonSerialization.Read<Tiled>("Map1");
 
-            public static int[,] Cave = new int[,]
-            {
-                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 1, 1, 1, 1, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
-                { 1, 0, 0, 0, 1, 1, 1, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
-                { 1, 0, 0, 1, 1, 1, 1, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
-                { 1, 1, 1, 1, 2, 1, 1, 1, 1, 1 }
-            };
+                /*public static Dictionary<int, Texture2D> textures => new Dictionary<int, Texture2D>()
+                {
+                    { 0, null },
+                    { 1, LightGray },
+                    { 2, Red }
+                };*/
+            }
         }
     }
 }
