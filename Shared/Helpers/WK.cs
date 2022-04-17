@@ -103,7 +103,7 @@ namespace Shared
         {
             public static string Menu => "GameMenu";
             public static string GameScene => "GameScene";
-            public static string House_1 => "House_1";
+            public static string House1 => "House1";
             public static string Cave => "Cave";
         }
 
@@ -116,13 +116,15 @@ namespace Shared
                 public static Dictionary<int, Texture2D> textures = Tools.Texture.GetTileTextures(atlasTexture);
 
                 public static Tiled tiled = Tiled_JsonSerialization.Read<Tiled>("Map1");
+            }
 
-                /*public static Dictionary<int, Texture2D> textures => new Dictionary<int, Texture2D>()
-                {
-                    { 0, null },
-                    { 1, LightGray },
-                    { 2, Red }
-                };*/
+            public class House1
+            {
+                static Texture2D atlasTexture => Tools.Texture.GetTexture("AtlasTiles_PNG");
+
+                public static Dictionary<int, Texture2D> textures = Tools.Texture.GetTileTextures(atlasTexture);
+
+                public static Tiled tiled = Tiled_JsonSerialization.Read<Tiled>("House1");
             }
         }
     }
