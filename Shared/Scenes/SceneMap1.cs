@@ -30,8 +30,8 @@ namespace Shared
             if (playerPosition == null)
             {
                 playerPosition = new Vector2(
-                    10 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
-                    15 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
+                    5 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                    20 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
                 );
             }
 

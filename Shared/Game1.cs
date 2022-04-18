@@ -16,7 +16,7 @@ namespace Shared
                 { WK.Scene.Cave, new SeneCave() }
             };
 
-            base.SetupScenes(scenes, WK.Scene.GameScene);
+            base.SetupScenes(scenes, WK.Scene.Menu);
         }
     }
 }
