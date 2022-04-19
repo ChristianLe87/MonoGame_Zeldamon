@@ -28,12 +28,12 @@
       <Link>Content\Map1.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="..\Content\Player_96x128_PNG.png">
-      <Link>Content\Player_96x128_PNG.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="..\Content\Maps\House1.json">
       <Link>Content\House1.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Content\AtlasPlayer_PNG.png">
+      <Link>Content\AtlasPlayer_PNG.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

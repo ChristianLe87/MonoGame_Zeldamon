@@ -41,7 +41,7 @@ namespace Shared
 
             public class Player
             {
-                static Texture2D atlasTexture = Tools.Texture.GetTexture("Player_96x128_PNG");
+                static Texture2D atlasTexture = Tools.Texture.GetTexture("AtlasPlayer_PNG");
 
                 static Texture2D idleUp = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 0 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
                 static Texture2D[] idleUpArr = new Texture2D[] { idleUp };
