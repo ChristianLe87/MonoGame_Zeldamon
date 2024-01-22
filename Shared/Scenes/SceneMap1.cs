@@ -30,8 +30,8 @@ namespace Shared
             if (playerPosition == null)
             {
                 playerPosition = new Vector2(
-                    5 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
-                    20 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
+                    10 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                    15 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
                 );
             }
 
@@ -60,19 +60,19 @@ namespace Shared
                 player,
                 new Portal(
                     centerPosition: new Vector2(
-                        5 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
-                        17 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
+                        7 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                        13 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
                     ),
                     texture2D: WK.Textures.Transparent,
-                    targetScene: WK.Scene.House1,
+                    targetScene: WK.Scene.House_1,
                     targetPlayerPosition: new Vector2(
-                        2 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
-                        4 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
+                        4 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
+                        14 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
                     )
                 ),
 
 
-                /*new Coin(
+                new Coin(
                     WK.Textures.Other.coin,
                     new Vector2(
                         8 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
@@ -116,7 +116,7 @@ namespace Shared
                         9 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2),
                         17 * assetSize_x_scaleFactor + (assetSize_x_scaleFactor / 2)
                     )
-                ),*/
+                ),
             };
 
             if (ChristianGame.gameData.key1_entity_isVisible == true)
@@ -124,7 +124,7 @@ namespace Shared
 
             this.map = new Map(textures: WK.Map.Map1.textures, tiled: WK.Map.Map1.tiled);
 
-            /*this.map.tiles.Add(
+            this.map.tiles.Add(
                 new KeyDoor(
                     WK.Textures.Other.keyDoor,
                     new Rectangle(
@@ -134,15 +134,15 @@ namespace Shared
                         WK.Textures.Other.keyDoor.Height
                     )
                 )
-            );*/
+            );
 
-            //this.dxUpdateSystem = (InputState lastInputState, InputState inputState) => UpdateSystem();
+            this.dxUpdateSystem = (InputState lastInputState, InputState inputState) => UpdateSystem();
         }
 
         private void UpdateSystem()
         {
-            /*Label coin = UIs.OfType<Label>().Where(x => x.tag == "coin").First();
-            coin.UpdateText($"Coins: {ChristianGame.gameData.coins}");*/
+            Label coin = UIs.OfType<Label>().Where(x => x.tag == "coin").First();
+            coin.UpdateText($"Coins: {ChristianGame.gameData.coins}");
         }
     }
 }

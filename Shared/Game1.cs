@@ -12,11 +12,11 @@ namespace Shared
             {
                 { WK.Scene.Menu, new Factory.SceneMenu(WK.Font.MyFont, WK.Scene.GameScene) },
                 { WK.Scene.GameScene, new SceneMap1() },
-                { WK.Scene.House1,  new SceneHouse1() },
+                { WK.Scene.House_1,  new SceneMap2() },
                 { WK.Scene.Cave, new SeneCave() }
             };
 
-            base.SetupScenes(scenes, WK.Scene.Menu);
+            base.SetupScenes(scenes, WK.Scene.GameScene);
         }
     }
 }

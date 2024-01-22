@@ -41,7 +41,7 @@ namespace Shared
 
             public class Player
             {
-                static Texture2D atlasTexture = Tools.Texture.GetTexture("AtlasPlayer_PNG");
+                static Texture2D atlasTexture = Tools.Texture.GetTexture("Player_96x128_PNG");
 
                 static Texture2D idleUp = Tools.Texture.CropTexture(atlasTexture, new Rectangle(0, 0 * ChristianGame.Default.AssetSize, 1 * ChristianGame.Default.AssetSize, ChristianGame.Default.AssetSize), ChristianGame.Default.ScaleFactor);
                 static Texture2D[] idleUpArr = new Texture2D[] { idleUp };
@@ -103,7 +103,7 @@ namespace Shared
         {
             public static string Menu => "GameMenu";
             public static string GameScene => "GameScene";
-            public static string House1 => "House1";
+            public static string House_1 => "House_1";
             public static string Cave => "Cave";
         }
 
@@ -116,15 +116,13 @@ namespace Shared
                 public static Dictionary<int, Texture2D> textures = Tools.Texture.GetTileTextures(atlasTexture);
 
                 public static Tiled tiled = Tiled_JsonSerialization.Read<Tiled>("Map1");
-            }
 
-            public class House1
-            {
-                static Texture2D atlasTexture => Tools.Texture.GetTexture("AtlasTiles_PNG");
-
-                public static Dictionary<int, Texture2D> textures = Tools.Texture.GetTileTextures(atlasTexture);
-
-                public static Tiled tiled = Tiled_JsonSerialization.Read<Tiled>("House1");
+                /*public static Dictionary<int, Texture2D> textures => new Dictionary<int, Texture2D>()
+                {
+                    { 0, null },
+                    { 1, LightGray },
+                    { 2, Red }
+                };*/
             }
         }
     }
